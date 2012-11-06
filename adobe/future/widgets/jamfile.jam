@@ -1,0 +1,132 @@
+# Jamfile for building adobe_widgets
+
+import testing ;
+import os ;
+import set ;
+
+SOURCE_DIRECTORY =  adobe/future/widgets/sources ;
+HEADER_DIRECTORY =  adobe/future/widgets/headers ;
+PLATFORM_DIRECTORIES_NAME = ../../../stub ;
+
+switch [ os.name ]
+{
+case NT : # --- Windows ---------------------------------------------------------------------------
+    {
+    #
+    # Directory name for Windows specific sources and headers
+    #
+    PLATFORM_DIRECTORIES_NAME = ../../../windows ;
+
+
+    #
+    # Build settings for Windows
+    #
+    PLATFORM_SETTINGS   =   
+                            #
+                            # The header file containing the resource definitions is currently
+                            # used by win/ui_core_implementation.cpp to load an icon in begin.
+                            #
+                            <include>resources/win32
+                            <include>.
+                            #
+                            # These definitions say that we're targetting Windows XP. 
+                            # That means that we get various preprocessor definitions which we
+                            # need, such as the WS_EX_COMPOSITED window style.
+                            #
+                            <define>WINVER=0x560 <define>_WIN32_WINNT=0x560 <define>_WIN32_IE=0x560
+
+                            <toolset>msvc:<linkflags>"gdi32.lib user32.lib comctl32.lib shell32.lib comdlg32.lib"
+
+                            <toolset>gcc:<linkflags>"-lgdi32 -lshell32 -luser32 -lcomctl32"
+
+                        ;
+    }
+case MACOSX :  # --- Mac OS (assumed) ------------------------------------------------------------------
+    {
+    #
+    # Directory name for MacOS specific sources
+    #
+    PLATFORM_DIRECTORIES_NAME = ../../../macintosh ;
+
+    #
+    # Build settings for MacOS
+    #
+    PLATFORM_SETTINGS   =
+        <toolset>darwin:<linkflags>"-framework Carbon -framework Cocoa -framework AudioToolbox"
+        <toolset>darwin:<cxxflags>"-Wno-deprecated-declarations"
+        ;
+    }
+}
+
+# -------------------------------------------------------------------------------------------------
+
+
+
+INCLUDE =
+    <include>../../..
+    <include>$(PLATFORM_DIRECTORIES_NAME)/$(HEADER_DIRECTORY)
+    <include>$(PLATFORM_DIRECTORIES_NAME)
+    ;
+
+# -------------------------------------------------------------------------------------------------
+
+#
+# The adobe_widgets library can be used by other applications to build dialogs and software
+# based on ui-core.
+#
+# The platform settings are required to build, but not to link against the generated
+# library, which is why they are in the second section, not the third.
+#
+
+project adobe/adobe_widgets
+    : requirements
+        <user-interface>gui 
+        $(INCLUDE)
+    : usage-requirements 
+        $(INCLUDE)
+    ;
+
+FUTURE_SET =
+        behavior
+        cursor_stack
+        image_slurp
+        locale
+        resources
+        modal_dialog_interface
+    ;
+
+NONFUTURE_SET =
+        dictionary_set
+        keyboard
+        sequence_model
+    ;
+
+PLATFORM_SOURCES =
+    [ glob $(PLATFORM_DIRECTORIES_NAME)/$(SOURCE_DIRECTORY)/*.cpp ]
+    [ glob $(PLATFORM_DIRECTORIES_NAME)/adobe/future/source/*.mm ] # Objective-C/C++ sources; Mac only
+    [ glob $(PLATFORM_DIRECTORIES_NAME)/adobe/future/source/*.m ]
+    [ glob $(PLATFORM_DIRECTORIES_NAME)/adobe/future/source/*.mm ]
+    [ glob $(PLATFORM_DIRECTORIES_NAME)/adobe/future/source/*.cpp ]
+    ;
+
+lib adobe_widgets
+    : # sources
+        [ glob ../../../$(SOURCE_DIRECTORY)/*.cpp ]
+        ../../../source/$(NONFUTURE_SET).cpp
+        ../source/$(FUTURE_SET).cpp
+        $(PLATFORM_SOURCES)
+       ../../../../adobe_source_libraries//asl_dev
+ 
+    : #requirements
+        $(PLATFORM_SETTINGS)
+        $(INCLUDE)
+    : #defaults
+        <link>static
+        <threading>multi
+    : #usage-requirements
+        #<toolset>darwin,<arch>native:<atomics>off
+        #<toolset>darwin,<arch>ppc:<atomics>off
+        #<toolset>darwin,<arch>fat:<atomics>off
+       $(PLATFORM_SETTINGS)
+        $(INCLUDE)
+    ;

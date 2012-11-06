@@ -1,0 +1,9 @@
+margin		= 10;
+
+space		= 10;
+gap			= 8;	// measured as space from popup to label.
+large_space	= 20;
+
+place_row	= @place_row;
+
+dialog = {margin: margin, spacing: large_space, placement: place_row};

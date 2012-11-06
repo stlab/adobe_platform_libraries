@@ -1,0 +1,11 @@
+# Jamfile for building the xstring smoke test app
+
+project adobe/xstr_bench
+    : requirements
+        <include>../../
+    ;
+
+
+exe xstr_bench
+    : main.cpp 
+    ;

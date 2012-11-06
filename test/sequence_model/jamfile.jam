@@ -1,0 +1,13 @@
+import testing ;
+
+project adobe/sequence_model
+    : requirements
+        <include>../../
+	;
+
+# Uncomment this to give you a binary for debugging
+# exe sequence_model
+#    : main.cpp
+#    ;
+
+run main.cpp ;

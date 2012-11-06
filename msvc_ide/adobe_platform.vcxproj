@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DCDE885-821D-4D50-B5A4-5FE0B64505C2}</ProjectGuid>
+    <RootNamespace>widgets</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="adobe_platform.props" />
+    <Import Project="..\..\adobe_source_libraries\msvc_ide\adobe_release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="adobe_platform.props" />
+    <Import Project="..\..\adobe_source_libraries\msvc_ide\adobe_debug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\adobe\future\widgets\sources\alert.cpp" />
+    <ClCompile Include="..\adobe\future\source\behavior.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\button_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\button_helper.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\checkbox_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\control_button.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\control_button_factory.cpp" />
+    <ClCompile Include="..\adobe\future\source\cursor_stack.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\default_factory.cpp" />
+    <ClCompile Include="..\source\dictionary_set.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\display_number_factory.cpp" />
+    <ClCompile Include="..\adobe\future\source\drag_and_drop.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\edit_number.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\edit_number_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\edit_text_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\group_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\image_factory.cpp" />
+    <ClCompile Include="..\adobe\future\source\image_slurp.cpp" />
+    <ClCompile Include="..\source\keyboard.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\label_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\link_factory.cpp" />
+    <ClCompile Include="..\adobe\future\source\locale.cpp" />
+    <ClCompile Include="..\adobe\future\source\modal_dialog_interface.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\number_unit.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\optional_panel_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\panel_factory.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_button.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_checkbox.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\platform_cursor.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_display.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_display_number.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\platform_drag_and_drop_data.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_edit_number.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_edit_text.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\platform_file_monitor_impl.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_group.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_image.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_label.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_link.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\platform_locale_data.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_metrics.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\platform_number_formatter_data.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_optional_panel.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_panel.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\platform_periodical_data.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_popup.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_presets.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_preview.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_progress_bar.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_radio_button.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_reveal.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_separator.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_slider.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_tab_group.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_toggle.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_widget_utils.cpp" />
+    <ClCompile Include="..\windows\adobe\future\widgets\sources\platform_window.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\popup_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\presets_common.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\presets_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\preview_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\progress_bar_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\radio_button_factory.cpp" />
+    <ClCompile Include="..\adobe\future\source\resources.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\reveal_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\separator_factory.cpp" />
+    <ClCompile Include="..\source\sequence_model.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\slider_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\sublayout.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\tab_group_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\toggle_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\virtual_machine_extension.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\widget_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\widget_factory_registry.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\widget_tokens.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\widget_utils.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\window_factory.cpp" />
+    <ClCompile Include="..\adobe\future\widgets\sources\window_server.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\windows_graphic_utils.cpp" />
+    <ClCompile Include="..\windows\adobe\future\source\windows_message_handler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\adobe\future\widgets\headers\alert.hpp" />
+    <ClInclude Include="..\adobe\future\assemblage.hpp" />
+    <ClInclude Include="..\adobe\future\behavior.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\button_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\button_helper.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\checkbox_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\control_button.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\control_button_factory.hpp" />
+    <ClInclude Include="..\adobe\future\cursor.hpp" />
+    <ClInclude Include="..\adobe\future\source\cursor_stack.hpp" />
+    <ClInclude Include="..\adobe\future\debounce.hpp" />
+    <ClInclude Include="..\adobe\dictionary_set.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\display.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\display_number_factory.hpp" />
+    <ClInclude Include="..\adobe\future\drag_and_drop.hpp" />
+    <ClInclude Include="..\adobe\future\drag_and_drop_converter_concept.hpp" />
+    <ClInclude Include="..\adobe\future\drag_and_drop_fwd.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\edit_number.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\edit_number_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\edit_text_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\factory.hpp" />
+    <ClInclude Include="..\test\begin\headers\file.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\group_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\image_factory.hpp" />
+    <ClInclude Include="..\adobe\key_handler_concept.hpp" />
+    <ClInclude Include="..\adobe\keyboard.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\label_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\link_factory.hpp" />
+    <ClInclude Include="..\adobe\future\modal_dialog_interface.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\number_unit.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\optional_connect.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\optional_panel_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\panel_factory.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_button.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_checkbox.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_display_number.hpp" />
+    <ClInclude Include="..\windows\adobe\future\platform_drag_and_drop_data.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_edit_number.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_edit_text.hpp" />
+    <ClInclude Include="..\windows\adobe\future\platform_file_monitor_impl.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_group.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_image.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_label.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_link.hpp" />
+    <ClInclude Include="..\windows\adobe\future\platform_locale_data.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_metrics.hpp" />
+    <ClInclude Include="..\windows\adobe\future\platform_number_formatter_data.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_optional_panel.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_panel.hpp" />
+    <ClInclude Include="..\windows\adobe\future\platform_periodical_data.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_popup.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_presets.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_preview.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_progress_bar.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_radio_button.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_reveal.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_separator.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_slider.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_tab_group.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_toggle.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_widget_utils.hpp" />
+    <ClInclude Include="..\windows\adobe\future\widgets\headers\platform_window.hpp" />
+    <ClInclude Include="..\adobe\poly_key_handler.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\popup_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\presets_common.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\presets_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\preview_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\progress_bar_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\radio_button_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\reveal_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\separator_factory.hpp" />
+    <ClInclude Include="..\adobe\sequence_controller.hpp" />
+    <ClInclude Include="..\adobe\sequence_model.hpp" />
+    <ClInclude Include="..\adobe\sequence_view.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\slider_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\slider_helper.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\sublayout.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\tab_group_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\toggle_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\ui_core_common.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\uncategorized_functions.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\value_range_format.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\virtual_machine_extension.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\visible_change_queue.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\widget_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\widget_factory_registry.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\sources\widget_tokens.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\widget_utils.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\window_factory.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\window_helper.hpp" />
+    <ClInclude Include="..\adobe\future\widgets\headers\window_server.hpp" />
+    <ClInclude Include="..\windows\adobe\future\windows_cast.hpp" />
+    <ClInclude Include="..\windows\adobe\future\windows_graphic_utils.hpp" />
+    <ClInclude Include="..\windows\adobe\future\windows_message_handler.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

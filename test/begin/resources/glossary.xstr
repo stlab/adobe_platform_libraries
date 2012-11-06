@@ -1,0 +1,130 @@
+<xstr id='cancel' lang='pg_PG'>Ancelcay</xstr>
+<xstr id='image_size_auto_best' lang='pg_PG'>Estbay</xstr>
+<xstr id='image_size_auto_dialog_title' lang='pg_PG'>Utoay Esolutionray</xstr>
+<xstr id='image_size_auto_draft' lang='pg_PG'>Raftday</xstr>
+<xstr id='image_size_auto_good' lang='pg_PG'>Oodgay</xstr>
+<xstr id='image_size_auto_lines_per_cm' lang='pg_PG'>ineslay/mcay</xstr>
+<xstr id='image_size_auto_lines_per_inch' lang='pg_PG'>ineslay/nchiay</xstr>
+<xstr id='image_size_auto_quality' lang='pg_PG'>Ualityqay</xstr>
+<xstr id='image_size_auto_screen' lang='pg_PG'>Creensay:</xstr>
+<xstr id='image_size_auto' lang='pg_PG'>Utoay...</xstr>
+<xstr id='image_size_bicubic_sharper' lang='pg_PG'>Icubicbay Harpersay</xstr>
+<xstr id='image_size_bicubic_smoother' lang='pg_PG'>Icubicbay Moothersay</xstr>
+<xstr id='image_size_bicubic' lang='pg_PG'>Icubicbay</xstr>
+<xstr id='image_size_bilinear' lang='pg_PG'>Ilinearbay</xstr>
+<xstr id='image_size_cm' lang='pg_PG'>mcay</xstr>
+<xstr id='image_size_columns' lang='pg_PG'>olumnscay</xstr>
+<xstr id='image_size_constrain' lang='pg_PG'>Onstraincay Roportionspay</xstr>
+<xstr id='image_size_dialog_title' lang='pg_PG'>Mageiay Izesay</xstr>
+<xstr id='image_size_dimensions_group' lang='pg_PG'>Ixelpay Imensionsday:</xstr>
+<xstr id='image_size_height' lang='pg_PG'>Eighthay:</xstr>
+<xstr id='image_size_inches' lang='pg_PG'>Nchesiay</xstr>
+<xstr id='image_size_mm' lang='pg_PG'>mmay</xstr>
+<xstr id='image_size_nearest' lang='pg_PG'>Earestnay Eighbornay</xstr>
+<xstr id='image_size_percent' lang='pg_PG'>Ercentpay</xstr>
+<xstr id='image_size_picas' lang='pg_PG'>Icaspay</xstr>
+<xstr id='image_size_pixels_per_cm' lang='pg_PG'>Ixelspay/mcay</xstr>
+<xstr id='image_size_pixels_per_inch' lang='pg_PG'>Ixelspay/Nchiay</xstr>
+<xstr id='image_size_pixels' lang='pg_PG'>Ixelspay</xstr>
+<xstr id='image_size_points' lang='pg_PG'>Ointspay</xstr>
+<xstr id='image_size_resample' lang='pg_PG'>Esampleray Mageiay:</xstr>
+<xstr id='image_size_resolution' lang='pg_PG'>Esolutionray:</xstr>
+<xstr id='image_size_scale_styles' lang='pg_PG'>Calesay Tylessay</xstr>
+<xstr id='image_size_size_group' lang='pg_PG'>Ocumentday Izesay:</xstr>
+<xstr id='image_size_width' lang='pg_PG'>Idthway:</xstr>
+<xstr id='ok' lang='pg_PG'>Koay</xstr>
+<xstr id='reset' lang='pg_PG'>Esetray</xstr>
+<xstr id='cancel' lang='ja_JP'>キャンセル</xstr>
+<xstr id='image_size_auto_best' lang='ja_JP'>高い</xstr>
+<xstr id='image_size_auto_dialog_title' lang='ja_JP'>自動解像度設定</xstr>
+<xstr id='image_size_auto_draft' lang='ja_JP'>低い</xstr>
+<xstr id='image_size_auto_good' lang='ja_JP'>標準</xstr>
+<xstr id='image_size_auto_lines_per_cm' lang='ja_JP'>line/cm</xstr>
+<xstr id='image_size_auto_lines_per_inch' lang='ja_JP'>line/inch</xstr>
+<xstr id='image_size_auto_quality' lang='ja_JP'>画質</xstr>
+<xstr id='image_size_auto_screen' lang='ja_JP'>スクリーン線数:</xstr>
+<xstr id='image_size_auto' lang='ja_JP'>自動設定</xstr>
+<xstr id='image_size_bicubic_sharper' lang='ja_JP'>バイキュービック法 (シャープ)</xstr>
+<xstr id='image_size_bicubic_smoother' lang='ja_JP'>バイキュービック法 (滑らか)</xstr>
+<xstr id='image_size_bicubic' lang='ja_JP'>バイキュービック法</xstr>
+<xstr id='image_size_bilinear' lang='ja_JP'>バイリニア法</xstr>
+<xstr id='image_size_columns' lang='ja_JP'>コラム</xstr>
+<xstr id='image_size_constrain' lang='ja_JP'>縦横比を固定</xstr>
+<xstr id='image_size_dialog_title' lang='ja_JP'>画像解像度</xstr>
+<xstr id='image_size_dimensions_group' lang='ja_JP'>ピクセル数:</xstr>
+<xstr id='image_size_height' lang='ja_JP'>高さ:</xstr>
+<xstr id='image_size_nearest' lang='ja_JP'>ニアレストネイバー法</xstr>
+<xstr id='image_size_percent' lang='ja_JP'>%</xstr>
+<xstr id='image_size_resample' lang='ja_JP'>画像の再サンプル:</xstr>
+<xstr id='image_size_resolution' lang='ja_JP'>解像度:</xstr>
+<xstr id='image_size_scale_styles' lang='ja_JP'>スタイルを拡大・縮小</xstr>
+<xstr id='image_size_size_group' lang='ja_JP'>ドキュメントのサイズ:</xstr>
+<xstr id='image_size_width' lang='ja_JP'>幅:</xstr>
+<xstr id='reset' lang='ja_JP'>初期化</xstr>
+<xstr id='cancel' lang='ko_KR'>취소</xstr>
+<xstr id='image_size_auto_best' lang='ko_KR'>최적</xstr>
+<xstr id='image_size_auto_dialog_title' lang='ko_KR'>자동 해상도</xstr>
+<xstr id='image_size_auto_draft' lang='ko_KR'>기본</xstr>
+<xstr id='image_size_auto_good' lang='ko_KR'>양호</xstr>
+<xstr id='image_size_auto_lines_per_cm' lang='ko_KR'>선 수/센티미터</xstr>
+<xstr id='image_size_auto_lines_per_inch' lang='ko_KR'>선 수/인치</xstr>
+<xstr id='image_size_auto_quality' lang='ko_KR'>품질</xstr>
+<xstr id='image_size_auto_screen' lang='ko_KR'>스크린:</xstr>
+<xstr id='image_size_auto' lang='ko_KR'>자동...</xstr>
+<xstr id='image_size_bicubic_sharper' lang='ko_KR'>쌍입방(더 선명하게)</xstr>
+<xstr id='image_size_bicubic_smoother' lang='ko_KR'>쌍입방(더 매끄럽게)</xstr>
+<xstr id='image_size_bicubic' lang='ko_KR'>쌍입방</xstr>
+<xstr id='image_size_bilinear' lang='ko_KR'>쌍선형</xstr>
+<xstr id='image_size_cm' lang='ko_KR'>센티미터</xstr>
+<xstr id='image_size_columns' lang='ko_KR'>열</xstr>
+<xstr id='image_size_constrain' lang='ko_KR'>비율 제한</xstr>
+<xstr id='image_size_dialog_title' lang='ko_KR'>이미지 크기</xstr>
+<xstr id='image_size_dimensions_group' lang='ko_KR'>픽셀 치수:</xstr>
+<xstr id='image_size_height' lang='ko_KR'>높이:</xstr>
+<xstr id='image_size_inches' lang='ko_KR'>인치</xstr>
+<xstr id='image_size_mm' lang='ko_KR'>밀리미터</xstr>
+<xstr id='image_size_nearest' lang='ko_KR'>최단입점</xstr>
+<xstr id='image_size_percent' lang='ko_KR'>퍼센트</xstr>
+<xstr id='image_size_picas' lang='ko_KR'>파이카</xstr>
+<xstr id='image_size_pixels_per_cm' lang='ko_KR'>픽셀/센티미터</xstr>
+<xstr id='image_size_pixels_per_inch' lang='ko_KR'>픽셀/인치</xstr>
+<xstr id='image_size_pixels' lang='ko_KR'>픽셀</xstr>
+<xstr id='image_size_points' lang='ko_KR'>포인트</xstr>
+<xstr id='image_size_resample' lang='ko_KR'>이미지 리샘플링:</xstr>
+<xstr id='image_size_resolution' lang='ko_KR'>해상도:</xstr>
+<xstr id='image_size_scale_styles' lang='ko_KR'>스타일 비율 조정</xstr>
+<xstr id='image_size_size_group' lang='ko_KR'>문서 크기:</xstr>
+<xstr id='image_size_width' lang='ko_KR'>폭:</xstr>
+<xstr id='ok' lang='ko_KR'>확인</xstr>
+<xstr id='reset' lang='ko_KR'>다시 설정</xstr>
+<xstr id='cancel' lang='de_DE'>Abbrechen</xstr>
+<xstr id='image_size_auto_best' lang='de_DE'>Hoch</xstr>
+<xstr id='image_size_auto_dialog_title' lang='de_DE'>Auto-Auflösung</xstr>
+<xstr id='image_size_auto_draft' lang='de_DE'>Entwurf</xstr>
+<xstr id='image_size_auto_good' lang='de_DE'>Gut</xstr>
+<xstr id='image_size_auto_lines_per_cm' lang='de_DE'>Linien/cm</xstr>
+<xstr id='image_size_auto_lines_per_inch' lang='de_DE'>Linien/Zoll</xstr>
+<xstr id='image_size_auto_quality' lang='de_DE'>Qualität</xstr>
+<xstr id='image_size_auto_screen' lang='de_DE'>Rasterweite:</xstr>
+<xstr id='image_size_bicubic_sharper' lang='de_DE'>Bikubisch schärfer</xstr>
+<xstr id='image_size_bicubic_smoother' lang='de_DE'>Bikubisch glatter</xstr>
+<xstr id='image_size_bicubic' lang='de_DE'>Bikubisch</xstr>
+<xstr id='image_size_columns' lang='de_DE'>Spalten</xstr>
+<xstr id='image_size_constrain' lang='de_DE'>Proportionen erhalten</xstr>
+<xstr id='image_size_dialog_title' lang='de_DE'>Bildgröße</xstr>
+<xstr id='image_size_dimensions_group' lang='de_DE'>Pixelmaße:</xstr>
+<xstr id='image_size_height' lang='de_DE'>Höhe:</xstr>
+<xstr id='image_size_inches' lang='de_DE'>Zoll</xstr>
+<xstr id='image_size_nearest' lang='de_DE'>Pixelwiederholung</xstr>
+<xstr id='image_size_percent' lang='de_DE'>Prozent</xstr>
+<xstr id='image_size_picas' lang='de_DE'>Pica</xstr>
+<xstr id='image_size_pixels_per_cm' lang='de_DE'>Pixel/cm</xstr>
+<xstr id='image_size_pixels_per_inch' lang='de_DE'>Pixel/Zoll</xstr>
+<xstr id='image_size_pixels' lang='de_DE'>Pixel</xstr>
+<xstr id='image_size_points' lang='de_DE'>Punkt</xstr>
+<xstr id='image_size_resample' lang='de_DE'>Bild neu berechnen mit:</xstr>
+<xstr id='image_size_resolution' lang='de_DE'>Auflösung:</xstr>
+<xstr id='image_size_scale_styles' lang='de_DE'>Stile skalieren</xstr>
+<xstr id='image_size_size_group' lang='de_DE'>Dateigröße:</xstr>
+<xstr id='image_size_width' lang='de_DE'>Breite:</xstr>
+<xstr id='reset' lang='de_DE'>Zurück</xstr>

@@ -1,0 +1,3 @@
+// Settings that are useful when building with the ASL Widgets Library
+
+ASL_PLATFORM_HEADER_SEARCH_PATHS = ../../adobe_platform_libraries/ ../../adobe_platform_libraries/macintosh/ 

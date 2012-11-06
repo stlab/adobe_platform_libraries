@@ -1,0 +1,64 @@
+# Main Jamfile for building APL
+# APL doesn't support gcc cygwin, though ASL does. Only supported toolsets for APL
+# are msvc and darwin
+
+path-constant TOP : . ;
+
+import os ;
+import testing ;
+
+switch [ os.name ]
+{
+case MACOSX :
+  {
+    DARWIN_APL_REQUIREMENTS =
+#    <macosx-version-min>10.5
+#    <macosx-version>10.5
+     <address-model>32
+     <architecture>x86
+    ;
+  }
+}
+
+
+project
+ : requirements
+   $(DARWIN_APL_REQUIREMENTS)
+ : default-build
+   <link>static
+   <threading>multi
+   <preserve-test-targets>on
+
+ : build-dir
+    $(TOP)/../built_artifacts
+  ;
+
+
+# tests
+
+use-project /widgets : adobe/future/widgets/ ;
+use-project /adobe : ../adobe_source_libraries/ ;
+
+
+## Build ASL first.  We use aliases with dummy names instead of
+# build-project since build-project cannot refer to targets, but
+# aliases have side-effect of building.
+
+alias build-asl_dev : /adobe//asl_dev ; 
+
+alias build-asl : /adobe//asl ; 
+
+# The build-asl target does not get built by adobe_source_libraries,
+# it's explicit.  We force it to be built here to be sure asl non-dev
+# doesn't go stale
+
+
+
+#build APL:
+alias build-wigets : /widgets ;
+build-project test/begin ;
+build-project test/layout_tidy ;
+build-project test/property_model_tidy ;
+build-project test/rset ;
+build-project test/selection_ops ;
+build-project test/xstr_test ;

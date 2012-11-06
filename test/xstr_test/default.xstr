@@ -1,0 +1,37 @@
+<xstr id='mixed_test'>&#x51; &euro; &#66; &#x52; &reg; &#66; &#x53; &#68; &#x54; &lt;</xstr>
+<xstr id="ok">OK</xstr>
+<xstr id="cancel">Cancel</xstr>
+<xstr id='ok' lang='sp'>Si</xstr>
+<xstr id='cancel' lang="sp">No</xstr>
+<xstr id='ok' lang='fr'>Okeedokee</xstr>
+<xstr id='ok' lang='fr' platform='macintosh'>Engage</xstr>
+<xstr id='markup_test_2'><i>Hello</i><br/><b>world!</b></xstr>
+<xstr id='markup_test_1'>Hello<br/>world!</xstr>
+<xstr id='ok' platform='windows'>Yes Sir!</xstr>
+<xstr id='entity_ref_test'>&euro; &lt; &gt; &reg;</xstr>
+<xstr id='dec_char_ref_test'>&#65; &#66; &#67; &#68;</xstr>
+<xstr id='hex_char_ref_test'>&#x51; &#x52; &#x53; &#x54;</xstr>
+<xstr id='meganested_example'>sA<A>
+	sB<B>
+		sD<D>
+			sG
+			<G/>
+			eG
+		</D>eD
+	</B>eB
+	sC<C>
+		sE<E>
+			sF<F>
+				mF
+			</F>eF
+		</E>eE
+	</C>eC
+</A>eA</xstr>
+
+<xstr id='replacement_test_1'>I think <marker id='good_thing'/> is a Good Thing</xstr>
+<xstr id='replacement_test_1'>I think <marker id='bad_thing'/> is a Bad Thing</xstr>
+<xstr id='replacement_test_1'>I don't think anything about <marker id='whatever'/></xstr>
+
+<xstr id="a_good_thing"><marker id="good_thing">ice cream</marker></xstr>
+<xstr id="a_bad_thing"><marker id="bad_thing">the Taliban</marker></xstr>
+<xstr id="a_neutral_thing"><marker id="whatever">yellow traffic lights</marker></xstr>

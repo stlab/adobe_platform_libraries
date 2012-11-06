@@ -1,0 +1,94 @@
+import testing ;
+import os ;
+
+SOURCE_DIRECTORY =  sources ;
+HEADER_DIRECTORY =  headers ;
+
+switch [ os.name ] 
+{
+case NT : # --- Windows ---------------------------------------------------------------------------
+    {
+    PLATFORM_DIRECTORIES_NAME =
+        win32
+        ;
+
+    PLATFORM_SETTINGS = 
+        <include>resources
+        <include>.
+        <define>WINVER=0x501 <define>_WIN32_WINNT=0x501 <define>_WIN32_IE=0x501
+        <toolset>msvc:<linkflags>"gdi32.lib user32.lib comctl32.lib shell32.lib"
+        <toolset>gcc:<cxxflags>"-mno-cygwin"
+        <toolset>gcc:<linkflags>"-lgdi32 -lshell32 -luser32 -lcomctl32 -mno-cygwin" 
+        ;
+    }
+case FREEBSD :
+    {
+    PLATFORM_DIRECTORIES_NAME = fltk ;
+
+    #
+    # Details of *your* local FLTK2 installation must be added here.
+    #
+    PLATFORM_SETTINGS = <linkflags>"-L/usr/X11R6/lib -lXft -L/usr/local/lib -lfreetype -lz -lfontconfig -lXrender -lXext -lXi -lX11" ;
+    }
+case MACOSX :  # --- Mac OS (assumed) ------------------------------------------------------------------
+    {
+    PLATFORM_DIRECTORIES_NAME =
+        mac
+        ;
+
+    PLATFORM_SETTINGS =
+        <toolset>darwin:<linkflags>"-framework Carbon"
+        ;
+
+    PLATFORM_EXTRAS =
+        ;
+    }
+}
+
+project adobe/camo
+    :   requirements
+            <user-interface>gui 
+    ;
+
+exe camo
+    :   main.cpp
+        command_line.mm
+        /adobe/adobe_widgets//adobe_widgets
+    :   $(PLATFORM_SETTINGS) 
+    ;
+
+OS = [ os.name ] ;
+DEST_PATH = $(BUILD_DIR)/install/$(OS)/ ;
+
+switch [ os.name ]
+{
+    case MACOSX :
+    {
+        # set up the bundle of the app
+
+        install "camo.app/Contents"
+            :   resources/Info.plist
+                resources/PkgInfo
+            :   <variant>release:<location>$(DEST_PATH)"release/camo.app/Contents"
+                <variant>debug:<location>$(DEST_PATH)"debug/camo.app/Contents"
+            ;
+
+        install "camo.app/Contents/MacOS"
+            :   camo
+            :   <variant>release:<location>$(DEST_PATH)"release/camo.app/Contents/MacOS"
+                <variant>debug:<location>$(DEST_PATH)"debug/camo.app/Contents/MacOS"
+            ;
+
+        install "camo.app/Contents/Resources/begin.nib"
+            :   [ glob resources/camo.nib/*.* ]
+            :   <variant>release:<location>$(DEST_PATH)"release/camo.app/Contents/Resources/camo.nib"
+                <variant>debug:<location>$(DEST_PATH)"debug/camo.app/Contents/Resources/camo.nib"
+            ;
+
+        install "camo.app/Contents/Resources"
+            :   resources/app_icon.icns
+            :   <variant>release:<location>$(DEST_PATH)"release/camo.app/Contents/Resources"
+                <variant>debug:<location>$(DEST_PATH)"debug/camo.app/Contents/Resources"
+            ;
+    }
+}

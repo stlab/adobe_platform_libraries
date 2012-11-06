@@ -1,0 +1,11 @@
+# Jamfile for building the xstring smoke test app
+
+# exe xstr_test
+#     : main.cpp /widgets
+#     ;
+
+run main.cpp /widgets
+    : # args
+    : default.xstr
+    : #requirements
+    ;

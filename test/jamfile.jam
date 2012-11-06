@@ -1,0 +1,8 @@
+# Establish common build settings across all .../adobe/test projects 
+# above and beyond those established for all .../adobe projects 
+
+project 
+	: requirements 
+		<library>/adobe
+		<asl>dev
+    ;

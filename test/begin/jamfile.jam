@@ -1,0 +1,212 @@
+# Jamfile for building Adobe Begin
+
+import testing ;
+import os ;
+
+SOURCE_DIRECTORY =  sources ;
+HEADER_DIRECTORY =  headers ;
+
+switch [ os.name ] 
+{
+case NT : # --- Windows ---------------------------------------------------------------------------
+    {
+    #
+    # Directory name for Windows specific sources and headers
+    #
+    PLATFORM_DIRECTORIES_NAME =
+        win32
+        ;
+
+    #
+    # Build settings for Windows
+    #
+    PLATFORM_SETTINGS =   
+        #
+        # The header file containing the resource definitions is currently
+        # used by win/ui_core_implementation.cpp to load an icon in begin.
+        #
+        <include>resources
+        <include>.
+        #
+        # These definitions say that we're targetting Windows XP. 
+        # That means that we get various preprocessor definitions which we
+        # need, such as the WS_EX_COMPOSITED window style.
+        #
+        <define>WINVER=0x560 <define>_WIN32_WINNT=0x560 <define>_WIN32_IE=0x560
+        <toolset>msvc:<linkflags>"gdi32.lib user32.lib comctl32.lib shell32.lib comdlg32.lib /MANIFEST /MANIFESTDEPENDENCY:\"type='Win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\""
+
+        #
+        # If compiling with GCC we add -mno-cygwin to tell the cygwin compiler
+        # and linker that we want a native Windows application.
+        # 
+        <toolset>gcc:<cxxflags>"-mno-cygwin"
+        <toolset>gcc:<linkflags>"-lgdi32 -lshell32 -luser32 -lcomctl32 -mno-cygwin" 
+        ;
+
+    #
+    # The resource file should only be included on the executable.
+    # We don't want it in the library, so this PLATFORM_EXTRA
+    # variable is defined.
+    #
+    PLATFORM_EXTRAS =
+        resources/resources.rc
+        ;
+    }
+case MACOSX :  # --- Mac OS (assumed) ------------------------------------------------------------------
+    {
+    #
+    # Directory name for MacOS specific sources
+    #
+    PLATFORM_DIRECTORIES_NAME =
+        mac
+        ;
+
+    #
+    # Build settings for MacOS
+    #
+    PLATFORM_SETTINGS =
+#     <toolset>darwin,<arch>fat:<atomics>off
+#     <toolset>darwin,<arch>native:<atomics>off
+#     <toolset>darwin,<arch>ppc:<atomics>off
+        ;
+
+    #
+    # MacOS has no extra requirements.
+    #
+    PLATFORM_EXTRAS =
+        ;
+    }
+}
+
+# -------------------------------------------------------------------------------------------------
+
+INCLUDE =
+    <include>$(HEADER_DIRECTORY)
+    <include>$(HEADER_DIRECTORY)/$(PLATFORM_DIRECTORIES_NAME)
+    ;
+
+COMMON_SOURCES =
+    express_viewer
+    report_exception
+    file
+    ;
+
+EXE_SOURCES =
+    $(SOURCE_DIRECTORY)/$(COMMON_SOURCES).cpp
+    $(SOURCE_DIRECTORY)/$(PLATFORM_DIRECTORIES_NAME)/main.cpp
+    ;
+
+# -------------------------------------------------------------------------------------------------
+
+project 
+    :   requirements
+            <user-interface>gui 
+            $(INCLUDE)
+            <library>/widgets
+#    :   usage-requirements 
+#            $(INCLUDE)
+    ;
+
+# -------------------------------------------------------------------------------------------------
+
+switch [ os.name ]
+{
+    case MACOSX :
+    {
+        BINARY_NAME = "Adobe Begin" ;
+    }
+	case * :
+    {
+        BINARY_NAME = "begin" ;
+    }
+}
+
+# -------------------------------------------------------------------------------------------------
+
+exe $(BINARY_NAME)
+    :   $(EXE_SOURCES) 
+#        /adobe/adobe_widgets//adobe_widgets 
+        $(PLATFORM_EXTRAS)
+    :   $(PLATFORM_SETTINGS) 
+    ;
+
+# Construct the destination path location
+OS = [ os.name ] ;
+DEST_PATH = $(TOP)/../built_artifacts/install/$(OS)/ ;
+
+
+
+switch [ os.name ]
+{
+    case MACOSX :
+    {
+        # set up the bundle of the app
+    
+        install "Adobe Begin.app/Contents"
+            :   Info.plist
+                resources/PkgInfo
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin/Adobe Begin.app/Contents"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin/Adobe Begin.app/Contents"
+            ;
+
+        install "Adobe Begin.app/Contents/MacOS"
+            :   "Adobe Begin"
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin/Adobe Begin.app/Contents/MacOS"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin/Adobe Begin.app/Contents/MacOS"
+            ;
+
+        install "Adobe Begin.app/Contents/Resources/begin.nib"
+            :   [ glob resources/begin.nib/*.* ]
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin/Adobe Begin.app/Contents/Resources/begin.nib"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin/Adobe Begin.app/Contents/Resources/begin.nib"
+            ;
+
+        install "Adobe Begin.app/Contents/Resources"
+            :   resources/app_icon.icns
+                resources/editor.adm
+                resources/editor.eve
+                resources/eve_globals.scp
+                resources/glossary.xstr
+                [ glob ../../adobe/future/widgets/resources/*.tga ]
+                [ glob ../../test/begin/resources/*.tga ]
+                resources/metrics_glossary.xstr
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin/Adobe Begin.app/Contents/Resources"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin/Adobe Begin.app/Contents/Resources"
+            ;
+        
+        install examples
+            :   [ glob ./examples/*.adm ./examples/*.eve ]
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin/examples"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin/examples"
+            ;
+
+        alias install_program : "Adobe Begin.app/Contents" 
+                          "Adobe Begin.app/Contents/MacOS" 
+                          "Adobe Begin.app/Contents/Resources/begin.nib"  
+                          "Adobe Begin.app/Contents/Resources" 
+                          examples ;
+    }
+
+    case * :
+    {
+        install "Adobe Begin"
+            :   begin
+                resources/editor.adm
+                resources/editor.eve
+                resources/eve_globals.scp
+                resources/glossary.xstr
+                [ glob ../../adobe/future/widgets/resources/*.tga ]
+                [ glob ../../test/begin/resources/*.tga ]
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin"
+            ;
+
+        install examples
+            :   [ glob ./examples/* ]
+            :   <variant>release:<location>$(DEST_PATH)"release/Adobe Begin/examples"
+                <variant>debug:<location>$(DEST_PATH)"debug/Adobe Begin/examples"
+            ;
+            
+        alias install_program : "Adobe Begin" examples ;
+    }
+}

@@ -1,0 +1,42 @@
+/*
+    Copyright 2007 Adobe Systems Incorporated
+    Distributed under the MIT License (see accompanying file LICENSE_1_0_0.txt
+    or a copy at http://stlab.adobe.com/licenses.html)
+*/
+
+sheet camo
+{
+constant:
+    npos : 4294967295;
+
+input:
+    cmd : 'chmod';
+    argc : 0;
+    argv : [ cmd, '<none>' ];
+
+interface:
+    filename <== argv[1];
+    recurse : false;
+    unlink symbolic_links : @dont_follow <== recurse ? symbolic_links : @dont_follow;
+
+    owner_r <== filename != '<none>' ? string_find(exec("stat", "-f%SHp", filename), 'r') != npos : false;
+    owner_w <== filename != '<none>' ? string_find(exec("stat", "-f%SHp", filename), 'w') != npos : false;
+    owner_x <== filename != '<none>' ? string_find(exec("stat", "-f%SHp", filename), 'x') != npos : false;
+
+    group_r <== filename != '<none>' ? string_find(exec("stat", "-f%SMp", filename), 'r') != npos : false;
+    group_w <== filename != '<none>' ? string_find(exec("stat", "-f%SMp", filename), 'w') != npos : false;
+    group_x <== filename != '<none>' ? string_find(exec("stat", "-f%SMp", filename), 'x') != npos : false;
+
+    other_r <== filename != '<none>' ? string_find(exec("stat", "-f%SLp", filename), 'r') != npos : false;
+    other_w <== filename != '<none>' ? string_find(exec("stat", "-f%SLp", filename), 'w') != npos : false;
+    other_x <== filename != '<none>' ? string_find(exec("stat", "-f%SLp", filename), 'x') != npos : false;
+
+output:
+    result <== {
+        command: cmd,
+        file: argv[1],
+        owner_perm: cat(owner_r ? 'r' : '-', owner_w ? 'w' : '-', owner_x ? 'x' : '-'),
+        group_perm: cat(group_r ? 'r' : '-', group_w ? 'w' : '-', group_x ? 'x' : '-'),
+        other_perm: cat(other_r ? 'r' : '-', other_w ? 'w' : '-', other_x ? 'x' : '-')
+    };
+}

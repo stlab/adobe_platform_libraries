@@ -1,0 +1,28 @@
+import testing ;
+
+project adobe/layout_tidy
+    : requirements
+        <library>/adobe//asl_dev
+        <include>../../../adobe_platform_libraries/
+    : default-build
+        <link>static
+        <threading>multi
+    ;
+
+SOURCE_FILE_SET =
+    ./layout_tidy_main.cpp
+    ../../source/formatter_tokens.cpp
+    ../../source/expression_formatter.cpp
+    ../../source/layout_formatter.cpp
+    ../../adobe/future/widgets/sources/widget_tokens.cpp
+    ;
+
+exe layout_tidy
+    : $(SOURCE_FILE_SET)
+    ;
+
+run $(SOURCE_FILE_SET)
+    :
+    : testfile.eve
+	;
+
