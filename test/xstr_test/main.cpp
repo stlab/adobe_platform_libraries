@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
 
         if (argc > 1) glossary_name.assign(argv[1]);
 
-        bfs::path                   glossary(glossary_name.c_str(), argc > 1 ? bfs::native : bfs::portable_name);
+        bfs::path                   glossary(glossary_name.c_str());
         adobe::file_slurp<char>     glossary_slurp(glossary);
         adobe::xstring_context_t    context(glossary_slurp.begin(), glossary_slurp.end(),
                                             adobe::line_position_t(glossary_name.c_str()));

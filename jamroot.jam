@@ -14,8 +14,9 @@ case MACOSX :
     DARWIN_APL_REQUIREMENTS =
 #    <macosx-version-min>10.5
 #    <macosx-version>10.5
-     <address-model>32
-     <architecture>x86
+#     <address-model>32
+#     <architecture>x86
+	  <cxxflags>"-arch i386"
     ;
   }
 }
@@ -44,9 +45,9 @@ use-project /adobe : ../adobe_source_libraries/ ;
 # build-project since build-project cannot refer to targets, but
 # aliases have side-effect of building.
 
-alias build-asl_dev : /adobe//asl_dev ; 
+alias build-asl_dev : /adobe//asl_dev ;
 
-alias build-asl : /adobe//asl ; 
+alias build-asl : /adobe//asl ;
 
 # The build-asl target does not get built by adobe_source_libraries,
 # it's explicit.  We force it to be built here to be sure asl non-dev
