@@ -68,6 +68,8 @@ case MACOSX :  # --- Mac OS (assumed) ------------------------------------------
 #     <toolset>darwin,<arch>fat:<atomics>off
 #     <toolset>darwin,<arch>native:<atomics>off
 #     <toolset>darwin,<arch>ppc:<atomics>off
+        <toolset>clang:<address-model>32
+        <toolset>clang:<linkflags>"-arch i386"
         ;
 
     #
