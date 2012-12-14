@@ -8,6 +8,8 @@
 
 #define ADOBE_DLL_SAFE 0
 
+#include <adobe/algorithm/for_each.hpp>
+
 #include <adobe/future/widgets/headers/platform_button.hpp>
 
 #include <adobe/future/widgets/headers/button_helper.hpp>
