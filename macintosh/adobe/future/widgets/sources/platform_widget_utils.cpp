@@ -142,7 +142,7 @@ extents_t get_text_dimensions(const std::string& text, theme_t theme)
 
     unibuffer.reserve(text.size());
 
-    to_utf16(text.begin(), text.end(), std::back_inserter(unibuffer));
+    copy_utf<boost::uint16_t>(text.begin(), text.end(), std::back_inserter(unibuffer));
 
     ADOBE_REQUIRE_STATUS(::ATSUCreateStyle(&style_nonauto));
 
@@ -549,7 +549,7 @@ std::string convert_utf(::UniChar* buffer, std::size_t size)
 
     result.reserve(size * 2);
 
-    to_utf8(buffer, buffer + size, std::back_inserter(result));
+    copy_utf<char>(buffer, buffer + size, std::back_inserter(result));
 
     return result;
 }
