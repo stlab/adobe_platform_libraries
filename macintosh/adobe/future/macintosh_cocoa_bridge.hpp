@@ -24,7 +24,7 @@ extern "C" {
 // You must call this routine before you make any Cocoa calls from your Carbon app.
 // You may safely call this routine more than once.
 
-void carbon_cocoa_bridge_initialize();
+// void carbon_cocoa_bridge_initialize();
 
 /****************************************************************************************************/
 
@@ -41,7 +41,7 @@ namespace adobe {
 class objc_auto_release_pool_t
 {
 public:
-    explicit objc_auto_release_pool_t(bool initialize_bridge = true);
+    explicit objc_auto_release_pool_t();
 
     ~objc_auto_release_pool_t();
 
@@ -51,6 +51,10 @@ private:
 
     ::NSAutoreleasePool* pool_m;
 };
+
+/****************************************************************************************************/
+
+void cocoa_environment(void (*)());
 
 /****************************************************************************************************/
 

@@ -19,6 +19,11 @@
 #include <sstream>
 #include <string>
 
+
+// REVISIT (sparent) : Can't include the bridge file because of ObjC depenedency
+// #include <adobe/future/macintosh_cocoa_bridge.hpp>
+namespace adobe { void cocoa_environment(void (*)()); }
+
 /****************************************************************************************************/
 
 #define kHICommandRefreshView       'Reld'
@@ -382,16 +387,18 @@ void os_end_mainloop()
 
 int main()
 {
-    try
-    {
-        adobe::application_t* theApp = adobe::application_t::getInstance();
+    adobe::cocoa_environment([] {
+        try
+        {
+            adobe::application_t* theApp = adobe::application_t::getInstance();
 
-        if( theApp ) theApp->run();
-    }
-    catch( ... )
-    {
-        adobe::report_exception();
-    }
+            if( theApp ) theApp->run();
+        }
+        catch( ... )
+        {
+            adobe::report_exception();
+        }
+    });
 
     return 0;
 }

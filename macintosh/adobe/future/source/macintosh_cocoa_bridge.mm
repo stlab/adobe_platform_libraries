@@ -14,6 +14,7 @@
 
 /****************************************************************************************************/
 
+#if 0
 namespace {
 
 /****************************************************************************************************/
@@ -70,16 +71,40 @@ void carbon_cocoa_bridge_initialize()
 } // extern "C"
 #endif
 
+#endif  // #if 0
+
 /****************************************************************************************************/
 #ifdef __cplusplus
 namespace adobe {
 
 /****************************************************************************************************/
 
-objc_auto_release_pool_t::objc_auto_release_pool_t(bool initialize_bridge)
+void cocoa_environment(void (*f)()) {
+    @autoreleasepool {
+        if (!::NSApplicationLoad()) {
+            throw std::runtime_error("NSApplicationLoad failed. Cocoa bridge undefined.");
+        }
+
+NS_DURING
+        // Set up the NSWindow machinery used by some classes (e.g., NSCursor)
+        [[[NSWindow alloc] init] release];
+NS_HANDLER
+        throw std::runtime_error("Objective-C Exception");
+NS_ENDHANDLER
+    
+        f();
+    }
+
+}
+
+/****************************************************************************************************/
+
+objc_auto_release_pool_t::objc_auto_release_pool_t()
 {
+#if 0
     if (initialize_bridge)
         carbon_cocoa_bridge_initialize();
+#endif
 
 NS_DURING
     pool_m = [[NSAutoreleasePool alloc] init];

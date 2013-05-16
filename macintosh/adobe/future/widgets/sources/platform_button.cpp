@@ -8,6 +8,8 @@
 
 #define ADOBE_DLL_SAFE 0
 
+#include <adobe/algorithm/for_each.hpp>
+
 #include <adobe/future/widgets/headers/platform_button.hpp>
 
 #include <adobe/future/widgets/headers/button_helper.hpp>
@@ -112,7 +114,7 @@ void button_t::measure(extents_t& result)
 
     std::vector<std::string> name_set;
 
-    for_each(state_set_m, boost::bind(&add_to_name_set, boost::ref(name_set), _1));
+    adobe::for_each(state_set_m, boost::bind(&add_to_name_set, boost::ref(name_set), _1));
 
     result = implementation::widget_best_bounds(*this, &name_set[0], &name_set[0] + name_set.size());
 
