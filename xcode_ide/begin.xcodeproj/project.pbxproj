@@ -492,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE5C21A70947A71400EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
