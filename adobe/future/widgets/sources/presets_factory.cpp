@@ -107,7 +107,7 @@ dictionary_t model_snapshot(sheet_t& model, const dictionary_t& mark)
 {
     dictionary_t result;
 
-    result.insert(std::make_pair(key_preset_value, model.contributing(mark)));
+    result.insert(std::pair<name_t, any_regular_t>(key_preset_value, any_regular_t(model.contributing(mark))));
 
     return result;
 }

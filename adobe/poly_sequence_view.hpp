@@ -13,13 +13,14 @@
 
 #include <adobe/config.hpp>
 
+#include <vector>
+
 #include <boost/function.hpp>
 
 #include <adobe/copy_on_write.hpp>
 #include <adobe/poly.hpp>
 #include <adobe/sequence_model_fwd.hpp>
 #include <adobe/sequence_view.hpp>
-#include <adobe/vector.hpp>
 
 /******************************************************************************/
 
@@ -40,9 +41,9 @@ struct poly_sequence_view_interface : poly_copyable_interface
 
     virtual void extend(sequence_key<T> before, sequence_key<T> value_key, cow_value_type value) = 0;
 
-    virtual void extend_set(sequence_key<T> before, const vector<sequence_key<T> >& extend_key_set) = 0;
+    virtual void extend_set(sequence_key<T> before, const std::vector<sequence_key<T> >& extend_key_set) = 0;
 
-    virtual void erase(const vector<sequence_key<T> >& key_set) = 0;
+    virtual void erase(const std::vector<sequence_key<T> >& key_set) = 0;
 
     virtual void clear() = 0;
 };
@@ -79,10 +80,10 @@ struct poly_sequence_view_instance
         void extend(sequence_key<T> before, sequence_key<T> value_key, cow_value_type value)
         { SequenceViewConcept<V>::extend(this->get(), before, value_key, value); }
 
-        void extend_set(sequence_key<T> before, const vector<sequence_key<T> >& extend_key_set)
+        void extend_set(sequence_key<T> before, const std::vector<sequence_key<T> >& extend_key_set)
         { SequenceViewConcept<V>::extend_set(this->get(), before, extend_key_set); }
 
-        void erase(const vector<sequence_key<T> >& key_set)
+        void erase(const std::vector<sequence_key<T> >& key_set)
         { SequenceViewConcept<V>::erase(this->get(), key_set); }
 
         void clear()
@@ -120,10 +121,10 @@ struct sequence_view : poly_base<poly_sequence_view_interface<T>,
     void extend(sequence_key<T> before, sequence_key<T> value_key, cow_value_type value)
     { this->interface_ref().extend(before, value_key, value); }
 
-    void extend_set(sequence_key<T> before, const vector<sequence_key<T> >& extend_key_set)
+    void extend_set(sequence_key<T> before, const std::vector<sequence_key<T> >& extend_key_set)
     { this->interface_ref().extend_set(before, extend_key_set); }
 
-    void erase(const vector<sequence_key<T> >& key_set)
+    void erase(const std::vector<sequence_key<T> >& key_set)
     { this->interface_ref().erase(key_set); }
 
     void clear()

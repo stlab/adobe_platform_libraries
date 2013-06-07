@@ -77,7 +77,9 @@ struct drag_and_drop_converter : poly_base<poly_drag_and_drop_converter_interfac
         { }
 
     drag_and_drop_converter(move_from<drag_and_drop_converter> x)
-        : base_t(move_from<base_t>(x.source)) {}
+        : base_t(std::move(x)) {}
+    
+    drag_and_drop_converter(const drag_and_drop_converter&) = default;
 
     template <typename V>
     any_regular_t convert(const V& new_value) const

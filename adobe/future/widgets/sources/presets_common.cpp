@@ -588,8 +588,8 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
 
     dictionary_t final_preset(snapshot);
 
-    final_preset.insert(std::make_pair(key_preset_value, confirmed_result));
-    final_preset.insert(std::make_pair(key_preset_name, the_preset_name));
+    final_preset.insert(std::make_pair(key_preset_value, any_regular_t(confirmed_result)));
+    final_preset.insert(std::make_pair(key_preset_name, any_regular_t(the_preset_name)));
 
     array_t& items(control.user_preset_set_m[0].cast<dictionary_t>()[key_preset_items].cast<array_t>());
 

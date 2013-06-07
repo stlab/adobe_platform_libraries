@@ -13,9 +13,10 @@
 
 #include <boost/concept_check.hpp>
 
+#include <vector>
+
 #include <adobe/sequence_model_fwd.hpp>
 #include <adobe/poly.hpp>
-#include <adobe/vector.hpp>
 
 /******************************************************************************/
 
@@ -84,7 +85,7 @@ inline void set(SM&                                                 v,
 template <class SM> // SM models SequenceModel
 inline void insert_set(SM&                                                         v,
                        typename sequence_model_key_type<SM>::type                  before,
-                       const vector<typename sequence_model_value_type<SM>::type>& x)
+                       const std::vector<typename sequence_model_value_type<SM>::type>& x)
 { v.insert_set(before, x); }
 
 /*!
@@ -105,7 +106,7 @@ inline void insert(SM&                                                 v,
 */
 template <class SM> // SM models SequenceModel
 inline void sequence_model_erase(SM&                                                       v,
-                                 const vector<typename sequence_model_key_type<SM>::type>& x)
+                                 const std::vector<typename sequence_model_key_type<SM>::type>& x)
 { v.erase(x); }
 
 /*!
@@ -155,7 +156,7 @@ struct SequenceModelConcept
         set(model, key, x);
     }
 
-    static void insert_set(SequenceModel& model, key_type before, const vector<value_type>& x)
+    static void insert_set(SequenceModel& model, key_type before, const std::vector<value_type>& x)
     {
         using adobe::insert_set;
 
@@ -169,7 +170,7 @@ struct SequenceModelConcept
         insert(model, before, x);
     }
 
-    static void erase(SequenceModel& model, const vector<key_type>& x)
+    static void erase(SequenceModel& model, const std::vector<key_type>& x)
     {
         using adobe::sequence_model_erase;
 
@@ -187,8 +188,8 @@ struct SequenceModelConcept
     SequenceModel*      model;
     key_type*           key;
     value_type*         value;
-    vector<value_type>* value_set;
-    vector<key_type>*   key_set;
+    std::vector<value_type>* value_set;
+    std::vector<key_type>*   key_set;
 #endif
 };
 
@@ -223,11 +224,11 @@ struct poly_sequence_model_interface : poly_copyable_interface
 
     virtual void set(sequence_key<T> key, const T& value) = 0;
 
-    virtual void insert_set(sequence_key<T> before, const vector<T>& value_set) = 0;
+    virtual void insert_set(sequence_key<T> before, const std::vector<T>& value_set) = 0;
 
     virtual void insert(sequence_key<T> before, const T& value) = 0;
 
-    virtual void erase(const vector<sequence_key<T> >& key_set) = 0;
+    virtual void erase(const std::vector<sequence_key<T> >& key_set) = 0;
 
     virtual void clear() = 0;
 };
@@ -262,13 +263,13 @@ struct poly_sequence_model_instance
         void set(sequence_key<T> key, const T& x)
         { SequenceModelConcept<V>::set(this->get(), key, x); }
 
-        void insert_set(sequence_key<T> before, const vector<T>& value_set)
+        void insert_set(sequence_key<T> before, const std::vector<T>& value_set)
         { SequenceModelConcept<V>::insert_set(this->get(), before, value_set); }
 
         void insert(sequence_key<T> before, const T& x)
         { SequenceModelConcept<V>::insert(this->get(), before, x); }
 
-        void erase(const vector<sequence_key<T> >& key_set)
+        void erase(const std::vector<sequence_key<T> >& key_set)
         { SequenceModelConcept<V>::erase(this->get(), key_set); }
 
         void clear()
@@ -304,13 +305,13 @@ struct sequence_model_base : poly_base<poly_sequence_model_interface<T>,
     void set(sequence_key<T> key, const T& x)
     { this->interface_ref().set(key, x); }
 
-    void insert_set(sequence_key<T> before, const vector<T>& value_set)
+    void insert_set(sequence_key<T> before, const std::vector<T>& value_set)
     { this->interface_ref().insert_set(before, value_set); }
 
     void insert(sequence_key<T> before, const T& x)
     { this->interface_ref().insert(before, x); }
 
-    void erase(const vector<sequence_key<T> >& key_set)
+    void erase(const std::vector<sequence_key<T> >& key_set)
     { this->interface_ref().erase(key_set); }
 
     void clear()

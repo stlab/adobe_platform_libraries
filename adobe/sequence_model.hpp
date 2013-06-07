@@ -12,6 +12,8 @@
 /******************************************************************************/
 
 #include <list>
+#include <vector>
+
 #ifdef ADOBE_STD_SERIALIZATION
     #include <iostream>
 #endif
@@ -30,7 +32,6 @@
 #include <adobe/poly_sequence_model.hpp>
 #include <adobe/sequence_model_fwd.hpp>
 #include <adobe/typeinfo.hpp>
-#include <adobe/vector.hpp>
 
 /******************************************************************************/
 
@@ -89,12 +90,12 @@ public:
                                          boost::cref(*iter)));
     }
 
-    void insert_set(key_type before, const vector<value_type>& value_set)
+    void insert_set(key_type before, const std::vector<value_type>& value_set)
     {
         storage_iterator before_iterator(iterator_for(before));
-        vector<key_type> extend_key_set;
+        std::vector<key_type> extend_key_set;
 
-        for (typename vector<value_type>::const_iterator iter(value_set.begin()),
+        for (typename std::vector<value_type>::const_iterator iter(value_set.begin()),
              last(value_set.end()); iter != last; ++iter)
         {
             storage_iterator result(storage_m.insert(before_iterator, cow_value_type(*iter)));
@@ -120,9 +121,9 @@ public:
                                          boost::cref(*result)));
     }
 
-    void erase(const vector<key_type>& key_set)
+    void erase(const std::vector<key_type>& key_set)
     {
-        typedef typename vector<key_type>::const_iterator const_iterator;
+        typedef typename std::vector<key_type>::const_iterator const_iterator;
 
         for (const_iterator iter(key_set.begin()), last(key_set.end());
              iter != last; ++iter)
@@ -197,8 +198,8 @@ private:
         return storage.end();
     }
 
-    typedef vector<poly_sequence_view_type*>       view_set_t;
-    typedef vector<poly_sequence_controller_type*> controller_set_t;
+    typedef std::vector<poly_sequence_view_type*>       view_set_t;
+    typedef std::vector<poly_sequence_controller_type*> controller_set_t;
 
     storage_type                           storage_m;
     view_set_t                             view_set_m;
@@ -228,7 +229,7 @@ void sequence_model<T>::attach_view(poly_sequence_view_type& view)
 
     // tell the view everything possible about the current state of the model
 
-    vector<key_type> extend_key_set;
+    std::vector<key_type> extend_key_set;
 
     for (storage_iterator iter(storage_m.begin()), last(storage_m.end());
          iter != last; ++iter)

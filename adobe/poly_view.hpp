@@ -56,7 +56,7 @@ struct poly_view_instance : optimized_storage_type<T, poly_view_interface>::type
     /*!
         Move constructor
     */
-    poly_view_instance(move_from<poly_view_instance> x) : base_t(move_from<base_t>(x.source)) {}
+    poly_view_instance(move_from<poly_view_instance> x) : base_t(std::move(x)) {}
 
     void display(const any_regular_t& new_value)
     { 
@@ -85,7 +85,7 @@ struct view : poly_base<poly_view_interface, poly_view_instance>
     /*!
         Move constructor
     */
-    view(move_from<view> x) : base_t(move_from<base_t>(x.source)) {}
+    view(move_from<view> x) : base_t(move(x)) {}
 
     template <typename V>
     void display(const V& new_value)

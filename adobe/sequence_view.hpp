@@ -11,12 +11,13 @@
 
 /******************************************************************************/
 
+#include <vector>
+
 #include <boost/concept_check.hpp>
 #include <boost/function.hpp>
 
 #include <adobe/copy_on_write.hpp>
 #include <adobe/selection.hpp>
-#include <adobe/vector.hpp>
 
 /******************************************************************************/
 
@@ -89,7 +90,7 @@ inline void extend(SV&                                             v,
 template <class SV> // SV models SequenceView
 inline void extend_set(SV&                                                  v,
                    typename sequence_view_key_type<SV>::type                before,
-                   const vector<typename sequence_view_key_type<SV>::type>& extend_key_set)
+                   const std::vector<typename sequence_view_key_type<SV>::type>& extend_key_set)
 { v.extend_set(before, extend_key_set); }
 
 /*!
@@ -99,7 +100,7 @@ inline void extend_set(SV&                                                  v,
 */
 template <class SV> // SV models SequenceView
 inline void erase(SV&                                                      v,
-                  const vector<typename sequence_view_key_type<SV>::type>& key_set)
+                  const std::vector<typename sequence_view_key_type<SV>::type>& key_set)
 { v.erase(key_set); }
 
 /*!
@@ -157,7 +158,7 @@ struct SequenceViewConcept
     /// notifes the SequenceView of the insertion of elements into the sequence
     static void extend_set(SequenceView&           view,
                            key_type                before,
-                           const vector<key_type>& key_set)
+                           const std::vector<key_type>& key_set)
     {
         using adobe::extend_set;
 
@@ -166,7 +167,7 @@ struct SequenceViewConcept
 
     /// notifes the SequenceView of the elimination of elements from the sequence
     static void erase(SequenceView&           view,
-                      const vector<key_type>& key_set)
+                      const std::vector<key_type>& key_set)
     {
         using adobe::erase;
 
@@ -185,7 +186,7 @@ struct SequenceViewConcept
     SequenceView*    view;
     key_type         index;
     cow_value_type   value;
-    vector<key_type> key_set;
+    std::vector<key_type> key_set;
 #endif
 };
 

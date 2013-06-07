@@ -107,7 +107,7 @@ class image_format_t
 
         instance(const T& x) : base_t(x) { }
         instance(adobe::move_from<instance> x) 
-            : base_t(adobe::move_from<base_t>(x.source)){ }
+            : base_t(std::move(x)){ }
 
         bool detect(std::streambuf& stream_buffer) const
             { return image_io_dispatch<T, view_type>().detect(this->get(), stream_buffer); }

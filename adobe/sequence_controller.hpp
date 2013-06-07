@@ -15,7 +15,6 @@
 #include <boost/function.hpp>
 
 #include <adobe/poly_sequence_model.hpp>
-#include <adobe/vector.hpp>
 
 /******************************************************************************/
 

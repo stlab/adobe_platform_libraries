@@ -328,7 +328,7 @@
 		20286C28FDCF999611CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "begin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -478,12 +478,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE5C21A60947A71400EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/build/Debug\"";
 				SDKROOT = "";
 			};
 			name = Debug;
@@ -493,12 +493,12 @@
 			baseConfigurationReference = CE5C21A70947A71400EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/build/Debug\"";
 				SDKROOT = "";
 			};
 			name = Release;
@@ -509,6 +509,11 @@
 			buildSettings = {
 				ASL_HEADER_SEARCH_PATHS = "../../adobe_source_libraries/ ../../adobe_platform_libraries/ ../../adobe_platform_libraries/macintosh/";
 				BOOST_HEADER_SEARCH_PATHS = ../../boost_libraries/;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = ../../adobe_platform_libraries/test/begin/Info.plist;
 				PRODUCT_NAME = "Adobe Begin";
 				SDKROOT = "";
@@ -523,6 +528,11 @@
 			buildSettings = {
 				ASL_HEADER_SEARCH_PATHS = "../../adobe_source_libraries/ ../../adobe_platform_libraries/ ../../adobe_platform_libraries/macintosh/";
 				BOOST_HEADER_SEARCH_PATHS = ../../boost_libraries/;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = ../../adobe_platform_libraries/test/begin/Info.plist;
 				PRODUCT_NAME = "Adobe Begin";
 				SDKROOT = "";
