@@ -231,7 +231,7 @@ adobe::any_regular_t serialize_(const adobe::array_t& arg_set)
 
     stream << adobe::begin_asl_cel << arg_set[0] << adobe::end_asl_cel;
 
-    return adobe::any_regular_t(adobe::string_t(stream.str()));
+    return adobe::any_regular_t(stream.str());
 }
 
 /****************************************************************************************************/

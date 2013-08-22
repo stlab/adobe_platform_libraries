@@ -43,8 +43,8 @@ struct poly_drag_and_drop_converter_instance : optimized_storage_type<T, poly_dr
 
     BOOST_CLASS_REQUIRE(T, adobe, DragAndDropConverterConcept);
 
-    poly_drag_and_drop_converter_instance(move_from<poly_drag_and_drop_converter_instance> x) :
-        base_t(move_from<base_t>(x.source))
+    poly_drag_and_drop_converter_instance(poly_drag_and_drop_converter_instance&& x) noexcept :
+        base_t(std::move(x.source))
     { }
 
     poly_drag_and_drop_converter_instance(const T& x) :
@@ -76,7 +76,7 @@ struct drag_and_drop_converter : poly_base<poly_drag_and_drop_converter_interfac
         base_t(s)
         { }
 
-    drag_and_drop_converter(move_from<drag_and_drop_converter> x)
+    drag_and_drop_converter(drag_and_drop_converter&& x) noexcept
         : base_t(std::move(x)) {}
     
     drag_and_drop_converter(const drag_and_drop_converter&) = default;

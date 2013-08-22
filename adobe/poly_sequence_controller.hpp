@@ -61,8 +61,8 @@ struct poly_sequence_controller_instance
             base_t(x)
         { }
 
-        type(move_from<type> x) :
-            base_t(move_from<base_t>(x.source))
+        type(type&& x) noexcept :
+            base_t(std::move(x.source))
         { }
 
         void monitor_sequence(typename poly_sequence_model<T>::type& sequence)
@@ -90,8 +90,8 @@ struct sequence_controller : poly_base<poly_sequence_controller_interface<T>,
         base_t(s)
     { }
 
-    sequence_controller(move_from<sequence_controller> x) :
-        base_t(move_from<base_t>(x.source))
+    sequence_controller(sequence_controller&& x) noexcept :
+        base_t(std::move(x.source))
     { }
 
     void monitor_sequence(typename poly_sequence_model<T>::type& sequence)

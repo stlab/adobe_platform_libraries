@@ -92,12 +92,6 @@ using adobe::version_0::sequence_key;
 } // namespace adobe
 
 /******************************************************************************/
-
-// This makes sequence keys binary compatible, so you can pass them across DLL
-// boundaries. (They are (and should always remain) simply pointers, after all.)
-ADOBE_NAME_TYPE_1("sequence_key:version_0:adobe", adobe::version_0::sequence_key<T0>)
-
-/******************************************************************************/
 // ADOBE_SEQUENCE_MODEL_FWD_HPP
 #endif
 

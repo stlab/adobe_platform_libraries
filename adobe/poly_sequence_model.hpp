@@ -253,8 +253,8 @@ struct poly_sequence_model_instance
             base_t(x)
         { }
 
-        type(move_from<type> x) :
-            base_t(move_from<base_t>(x.source))
+        type(type&& x) noexcept :
+            base_t(std::move(x.source))
         { }
 
         void push_back(const T& x)
@@ -295,8 +295,8 @@ struct sequence_model_base : poly_base<poly_sequence_model_interface<T>,
         base_t(s)
     { }
 
-    sequence_model_base(move_from<sequence_model_base> x) :
-        base_t(move_from<base_t>(x.source))
+    sequence_model_base(sequence_model_base&& x) noexcept :
+        base_t(std::move(x.source))
     { }
 
     void push_back(const T& x)

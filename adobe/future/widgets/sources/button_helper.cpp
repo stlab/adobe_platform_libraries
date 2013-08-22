@@ -49,9 +49,7 @@ modifiers_t name_to_modifer(name_t name)
     if (name == key_modifiers_optctlcmd)
         return modifiers_any_option_s | modifiers_any_control_s | modifiers_any_command_s;
     
-    std::string error("unknown modifier: ");
-    error << name.c_str();
-    throw std::invalid_argument(error);
+    throw std::invalid_argument(std::string() + "unknown modifier: " + name.c_str());
 }
 
 /*************************************************************************************************/
@@ -60,7 +58,7 @@ modifiers_t value_to_modifier(const any_regular_t& modifier_set)
 {
     modifiers_t result(modifiers_none_s);
 
-    if (modifier_set.type_info() == type_info<name_t>())
+    if (modifier_set.type_info() == typeid(name_t))
     {
         result |= name_to_modifer(modifier_set.cast<name_t>());
     }

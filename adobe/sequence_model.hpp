@@ -58,9 +58,6 @@ public:
 
     BOOST_STATIC_ASSERT((sizeof(key_type) == sizeof(void*)));
 
-    static bool interface_requires_std_rtti()
-    { return adobe::type_info<T>().requires_std_rtti(); }
-
     static cow_value_type at(key_type key)
     { return *key.value_m; }
 

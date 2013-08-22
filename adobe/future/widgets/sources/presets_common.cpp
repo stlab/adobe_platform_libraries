@@ -4,7 +4,7 @@
     or a copy at http://stlab.adobe.com/licenses.html)
 */
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 #define ADOBE_CLOSED_HASH_MAP_INDEX 1
 
@@ -12,6 +12,7 @@
 #include <adobe/future/widgets/headers/presets_common.hpp>
 
 #include <sstream>
+#include <string>
 
 #include <adobe/future/widgets/headers/widget_utils.hpp>
 
@@ -33,19 +34,17 @@
     #include <adobe/iomanip_asl_cel.hpp>
 #endif
 
-/****************************************************************************************************/
+using namespace std;
 
-ADOBE_ONCE_DECLARATION(presets_once)
-
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 namespace {
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 ADOBE_THREAD_LOCAL_STORAGE(adobe::virtual_machine_t, presets_vm)
 
-/*************************************************************************************************/
+/**************************************************************************************************/
 
 void init_presets_once()
 {
@@ -54,12 +53,20 @@ void init_presets_once()
     ADOBE_THREAD_LOCAL_STORAGE_INITIALIZE(presets_vm);
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
+
+void presets_once()
+{
+    static once_flag flag;
+    call_once(flag, &init_presets_once);
+}
+
+/**************************************************************************************************/
 
 inline bool always_break(adobe::name_t, const adobe::any_regular_t&)
     { return true; }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 std::string temp_cell_name()
 {
@@ -83,7 +90,7 @@ std::string temp_cell_name()
     return result;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void append_definitions(const adobe::array_t& element,
                         std::string&          preset_dialog_model,
@@ -92,14 +99,14 @@ void append_definitions(const adobe::array_t& element,
 {
     if (element.size() != 2)
         return;
-    else if (element[1].type_info() != adobe::type_info<adobe::string_t>())
+    else if (element[1].type_info() != typeid(string))
         return;
 
     adobe::array_t cell_array;
 
-    if (element[0].type_info() == adobe::type_info<adobe::name_t>())
+    if (element[0].type_info() == typeid(adobe::name_t))
         cell_array.push_back(element[0]);
-    else if (element[0].type_info() == adobe::type_info(cell_array))
+    else if (element[0].type_info() == typeid(cell_array))
         cell_array = element[0].cast<adobe::array_t>();
     else
         throw std::runtime_error("Preset: Expected either a name or an array of names in item");
@@ -109,14 +116,14 @@ void append_definitions(const adobe::array_t& element,
     static const std::string comma_space(", ");
     static const std::string spaced_colon(" : ");
 
-    preset_dialog_model << cell + model_interface_cell_decl_suffix;
-    preset_layout << "checkbox(name: \"" << element[1].cast<std::string>() << "\", bind: @" << cell << ");\n";
+    preset_dialog_model += cell + model_interface_cell_decl_suffix;
+    preset_layout += "checkbox(name: \"" + element[1].cast<std::string>() + "\", bind: @" + cell + ");\n";
 
     for (adobe::array_t::const_iterator first(cell_array.begin()), last(cell_array.end()); first != last; ++first)
-        preset_dialog_model_result_footer << comma_space << first->cast<adobe::name_t>().c_str() << spaced_colon << cell;
+        preset_dialog_model_result_footer += comma_space + first->cast<adobe::name_t>().c_str() + spaced_colon + cell;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 adobe::array_t preset_stream_to_array(std::istream& instream, const std::string& stream_name)
 {
@@ -127,7 +134,7 @@ adobe::array_t preset_stream_to_array(std::istream& instream, const std::string&
         if (instream.fail())
             return result;
 
-        ADOBE_ONCE_INSTANCE(presets_once);
+        presets_once();
 
 #if defined(ADOBE_STD_SERIALIZATION)
         adobe::expression_parser parser(instream, adobe::line_position_t(stream_name.c_str()));
@@ -153,7 +160,7 @@ adobe::array_t preset_stream_to_array(std::istream& instream, const std::string&
     return result;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void populate_category_popup(adobe::presets_t& control, const adobe::array_t& contents)
 {
@@ -209,21 +216,19 @@ const adobe::dictionary_t& preset_menu_item_separator()
     return separator_s;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 boost::filesystem::path user_preset_filepath(adobe::presets_t& control)
 {
     std::string user_preset_file_extension(adobe::implementation::localization_value(control, adobe::key_preset_file_extension, ".presets"));
-    std::string user_preset_filename;
-
-    user_preset_filename << control.name_m << user_preset_file_extension;
+    std::string user_preset_filename = string() + control.name_m + user_preset_file_extension;
 
     boost::filesystem::path result(adobe::implementation::preset_directory(control) / user_preset_filename);
 
     return result;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 adobe::array_t compose_category_menu(adobe::presets_t& control)
 {
@@ -256,7 +261,7 @@ adobe::array_t compose_category_menu(adobe::presets_t& control)
     return result;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 bool has_collisions(const adobe::dictionary_t& x, const adobe::dictionary_t& y)
 {
@@ -275,7 +280,7 @@ bool has_collisions(const adobe::dictionary_t& x, const adobe::dictionary_t& y)
     return false;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 bool is_subset(const adobe::dictionary_t& x, const adobe::dictionary_t& y)
 {
@@ -298,15 +303,15 @@ bool is_subset(const adobe::dictionary_t& x, const adobe::dictionary_t& y)
     return true;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 } // namespace
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 namespace adobe {
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void presets_t::display_additional_preset_set(const array_t& value)
 {
@@ -319,7 +324,7 @@ void presets_t::display_additional_preset_set(const array_t& value)
     display(last_m);                             // redisplay the last preset we had selected
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void presets_t::display(const model_type& value)
 {
@@ -407,7 +412,7 @@ void presets_t::display(const model_type& value)
     }
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void presets_t::display_custom()
 {
@@ -426,7 +431,7 @@ void presets_t::display_custom()
     type_2_debounce_m = false;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void presets_t::do_imbue(const popup_t::model_type& value)
 {
@@ -437,11 +442,11 @@ void presets_t::do_imbue(const popup_t::model_type& value)
         proc_m(value);
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 namespace implementation {
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void reload_preset_widget(presets_t& control)
 {
@@ -452,7 +457,7 @@ void reload_preset_widget(presets_t& control)
     populate_category_popup(control, control.composite_m);
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void append_user_preset(presets_t& control, const dictionary_t& snapshot)
 {
@@ -460,42 +465,42 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
     std::string eve_header;
     std::string eve_footer;
 
-    adam_header <<
+    adam_header +=
         "sheet save_preset\n"
         "{\n"
         "interface:\n"
-        "   preset__name__ : '" << localization_value(control, key_preset_add_subdialog_default_preset_name, "My Preset") << "';\n"
+        "   preset__name__ : '" + localization_value(control, key_preset_add_subdialog_default_preset_name, "My Preset") + "';\n"
         ;
 
     const char* adam_footer =
         "}\n"
         ;
 
-    eve_header <<
+    eve_header +=
         "layout save_preset\n"
         "{\n"
-        "    view dialog(name: '" << localization_value(control, key_preset_add_dialog_name, "Add A Preset") << "', placement: place_row)\n"
+        "    view dialog(name: '" + localization_value(control, key_preset_add_dialog_name, "Add A Preset") + "', placement: place_row)\n"
         "    {\n"
         "        column()\n"
         "        {\n"
         "            edit_text(name: 'Name:', bind: @preset__name__, horizontal: align_fill);\n"
-        "            group(name: '" << localization_value(control, key_preset_add_dialog_group_name, "Include in Preset") << "', placement: place_row)\n"
+        "            group(name: '" + localization_value(control, key_preset_add_dialog_group_name, "Include in Preset") + "', placement: place_row)\n"
         "            {\n"
         "               column()\n"
         "               {\n"
         ;
 
-    eve_footer <<
+    eve_footer +=
         "               }\n"
         "            }\n"
-        "            static_text(name: '" << localization_value(control, key_preset_add_dialog_message, "Values not included in the saved preset will default to their last used value.") << "', characters: 10, horizontal: align_fill);\n"
+        "            static_text(name: '" + localization_value(control, key_preset_add_dialog_message, "Values not included in the saved preset will default to their last used value.") + "', characters: 10, horizontal: align_fill);\n"
         "        }\n"
         "        column(vertical: align_fill, child_horizontal: align_fill)\n"
         "        {\n"
-        "            button(name: '" << localization_value(control, key_preset_subdialog_ok_button_name, "OK") << "',"
-        "                   action: @ok, default: true, alt: '" << localization_value(control, key_preset_add_subdialog_ok_button_alt_text, "Save a preset with the selected settings") << "');\n"
-        "            button(name: '" << localization_value(control, key_preset_subdialog_cancel_button_name, "Cancel") << "',"
-        "                   action: @cancel, cancel: true, alt: '" << localization_value(control, key_preset_add_subdialog_cancel_button_alt_text, "Do not save a preset") << "');\n"
+        "            button(name: '" + localization_value(control, key_preset_subdialog_ok_button_name, "OK") + "',"
+        "                   action: @ok, default: true, alt: '" + localization_value(control, key_preset_add_subdialog_ok_button_alt_text, "Save a preset with the selected settings") + "');\n"
+        "            button(name: '" + localization_value(control, key_preset_subdialog_cancel_button_name, "Cancel") + "',"
+        "                   action: @cancel, cancel: true, alt: '" + localization_value(control, key_preset_add_subdialog_cancel_button_alt_text, "Do not save a preset") + "');\n"
         "        }\n"
         "    }\n"
         "}\n"
@@ -510,7 +515,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
 
     for (array_t::const_iterator first(control.bind_set_m.begin()), last(first + half_count); first != last; ++first)
     {
-        if (first->type_info() != type_info<array_t>())
+        if (first->type_info() != typeid(array_t))
             throw std::runtime_error("Preset: expected an array_t for the item in the preset");
 
         append_definitions(first->cast<array_t>(), preset_dialog_model, preset_layout, preset_dialog_model_result_footer);
@@ -520,7 +525,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
 
     for (array_t::const_iterator first(control.bind_set_m.begin() + half_count), last(control.bind_set_m.end()); first != last; ++first)
     {
-        if (first->type_info() != type_info<array_t>())
+        if (first->type_info() != typeid(array_t))
             throw std::runtime_error("Preset: expected an array_t for the item in the preset");
 
         append_definitions(first->cast<array_t>(), preset_dialog_model, preset_layout, preset_dialog_model_result_footer);
@@ -561,7 +566,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
 
     assert(result.command_m.count(preset_name));
     assert(snapshot.count(key_preset_value));
-    assert(get_value(snapshot, key_preset_value).type_info() == type_info<dictionary_t>());
+    assert(get_value(snapshot, key_preset_value).type_info() == typeid(dictionary_t));
 
     std::string the_preset_name(get_value(result.command_m, preset_name).cast<std::string>());
 
@@ -577,7 +582,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
     for (dictionary_t::const_iterator first(result.command_m.begin()), last(result.command_m.end());
          first != last; ++first)
     {
-        assert(first->second.type_info() == type_info<bool>());
+        assert(first->second.type_info() == typeid(bool));
 
         name_t preset_attribute(first->first);
         bool          should_add(first->second.cast<bool>());
@@ -600,7 +605,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
     control.display(control.last_m); // redisplay the last preset we had selected
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void delete_user_preset(presets_t& control)
 {
@@ -617,26 +622,26 @@ void delete_user_preset(presets_t& control)
     std::string eve_header;
     std::string eve_footer;
 
-    eve_header <<
+    eve_header +=
         "layout delete_preset\n"
         "{\n"
-        "    view dialog(name: '" << localization_value(control, key_preset_delete_dialog_name, "Delete A Preset") << "', placement: place_row)\n"
+        "    view dialog(name: '" + localization_value(control, key_preset_delete_dialog_name, "Delete A Preset") + "', placement: place_row)\n"
         "    {\n"
         "        column()\n"
         "        {\n"
-        "            static_text(name: '" << localization_value(control, key_preset_delete_dialog_message, "Please select a preset you would like to delete. This operation cannot be undone.") << "', characters: 10, horizontal: align_fill);\n"
-        "            popup(name: '" << localization_value(control, key_preset_preset_popup_name, "Preset:") << "', bind: @preset__name__, horizontal: align_fill, items: [\n"
+        "            static_text(name: '" + localization_value(control, key_preset_delete_dialog_message, "Please select a preset you would like to delete. This operation cannot be undone.") + "', characters: 10, horizontal: align_fill);\n"
+        "            popup(name: '" + localization_value(control, key_preset_preset_popup_name, "Preset:") + "', bind: @preset__name__, horizontal: align_fill, items: [\n"
         ;
 
-    eve_footer <<
+    eve_footer +=
         "                  ]);\n"
         "        }\n"
         "        column(vertical: align_fill, child_horizontal: align_fill)\n"
         "        {\n"
-        "            button(name: '" << localization_value(control, key_preset_subdialog_ok_button_name, "OK") << "', "
-        "                   action: @ok, default: true, alt: '" << localization_value(control, key_preset_delete_subdialog_ok_button_alt_text, "Delete the selected preset") << "');\n"
-        "            button(name: '" << localization_value(control, key_preset_subdialog_cancel_button_name, "Cancel") << "',"
-        "                   action: @cancel, cancel: true, alt: '" << localization_value(control, key_preset_delete_subdialog_cancel_button_alt_text, "Do not delete a preset") << "');\n"
+        "            button(name: '" + localization_value(control, key_preset_subdialog_ok_button_name, "OK") + "', "
+        "                   action: @ok, default: true, alt: '" + localization_value(control, key_preset_delete_subdialog_ok_button_alt_text, "Delete the selected preset") + "');\n"
+        "            button(name: '" + localization_value(control, key_preset_subdialog_cancel_button_name, "Cancel") + "',"
+        "                   action: @cancel, cancel: true, alt: '" + localization_value(control, key_preset_delete_subdialog_cancel_button_alt_text, "Do not delete a preset") + "');\n"
         "        }\n"
         "    }\n"
         "}\n"
@@ -713,7 +718,7 @@ void delete_user_preset(presets_t& control)
     control.display(control.last_m); // redisplay the last preset we had selected
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void save_user_preset_set(presets_t& control)
 {
@@ -728,7 +733,7 @@ void save_user_preset_set(presets_t& control)
 #endif
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void append_user_preset_set(presets_t& control)
 {
@@ -753,7 +758,7 @@ void append_user_preset_set(presets_t& control)
     control.display(control.last_m); // redisplay the last preset we had selected
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 array_t load_user_preset_set(presets_t& control)
 {
@@ -781,14 +786,12 @@ array_t load_user_preset_set(presets_t& control)
     return set;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 array_t load_default_preset_set(presets_t& control)
 {
     std::string                 user_preset_file_extension(implementation::localization_value(control, key_preset_file_extension, ".presets"));
-    std::string                 user_preset_filename;
-
-    user_preset_filename << control.name_m << user_preset_file_extension;
+    std::string                 user_preset_filename = std::string() + control.name_m + user_preset_file_extension;
 
     try
     {
@@ -809,25 +812,25 @@ array_t load_default_preset_set(presets_t& control)
     return array_t();
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 std::string localization_value(const dictionary_t& set, name_t key, const std::string& default_string)
 {
-    return set.count(key) && get_value(set, key).type_info() == type_info<adobe::string_t>() ?
-        std::string(get_value(set, key).cast<adobe::string_t>()) :
+    return set.count(key) && get_value(set, key).type_info() == typeid(string) ?
+        std::string(get_value(set, key).cast<string>()) :
         default_string;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 } // namespace implementation
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 bool operator==(const presets_t& /*x*/, const presets_t& /*y*/)
 { return true; }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 // these are for the localization set to be found in the eve description of the widget
 aggregate_name_t key_preset_add_dialog_group_name = { "add_dialog_group_name" };
@@ -859,13 +862,9 @@ aggregate_name_t key_preset_value = { "value" };
 aggregate_name_t key_preset_name = { "name" };
 aggregate_name_t key_preset_items = { "items" };
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 } // namespace adobe
 
-/*************************************************************************************************/
-
-ADOBE_ONCE_DEFINITION(presets_once, init_presets_once)
-
-/****************************************************************************************************/
+/**************************************************************************************************/
 

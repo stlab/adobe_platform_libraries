@@ -81,8 +81,8 @@ struct poly_key_handler_instance : optimized_storage_type<T, poly_key_handler_in
     poly_key_handler_instance(const T& x) 
         : base_t(x) {}
 
-    poly_key_handler_instance(move_from<poly_key_handler_instance> x) 
-        : base_t(move(x)) {}
+    poly_key_handler_instance(poly_key_handler_instance&& x)
+        : base_t(std::move(x)) {}
 
     bool handle_key(key_type key, bool pressed, modifiers_t modifiers)
     { 
@@ -106,7 +106,7 @@ struct key_handler : public poly_base<poly_key_handler_interface, poly_key_handl
     template <typename T>
     explicit key_handler(const T& s) : base_t(s) { }
 
-    key_handler(move_from<key_handler> x) : base_t(std::move(x)) {}
+    key_handler(key_handler&& x) : base_t(std::move(x)) {}
     
     key_handler(const key_handler&) = default;
 

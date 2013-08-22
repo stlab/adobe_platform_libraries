@@ -106,7 +106,7 @@ class image_format_t
         typedef T value_type;
 
         instance(const T& x) : base_t(x) { }
-        instance(adobe::move_from<instance> x) 
+        instance(instance&& x) noexcept
             : base_t(std::move(x)){ }
 
         bool detect(std::streambuf& stream_buffer) const

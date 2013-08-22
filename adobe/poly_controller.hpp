@@ -56,8 +56,8 @@ struct poly_controller_instance : optimized_storage_type<T, poly_controller_inte
     BOOST_CLASS_REQUIRE(T, adobe, ControllerConcept);
 
     poly_controller_instance(const T& x) : base_t(x) {}
-    poly_controller_instance(move_from<poly_controller_instance> x) 
-        : base_t(move(x)) {}
+    poly_controller_instance(poly_controller_instance&& x)
+        : base_t(std::move(x)) {}
 
     void monitor(boost::function<void (const any_regular_t&)> f)
     { 
@@ -82,7 +82,7 @@ struct controller : poly_base<poly_controller_interface, poly_controller_instanc
     template <typename T> // T Models Controller
     explicit controller(const T& s) :  base_t(s) { }
 
-    controller(move_from<controller> x) : base_t(move(x)) {}
+    controller(controller&& x) : base_t(std::move(x)) {}
 
     void monitor(const boost::function<void (const any_regular_t&)>& f)
     { interface_ref().monitor(f); }

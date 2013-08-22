@@ -33,7 +33,7 @@ static popup_t::menu_item_set_t array_to_menu_item_set(const array_t& value)
     for (array_t::const_iterator iter(value.begin()), last(value.end());
          iter != last; ++iter)
     {
-        if (iter->type_info() != type_info<dictionary_t>())
+        if (iter->type_info() != typeid(dictionary_t))
             continue;
 
         const dictionary_t&          cur_new_item(iter->cast<dictionary_t>());
@@ -41,7 +41,7 @@ static popup_t::menu_item_set_t array_to_menu_item_set(const array_t& value)
         dictionary_t::const_iterator value_iter(cur_new_item.find(key_value));
 
         if (name_iter == cur_new_item.end() ||
-            name_iter->second.type_info() != type_info<string_t>() ||
+            name_iter->second.type_info() != typeid(std::string) ||
             value_iter == cur_new_item.end())
             continue;
 

@@ -70,8 +70,8 @@ struct poly_sequence_view_instance
             base_t(x)
         { }
 
-        type(move_from<type> x) :
-            base_t(move_from<base_t>(x.source))
+        type(type&& x) noexcept :
+            base_t(std::move(x.source))
         { }
 
         void refresh(sequence_key<T> index, cow_value_type value)
@@ -111,8 +111,8 @@ struct sequence_view : poly_base<poly_sequence_view_interface<T>,
         base_t(s)
     { }
 
-    sequence_view(move_from<sequence_view> x) :
-        base_t(move_from<base_t>(x.source))
+    sequence_view(sequence_view&& x) noexcept :
+        base_t(std::move(x.source))
     { }
 
     void refresh(sequence_key<T> index, cow_value_type value)

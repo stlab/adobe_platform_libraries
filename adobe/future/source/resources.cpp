@@ -70,11 +70,8 @@ boost::filesystem::path find_resource(const boost::filesystem::path& name)
             return candidate;
     }
 
-    std::string err;
-
-    err << "Could not locate resource \"" << name.string() << "\" in any resource path.";
-
-    throw std::runtime_error(err);
+    throw std::runtime_error(std::string() + "Could not locate resource \"" + name.string()
+            + "\" in any resource path.");
 }
 
 /****************************************************************************************************/

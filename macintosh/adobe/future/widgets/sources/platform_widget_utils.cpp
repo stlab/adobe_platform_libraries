@@ -8,12 +8,16 @@
 
 #define ADOBE_DLL_SAFE 0
 
+#include <string>
+
 #include <adobe/string.hpp>
 #include <adobe/future/widgets/headers/widget_utils.hpp>
 #include <adobe/future/widgets/headers/edit_number.hpp>
 #include <adobe/future/macintosh_events.hpp>
 
 #include <boost/noncopyable.hpp>
+
+using namespace std;
 
 /****************************************************************************************************/
 
@@ -600,7 +604,7 @@ bool context_menu(::WindowRef parent,
     auto_resource< ::MenuRef > auto_menu(menu);
 
     for (; first != last; ++first)
-        ::AppendMenuItemTextWithCFString(menu, explicit_cast<auto_cfstring_t>(adobe::string_t(first->c_str())).get(), 0, 0, 0);
+        ::AppendMenuItemTextWithCFString(menu, explicit_cast<auto_cfstring_t>(string(first->c_str())).get(), 0, 0, 0);
 
     ::GetKeyboardFocus(parent, &focus_control);
     ::SetKeyboardFocus(parent, focus_control, kControlFocusNoPart);

@@ -4,7 +4,7 @@
     or a copy at http://stlab.adobe.com/licenses.html)
 */
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 #include <adobe/future/platform_number_formatter_data.hpp>
 
@@ -18,16 +18,16 @@
 
 #include <limits>
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 namespace {
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 typedef adobe::auto_resource< ::CFLocaleRef >          auto_locale_t;
 typedef adobe::auto_resource< ::CFNumberFormatterRef > auto_formatter_t;
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 template <typename Numeric> struct type_to_cfnumbertype;
 template <> struct type_to_cfnumbertype<char>       { static const ::CFNumberType value = kCFNumberCharType; };
@@ -40,7 +40,7 @@ template <> struct type_to_cfnumbertype<double>     { static const ::CFNumberTyp
 
 //template <> struct type_to_cfnumbertype<unsigned long long> { static const ::CFNumberType value = kCFNumberLongLongType; };
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 template <typename Numeric>
 std::string number_format(::CFNumberFormatterRef formatter, const Numeric& x)
@@ -54,7 +54,7 @@ std::string number_format(::CFNumberFormatterRef formatter, const Numeric& x)
     return adobe::explicit_cast<std::string>(temp_string.get());
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 template <typename Numeric>
 Numeric number_parse(::CFNumberFormatterRef formatter, const std::string& str)
@@ -69,22 +69,22 @@ Numeric number_parse(::CFNumberFormatterRef formatter, const std::string& str)
     return result;
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 } // namespace
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 namespace adobe {
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void number_formatter_platform_data_t::initialize()
 {
     monitor_locale(dictionary_t());
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void number_formatter_platform_data_t::set_format(const std::string& format)
 {
@@ -94,7 +94,7 @@ void number_formatter_platform_data_t::set_format(const std::string& format)
     ::CFNumberFormatterSetFormat(formatter_m.get(), explicit_cast<auto_cfstring_t>(format).get());
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 std::string number_formatter_platform_data_t::get_format() const
 {
@@ -104,13 +104,13 @@ std::string number_formatter_platform_data_t::get_format() const
     return explicit_cast<std::string>(::CFNumberFormatterGetFormat(formatter_m.get()));
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 std::string number_formatter_platform_data_t::format(const any_regular_t& x)
 {
     assert(formatter_m);
 
-    if (x.type_info() == type_info<double>()) {
+    if (x.type_info() == typeid(double)) {
         return number_format<double>(formatter_m.get(), x.cast<double>());
     }
     
@@ -123,13 +123,13 @@ std::string number_formatter_platform_data_t::format(const any_regular_t& x)
     else return std::string("formatter_format_number error");
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 any_regular_t number_formatter_platform_data_t::parse(const std::string& str, any_regular_t the_type)
 {
     assert(formatter_m);
 
-    if (the_type.type_info() == type_info<double>()) {
+    if (the_type.type_info() == typeid(double)) {
         return any_regular_t(number_parse<double>(formatter_m.get(), str));
     }
     
@@ -141,7 +141,7 @@ any_regular_t number_formatter_platform_data_t::parse(const std::string& str, an
     else return any_regular_t(std::string("formatter_format_number error"));
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void number_formatter_platform_data_t::monitor_locale(const dictionary_t&)
 {
@@ -153,13 +153,13 @@ void number_formatter_platform_data_t::monitor_locale(const dictionary_t&)
     set_format(num_format_save);
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 #if 0
 #pragma mark -
 #endif
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 bool completely_valid_number_string_given_current_locale(const std::string& value)
 {
@@ -181,41 +181,41 @@ bool completely_valid_number_string_given_current_locale(const std::string& valu
     return static_cast<double>(range.length) == static_cast<double>(value.size());
 }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 #if 0
 #pragma mark -
 #endif
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void number_formatter_t::set_format(const std::string& format)
 { data_m.set_format(format); }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 std::string number_formatter_t::get_format() const
 { return data_m.get_format(); }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 template <>
 std::string number_formatter_t::format<any_regular_t>(const any_regular_t& x)
 { return data_m.format(x); }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 template <>
 any_regular_t number_formatter_t::parse<any_regular_t>(const std::string& str, any_regular_t dummy)
 { return data_m.parse(str, dummy); }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 void number_formatter_t::monitor_locale(const dictionary_t& locale_data)
 { return data_m.monitor_locale(locale_data); }
 
-/****************************************************************************************************/
+/**************************************************************************************************/
 
 } // namespace adobe
 
-/****************************************************************************************************/
+/**************************************************************************************************/

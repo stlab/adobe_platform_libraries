@@ -74,7 +74,7 @@ void attach_view_and_controller(popup_t&               control,
     }
 
     if (parameters.count(key_items) && 
-            get_value(parameters, key_items).type_info() == type_info<name_t>())
+            get_value(parameters, key_items).type_info() == typeid(name_t))
     {
         // dynamically bind to the cell instead of getting a static list of popup items
 
