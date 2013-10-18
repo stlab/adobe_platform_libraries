@@ -15,7 +15,7 @@
 #include <boost/utility/enable_if.hpp>
 #include <boost/type_traits.hpp>
 #include <boost/mpl/bool_fwd.hpp>
-#include <boost/signals/connection.hpp>
+#include <boost/signals2/connection.hpp>
 
 #include <adobe/adam.hpp>
 #include <adobe/any_regular.hpp>

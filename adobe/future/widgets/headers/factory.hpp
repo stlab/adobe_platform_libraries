@@ -113,7 +113,7 @@ struct eve_client_holder : public boost::noncopyable
     /// is issued when the top-level window needs to be shown -- so any factory function
     /// which creates a window needs to connect to this signal.
     //
-    boost::signal<void ()>                   show_window_m;
+    boost::signals2::signal<void ()>         show_window_m;
 
     //
     /// REVISIT (sparent) : We really need a generalized mechanism for deferring an action -

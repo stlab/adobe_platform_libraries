@@ -198,7 +198,7 @@ void attach_view_and_controller(presets_t&             control,
         }
         else
         {
-            assemblage.cleanup(boost::bind(&boost::signals::connection::disconnect, token.sheet_m.monitor_invariant_dependent(cell, 
+            assemblage.cleanup(boost::bind(&boost::signals2::connection::disconnect, token.sheet_m.monitor_invariant_dependent(cell,
                 boost::bind(static_cast<void (*)(presets_t&, bool)>(&enable), 
                     boost::ref(control), _1))));
 

@@ -241,7 +241,7 @@ private:
     double                      max_m;
     edit_number_platform_data_t platform_m;
 public:
-    boost::signals::connection  locale_change_connection_m;
+    boost::signals2::connection locale_change_connection_m;
 #endif
 };
 

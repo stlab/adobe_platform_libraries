@@ -15,7 +15,7 @@
 
 #include <boost/bind/apply.hpp>
 #include <boost/function.hpp>
-#include <boost/signals/connection.hpp>
+#include <boost/signals2/connection.hpp>
 
 #include <adobe/algorithm/for_each.hpp>
 #include <adobe/memory.hpp>
@@ -52,8 +52,8 @@ inline void assemblage_cleanup_ptr(assemblage_t& assemblage, T* x)
 
 /****************************************************************************************************/
 
-inline void assemblage_cleanup_connection(assemblage_t& assemblage, boost::signals::connection& x)
-{ assemblage.cleanup(boost::bind(&boost::signals::connection::disconnect, x)); }
+inline void assemblage_cleanup_connection(assemblage_t& assemblage, boost::signals2::connection& x)
+{ assemblage.cleanup(boost::bind(&boost::signals2::connection::disconnect, x)); }
 
 /*************************************************************************************************/
 

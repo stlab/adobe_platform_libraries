@@ -140,7 +140,7 @@ void connect_button_state(adobe::button_t&          control,
         current_display(adobe::make_display_compositor(control, temp.modifier_set_m));
 
     assemblage.cleanup(boost::bind(adobe::delete_ptr(), current_display));
-    assemblage.cleanup(boost::bind(&boost::signals::connection::disconnect, 
+    assemblage.cleanup(boost::bind(&boost::signals2::connection::disconnect,
                                     sheet.monitor_invariant_dependent(
                                      temp.bind_m, boost::bind(&adobe::button_t::enable, 
                                                                boost::ref(control), _1))));
@@ -154,7 +154,7 @@ void connect_button_state(adobe::button_t&          control,
     	now I'm passing in an empty dictionary for no filtering.
     */
 
-    assemblage.cleanup(boost::bind(&boost::signals::connection::disconnect, 
+    assemblage.cleanup(boost::bind(&boost::signals2::connection::disconnect,
                                     sheet.monitor_contributing(temp.bind_m, adobe::dictionary_t(), 
                                                                boost::bind(&adobe::button_t::set_contributing, 
                                                                    boost::ref(control), 

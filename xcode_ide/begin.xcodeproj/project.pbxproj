@@ -10,7 +10,6 @@
 		8912B7E50C72405E00EB6973 /* libadobe_source.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8912B7CE0C723EB900EB6973 /* libadobe_source.a */; };
 		8912B7E60C72406400EB6973 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8912B7C80C723EB900EB6973 /* libboost_filesystem.a */; };
 		8912B7E70C72406D00EB6973 /* libboost_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8912B7C20C723EB900EB6973 /* libboost_threads.a */; };
-		8912B7E80C72407200EB6973 /* libboost_signals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8912B7BC0C723EB900EB6973 /* libboost_signals.a */; };
 		89862AC00C6E8D190036A6B8 /* libadobe_platform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8986289E0C6E75720036A6B8 /* libadobe_platform.a */; };
 		8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20286C33FDCF999611CA2CEA /* Carbon.framework */; };
 		9A9E70871474A8D3001E0671 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E70861474A8D3001E0671 /* libstdc++.dylib */; };
@@ -38,13 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8912B7BB0C723EB900EB6973 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8912B7A50C723EB900EB6973 /* boost_signals.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D;
-			remoteInfo = boost_signals;
-		};
 		8912B7C10C723EB900EB6973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8912B7A80C723EB900EB6973 /* boost_threads.xcodeproj */;
@@ -65,13 +57,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC046055464E500DB518D;
 			remoteInfo = adobe_source;
-		};
-		8912B7CF0C723EDC00EB6973 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8912B7A50C723EB900EB6973 /* boost_signals.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = boost_signals;
 		};
 		8912B7D10C723EDC00EB6973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -114,7 +99,6 @@
 		20286C33FDCF999611CA2CEA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		4A9504C8FFE6A3BC11CA0CBA /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		4A9504CAFFE6A41611CA0CBA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
-		8912B7A50C723EB900EB6973 /* boost_signals.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_signals.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_signals.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8912B7A80C723EB900EB6973 /* boost_threads.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_threads.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_threads.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8912B7AB0C723EB900EB6973 /* boost_filesystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_filesystem.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_filesystem.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8912B7AE0C723EB900EB6973 /* adobe_source.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = adobe_source.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/adobe_source.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -155,7 +139,6 @@
 				9A9E70871474A8D3001E0671 /* libstdc++.dylib in Frameworks */,
 				89862AC00C6E8D190036A6B8 /* libadobe_platform.a in Frameworks */,
 				8912B7E50C72405E00EB6973 /* libadobe_source.a in Frameworks */,
-				8912B7E80C72407200EB6973 /* libboost_signals.a in Frameworks */,
 				8912B7E70C72406D00EB6973 /* libboost_threads.a in Frameworks */,
 				8912B7E60C72406400EB6973 /* libboost_filesystem.a in Frameworks */,
 				8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */,
@@ -234,14 +217,6 @@
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
-		8912B7A60C723EB900EB6973 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8912B7BC0C723EB900EB6973 /* libboost_signals.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8912B7A90C723EB900EB6973 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,7 +262,6 @@
 		CE5C21570947A0DB00EB4BB6 /* asl_projects */ = {
 			isa = PBXGroup;
 			children = (
-				8912B7A50C723EB900EB6973 /* boost_signals.xcodeproj */,
 				8912B7A80C723EB900EB6973 /* boost_threads.xcodeproj */,
 				8912B7AB0C723EB900EB6973 /* boost_filesystem.xcodeproj */,
 				8912B7AE0C723EB900EB6973 /* adobe_source.xcodeproj */,
@@ -312,7 +286,6 @@
 			dependencies = (
 				8912B7D80C723EDC00EB6973 /* PBXTargetDependency */,
 				89AFF3C00C6E93A90081A93D /* PBXTargetDependency */,
-				8912B7D00C723EDC00EB6973 /* PBXTargetDependency */,
 				8912B7D20C723EDC00EB6973 /* PBXTargetDependency */,
 				8912B7D40C723EDC00EB6973 /* PBXTargetDependency */,
 			);
@@ -353,10 +326,6 @@
 					ProjectRef = 8912B7AB0C723EB900EB6973 /* boost_filesystem.xcodeproj */;
 				},
 				{
-					ProductGroup = 8912B7A60C723EB900EB6973 /* Products */;
-					ProjectRef = 8912B7A50C723EB900EB6973 /* boost_signals.xcodeproj */;
-				},
-				{
 					ProductGroup = 8912B7A90C723EB900EB6973 /* Products */;
 					ProjectRef = 8912B7A80C723EB900EB6973 /* boost_threads.xcodeproj */;
 				},
@@ -369,13 +338,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8912B7BC0C723EB900EB6973 /* libboost_signals.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libboost_signals.a;
-			remoteRef = 8912B7BB0C723EB900EB6973 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		8912B7C20C723EB900EB6973 /* libboost_threads.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -446,11 +408,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8912B7D00C723EDC00EB6973 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = boost_signals;
-			targetProxy = 8912B7CF0C723EDC00EB6973 /* PBXContainerItemProxy */;
-		};
 		8912B7D20C723EDC00EB6973 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = adobe_source;

@@ -79,7 +79,7 @@ widget_node_t make_window(const dictionary_t&     parameters,
     // This is a top-level container, so we hook it up to the show_window_signal
     // (so that it gets shown when all of the children have been made and inserted).
     //
-    token.client_holder_m.assemblage_m.cleanup(boost::bind(&boost::signals::connection::disconnect,
+    token.client_holder_m.assemblage_m.cleanup(boost::bind(&boost::signals2::connection::disconnect,
         token.client_holder_m.show_window_m.connect(
           boost::bind(&window_t::set_visible, boost::ref(*widget), true))));
 

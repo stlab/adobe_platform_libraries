@@ -16,7 +16,7 @@
 #include <adobe/dictionary.hpp>
 
 #include <boost/function.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <adobe/future/platform_locale_data.hpp>
 
@@ -28,7 +28,7 @@ namespace adobe {
 
 typedef boost::function<void (const dictionary_t& locale_data)> monitor_locale_proc_t;
 
-boost::signals::connection monitor_locale(const monitor_locale_proc_t& proc);
+boost::signals2::connection monitor_locale(const monitor_locale_proc_t& proc);
 
 const dictionary_t& current_locale();
 

@@ -86,7 +86,7 @@ private:
     void monitor_locale(const dictionary_t&);
 
     number_formatter_platform_data_t data_m;
-    boost::signals::connection       connection_m;
+    boost::signals2::connection      connection_m;
 };
 
 /****************************************************************************************************/

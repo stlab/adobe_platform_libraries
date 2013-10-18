@@ -15,7 +15,7 @@
 
 #include <adobe/name.hpp>
 
-#include <boost/signals.hpp>
+#include <boost/signals2.hpp>
 #include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
 
@@ -34,7 +34,7 @@ class command_system_t : boost::noncopyable
 public:
     typedef boost::function<void ()>        command_proc_t;
     typedef boost::function<void (bool)>    command_enabled_callback_t;
-    typedef boost::signals::connection      connection_t;
+    typedef boost::signals2::connection     connection_t;
 
     command_system_t();
     ~command_system_t();

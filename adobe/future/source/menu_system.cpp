@@ -79,11 +79,11 @@ public:
             return *this;
         }
 
-        name_t           name_m;
-        value_t          ref_m;
-        bool                    enabled_m;
-        boost::signal<void ()>  callback_signal_m;
-        const MenuCommand       command_id_m;
+        name_t                           name_m;
+        value_t                          ref_m;
+        bool                             enabled_m;
+        boost::signals2::signal<void ()> callback_signal_m;
+        const MenuCommand                command_id_m;
 
     private:
         ::MenuCommand next_menu_command()
@@ -99,7 +99,7 @@ public:
 
     auto_resource<MenuRef>   old_root_m;
     auto_resource<MenuRef>   root_m;
-    component_set_t                 component_set_m;
+    component_set_t          component_set_m;
 
 private:
     inline component_iterator   find_iter(name_t name);

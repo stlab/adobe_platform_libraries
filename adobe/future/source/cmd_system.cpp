@@ -8,7 +8,7 @@
 
 #include <adobe/future/cmd_system.hpp>
 
-#include <boost/signals.hpp>
+#include <boost/signals2.hpp>
 
 #include <stdexcept>
 #include <map>
@@ -23,7 +23,7 @@ struct command_system_t::implementation_t
 {
     struct command_entry_t
     {
-        typedef boost::signal<void (bool)> enable_callback_list_t;
+        typedef boost::signals2::signal<void (bool)> enable_callback_list_t;
 
         command_entry_t() :
             enabled_m(false)

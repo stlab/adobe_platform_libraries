@@ -24,7 +24,7 @@ namespace {
 
 /**************************************************************************************************/
 
-typedef boost::signal<void (const adobe::dictionary_t&)> locale_signal_type;
+typedef boost::signals2::signal<void (const adobe::dictionary_t&)> locale_signal_type;
 
 /**************************************************************************************************/
 
@@ -70,14 +70,14 @@ namespace adobe {
 
 /**************************************************************************************************/
 
-boost::signals::connection monitor_locale(const monitor_locale_proc_t& proc)
+boost::signals2::connection monitor_locale(const monitor_locale_proc_t& proc)
 {
     locale_once();
 
     // signal the client right off the bat with the current locale information
     proc(current_locale_data());
 
-    return locale_signal().connect(proc, boost::signals::at_back);
+    return locale_signal().connect(proc, boost::signals2::at_back);
 }
 
 const dictionary_t& current_locale()

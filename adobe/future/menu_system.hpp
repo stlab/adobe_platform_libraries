@@ -18,7 +18,7 @@
 
 #include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
-#include <boost/signals.hpp>
+#include <boost/signals2.hpp>
 #include <boost/cstdint.hpp>
 
 /****************************************************************************************************/
@@ -40,7 +40,7 @@ public:
     };
 
     typedef boost::function<void ()>    item_callback_t;
-    typedef boost::signals::connection  connection_t;
+    typedef boost::signals2::connection connection_t;
 
     menu_system_t();
 
