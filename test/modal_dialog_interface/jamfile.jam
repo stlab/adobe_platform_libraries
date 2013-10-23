@@ -1,0 +1,93 @@
+import testing ;
+import os ;
+
+SOURCE_DIRECTORY =  sources ;
+HEADER_DIRECTORY =  headers ;
+
+switch [ os.name ] 
+{
+case NT : # --- Windows ---------------------------------------------------------------------------
+    {
+    PLATFORM_DIRECTORIES_NAME =
+        win32
+        ;
+
+    PLATFORM_SETTINGS = 
+        <include>resources
+        <include>.
+        <define>WINVER=0x501 <define>_WIN32_WINNT=0x501 <define>_WIN32_IE=0x501
+        <toolset>msvc:<linkflags>"gdi32.lib user32.lib comctl32.lib shell32.lib"
+        <toolset>gcc:<cxxflags>"-mno-cygwin"
+        <toolset>gcc:<linkflags>"-lgdi32 -lshell32 -luser32 -lcomctl32 -mno-cygwin" 
+        ;
+    }
+case FREEBSD :
+    {
+    PLATFORM_DIRECTORIES_NAME = fltk ;
+
+    #
+    # Details of *your* local FLTK2 installation must be added here.
+    #
+    PLATFORM_SETTINGS = <linkflags>"-L/usr/X11R6/lib -lXft -L/usr/local/lib -lfreetype -lz -lfontconfig -lXrender -lXext -lXi -lX11" ;
+    }
+case MACOSX :  # --- Mac OS (assumed) ------------------------------------------------------------------
+    {
+    PLATFORM_DIRECTORIES_NAME =
+        mac
+        ;
+
+    PLATFORM_SETTINGS =
+        <toolset>darwin:<linkflags>"-framework Carbon"
+        ;
+
+    PLATFORM_EXTRAS =
+        ;
+    }
+}
+
+project adobe/modal_dialog_interface
+    :   requirements
+            <user-interface>gui 
+    ;
+
+exe modal_dialog_interface
+    :   main.cpp
+        /adobe/adobe_widgets//adobe_widgets 
+    :   $(PLATFORM_SETTINGS) 
+    ;
+
+OS = [ os.name ] ;
+DEST_PATH = $(BUILD_DIR)/install/$(OS)/ ;
+
+switch [ os.name ]
+{
+    case MACOSX :
+    {
+        # set up the bundle of the app
+
+        install "modal_dialog_interface.app/Contents"
+            :   resources/Info.plist
+                resources/PkgInfo
+            :   <variant>release:<location>$(DEST_PATH)"release/modal_dialog_interface.app/Contents"
+                <variant>debug:<location>$(DEST_PATH)"debug/modal_dialog_interface.app/Contents"
+            ;
+
+        install "modal_dialog_interface.app/Contents/MacOS"
+            :   modal_dialog_interface
+            :   <variant>release:<location>$(DEST_PATH)"release/modal_dialog_interface.app/Contents/MacOS"
+                <variant>debug:<location>$(DEST_PATH)"debug/modal_dialog_interface.app/Contents/MacOS"
+            ;
+
+        install "modal_dialog_interface.app/Contents/Resources/begin.nib"
+            :   [ glob resources/modal_dialog_interface.nib/*.* ]
+            :   <variant>release:<location>$(DEST_PATH)"release/modal_dialog_interface.app/Contents/Resources/modal_dialog_interface.nib"
+                <variant>debug:<location>$(DEST_PATH)"debug/modal_dialog_interface.app/Contents/Resources/modal_dialog_interface.nib"
+            ;
+
+        install "modal_dialog_interface.app/Contents/Resources"
+            :   resources/app_icon.icns
+            :   <variant>release:<location>$(DEST_PATH)"release/modal_dialog_interface.app/Contents/Resources"
+                <variant>debug:<location>$(DEST_PATH)"debug/modal_dialog_interface.app/Contents/Resources"
+            ;
+    }
+}

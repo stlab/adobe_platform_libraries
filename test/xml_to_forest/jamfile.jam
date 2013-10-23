@@ -1,0 +1,10 @@
+import testing ;
+
+project adobe/xml_to_forest
+    : requirements
+        <include>../../
+	;
+
+exe xml_to_forest :
+    main.cpp
+	;

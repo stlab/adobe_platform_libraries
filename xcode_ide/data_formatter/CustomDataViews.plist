@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>File Version</key>
+	<string>1</string>
+
+    <!-- adobe::any_regular_t -->
+	<key>any_regular_t</key><dict><key>SummaryString</key><string>{(const char *)format_any_regular_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>any_regular_t *</key><dict><key>SummaryString</key><string>{(const char *)format_any_regular_t($VAR, (int)$ID)}:s</string></dict>
+	<key>any_regular_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_any_regular_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::any_regular_t</key><dict><key>SummaryString</key><string>{(const char *)format_any_regular_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::any_regular_t *</key><dict><key>SummaryString</key><string>{(const char *)format_any_regular_t($VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::any_regular_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_any_regular_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+
+    <!-- adobe::dictionary_t -->
+	<key>dictionary_t</key><dict><key>SummaryString</key><string>{(const char *)format_dictionary_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>dictionary_t *</key><dict><key>SummaryString</key><string>{(const char *)format_dictionary_t($VAR, (int)$ID)}:s</string></dict>
+	<key>dictionary_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_dictionary_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::dictionary_t</key><dict><key>SummaryString</key><string>{(const char *)format_dictionary_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::dictionary_t *</key><dict><key>SummaryString</key><string>{(const char *)format_dictionary_t($VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::dictionary_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_dictionary_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+
+    <!-- adobe::array_t -->
+    <key>array_t</key><dict><key>SummaryString</key><string>{(const char *)format_array_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>array_t *</key><dict><key>SummaryString</key><string>{(const char *)format_array_t($VAR, (int)$ID)}:s</string></dict>
+	<key>array_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_array_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+    <key>adobe::version_1::array_t</key><dict><key>SummaryString</key><string>{(const char *)format_array_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::array_t *</key><dict><key>SummaryString</key><string>{(const char *)format_array_t($VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::array_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_array_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+
+    <!-- adobe::name_t -->
+	<key>name_t</key><dict><key>SummaryString</key><string>{(const char *)format_name_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>name_t *</key><dict><key>SummaryString</key><string>{(const char *)format_name_t($VAR, (int)$ID)}:s</string></dict>
+	<key>name_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_name_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::name_t</key><dict><key>SummaryString</key><string>{(const char *)format_name_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::name_t *</key><dict><key>SummaryString</key><string>{(const char *)format_name_t($VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::name_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_name_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+
+    <!-- adobe::string_t -->
+	<key>string_t</key><dict><key>SummaryString</key><string>{(const char *)format_string_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>string_t *</key><dict><key>SummaryString</key><string>{(const char *)format_string_t($VAR, (int)$ID)}:s</string></dict>
+	<key>string_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_string_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::string_t</key><dict><key>SummaryString</key><string>{(const char *)format_string_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::string_t *</key><dict><key>SummaryString</key><string>{(const char *)format_string_t($VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::string_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_string_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+
+    <!-- adobe::empty_t -->
+	<key>empty_t</key><dict><key>SummaryString</key><string>{(const char *)format_empty_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>empty_t *</key><dict><key>SummaryString</key><string>{(const char *)format_empty_t($VAR, (int)$ID)}:s</string></dict>
+	<key>empty_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_empty_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::empty_t</key><dict><key>SummaryString</key><string>{(const char *)format_empty_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::empty_t *</key><dict><key>SummaryString</key><string>{(const char *)format_empty_t($VAR, (int)$ID)}:s</string></dict>
+	<key>adobe::version_1::empty_t &amp;</key><dict><key>SummaryString</key><string>{(const char *)format_empty_t(&amp;$VAR, (int)$ID)}:s</string></dict>
+</dict>
+</plist>

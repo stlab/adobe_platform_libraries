@@ -1,0 +1,220 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Adobe ASL Visualations, Version 0.9.2 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Visualizations into any_regular_t and dictionary_t (aka, closed_hash_t).
+
+;; For visualizations, the preview section and children section can form
+;; different chains.  I've concentrated on the children definition for the
+;; closed hash structure, letting you open is up and see it all right away.
+
+;; For those closed hash children, the meat of things is in the preview chain
+;; - first, the visualizer for the node, which can tell you if the node is
+;; free, home, or misplaced (useful) and then shows the value.  That leads to
+;; the name visualizer (pretty easy) and the any_regular_t visualizer, which
+;; is pretty complicated.  Sub-containers, of course, can't be brought out
+;; that far, and so you have to switch back to the children chain for those.
+
+;; The any_regular visualizer depends on being able to compare one of the
+;; vtable procedure pointers to known procedure pointers in order to
+;; determine what type the regular type really is, and a cast at that point
+;; can get the real value.  It's pretty easy to add additional types in
+;; there, though I haven't yet had the need to add a remote type yet.  I
+;; suspect as we use dictionaries more widely and start tucking different
+;; things into dictionaries that that will need to expand.
+
+;; Enums are going to prove to be an annoyance, since they end up with a
+;; different vtable per enum type.  I'm trying to figure out at least a
+;; generic way of limping around that issue.
+
+;; Visualization notes: avoid providing an expression at the end of the array
+;; visualization, it makes it tricky to keep the array numbering zero based
+;; and to keep the count right.  Better to provide a visualization for the
+;; array item type separately instead.
+
+;; Lists are hard to get right.  Never did manage to get the visualization to
+;; walk the closed hash used chain right.  I like seeing the closed hash as
+;; an array better anyways.
+
+
+;; The previews for dictionaries and arrays pull the desired data directly
+;; into here.  DevStudio seems to have a preview expression depth limit that
+;; we start hitting that limit, and if we didn't pull that data up, you'd get
+;; lots of useless elipsis.  It complicates things a bit to have them up
+;; here, especially for array and the subtraction that has to be done.  I'd
+;; like to figure out how not to have to do that, but this basically works.
+
+adobe::implementation::any_regular_interface_t{
+    preview (
+	  #if ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<double>::vtable_s) ) (
+		#( "number=", ((adobe::implementation::any_regular_model_local<double>*)&$c)->object_m )
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<adobe::version_0::name_t>::vtable_s) ) (
+	    ((adobe::implementation::any_regular_model_local<adobe::version_0::name_t>*)&$c)->object_m
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<char>::vtable_s) ) (
+		#( "char=", ((adobe::implementation::any_regular_model_local<char>*)&$c)->object_m )
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<bool>::vtable_s) ) (
+		#( "bool=", ((adobe::implementation::any_regular_model_local<bool>*)&$c)->object_m )
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<adobe::version_0::string_t>::vtable_s) ) (
+		((adobe::implementation::any_regular_model_local<adobe::version_0::string_t>*)&$c)->object_m
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<void *>::vtable_s) ) (
+		#( "ptr=", ((adobe::implementation::any_regular_model_local<void *>*)&$c)->object_m )
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >::vtable_s) ) (
+        #( "array= [size=", ( (((adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >*)&$c)->object_m).header_m->finish_m - (((adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >*)&$c)->object_m).header_m->storage_m),
+           " cap=", ( (((adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >*)&$c)->object_m).header_m->end_of_storage_m - (((adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >*)&$c)->object_m).header_m->storage_m), "]" )
+      ) #elif ( $c.vtable_m == &(adobe::implementation::any_regular_model_local<adobe::version_0::closed_hash_map<adobe::version_0::name_t,adobe::version_0::any_regular_t,boost::hash<adobe::version_0::name_t>,std::equal_to<adobe::version_0::name_t> > >::vtable_s) ) (
+		#( "dict= [size=", (((adobe::implementation::any_regular_model_local<adobe::version_0::closed_hash_map<adobe::version_0::name_t,adobe::version_0::any_regular_t,boost::hash<adobe::version_0::name_t>,std::equal_to<adobe::version_0::name_t> > >*)&$c)->object_m).header_m->size_m, " cap=", (((adobe::implementation::any_regular_model_local<adobe::version_0::closed_hash_map<adobe::version_0::name_t,adobe::version_0::any_regular_t,boost::hash<adobe::version_0::name_t>,std::equal_to<adobe::version_0::name_t> > >*)&$c)->object_m).header_m->capacity_m, "]" )
+      ) #else (
+	  	#( "unknown [int/enum=", (((long*)&$c)[1]), "]" )
+      )
+    )
+    children (
+	  #( 
+         raw: [$c,!]
+       )
+    )
+}
+
+;; We pull up the access to any container format (dictionaries, arrays)
+;; because it makes things a lot more convenient when traversing a dictionary
+;; tree.  By having them here, they don't also have to appear in the children
+;; section of any_regular_interface_t.  Because they are containers
+;; themselves, they would have to appear in one of those two children
+;; sections anyway, so might as well make it this one and eliminate a level
+;; of opening up boxes in the debugger.
+
+adobe::version_0::any_regular_t{
+    preview (
+      ((adobe::implementation::any_regular_interface_t*)$c.data_m)
+	)
+    children (
+	  #if ( ((adobe::implementation::any_regular_interface_t*)$c.data_m)->vtable_m == &(adobe::implementation::any_regular_model_local<adobe::version_0::closed_hash_map<adobe::version_0::name_t,adobe::version_0::any_regular_t,boost::hash<adobe::version_0::name_t>,std::equal_to<adobe::version_0::name_t> > >::vtable_s) ) (
+        #( 
+		    dict: (((adobe::implementation::any_regular_model_local<adobe::version_0::closed_hash_map<adobe::version_0::name_t,adobe::version_0::any_regular_t,boost::hash<adobe::version_0::name_t>,std::equal_to<adobe::version_0::name_t> > >*)$c.data_m)->object_m),
+		    raw: [$c,!] 
+		)
+      ) #elif ( ((adobe::implementation::any_regular_interface_t*)$c.data_m)->vtable_m == &(adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >::vtable_s) ) (
+        #(
+		    array: (((adobe::implementation::any_regular_model_local<adobe::version_0::vector<adobe::version_0::any_regular_t> >*)$c.data_m)->object_m),
+		    raw: [$c,!] 
+        )
+      ) #else (
+	  	#( 
+		    data: ((adobe::implementation::any_regular_interface_t*)$c.data_m),
+			raw: [$c,!] 
+		)
+      )
+	)
+}
+
+adobe::pair<*,*>{
+	preview (
+		#( "(", $e.first, ", ", $e.second , ")" )
+	)
+}
+
+adobe::version_0::string_t{
+	preview (
+	  #("string=", $e.storage_m.header_m->storage_m)
+	)
+}
+
+adobe::version_0::name_t{
+	preview (
+	  #("name=", $e.name_m)
+	)
+}
+
+;; The abbreviation for misplaced was chosen to be approximately the same
+;; width as "Home" in the default DevStudio interface font, which is
+;; proportional.  So while it doesn't look even here, it's easy to read
+;; there.
+
+;; In the children section, we pull forward first and second in order to
+;; eliminate a level of indirection in the debugger.  Since the other piece
+;; of info in a node is an empty piece of type info, I'm not even putting in
+;; raw access for now.
+
+adobe::version_0::closed_hash_set<*>::node_t{
+	 preview (
+	     #(
+		    #switch(((size_t)($e.next_m))&0x3)
+			#case 0x0 ( "[Free]" )
+			#case 0x1 ( #( "[Home] ", $e.value_m ) )
+			#case 0x2 ( #( "[Mplcd] ", $e.value_m ) )
+			#default  ( #( "[?] ", $e.value_m ) )
+		 	)
+     )
+     children (
+      #(
+	    first: $e.value_m.first,
+		second: $e.value_m.second
+      )
+     )
+}
+
+adobe::version_0::closed_hash_set<*>{
+	children (
+
+		;; Array mode for the closed hash works really well in combo with the
+		;; node previewer which can detect the state of each node, and
+		;; display the name/value pair for the used nodes.  It also lets you
+		;; see the number of collisions easily.
+
+		#(
+            ;; You *rarely* need to look at this.
+			[raw]:  [$c,!],
+			#array (
+			   expr: $c.header_m->storage_m[$i],
+			   size: $c.header_m->capacity_m
+			   )
+		)
+	)
+	preview	(
+		#( "[size=", $c.header_m->size_m, " cap=", $c.header_m->capacity_m, "]" )
+	)			      
+}
+
+;; Even though the type of a closed_hash_map is essentially just a
+;; closed_hash_set, in some cases DevStudio won't do the extra bit of lookup
+;; (e.g., trying to open a dictionary within a dictionary), so duplicating it
+;; is necessary.  The contents of the two visualizers is exactly the same.
+
+adobe::version_0::closed_hash_map<*>{
+	children (
+
+		;; Array mode for the closed hash works really well in combo with the
+		;; node previewer which can detect the state of each node, and
+		;; display the name/value pair for the used nodes.  It also lets you
+		;; see the number of collisions easily.
+
+		#(
+            ;; You *rarely* need to look at this.
+			[raw]:  [$c,!],
+			#array (
+			   expr: $c.header_m->storage_m[$i],
+			   size: $c.header_m->capacity_m
+			   )
+		)
+	)
+	preview	(
+		#( "[size=", $c.header_m->size_m, " cap=", $c.header_m->capacity_m, "]" )
+	)			      
+}
+
+;; This covers adobe::array_t.
+
+adobe::version_0::vector<*>{
+	children (
+		#(
+            ;; You *rarely* need to look at this.
+			[raw]:  [$c,!],
+			#array (
+			   expr: $c.header_m->storage_m[$i],
+			   size: ( $c.header_m->finish_m - $c.header_m->storage_m )
+			   )
+		)
+	)
+	preview	(
+		#( "[size=", ($c.header_m->finish_m - $c.header_m->storage_m), " cap=", ($c.header_m->end_of_storage_m - $c.header_m->storage_m), "]" )
+	)			      
+}

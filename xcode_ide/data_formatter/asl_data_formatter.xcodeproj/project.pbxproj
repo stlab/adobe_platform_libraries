@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D01CCCA0486CAD60068D4B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		CE932AE70D6DFDDA00B3D251 /* libadobe_source.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932AD40D6DFDCB00B3D251 /* libadobe_source.a */; };
+		CE932AE80D6DFDDA00B3D251 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932ADA0D6DFDCB00B3D251 /* libboost_filesystem.a */; };
+		CE932AE90D6DFDDA00B3D251 /* libboost_signals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932AE00D6DFDCB00B3D251 /* libboost_signals.a */; };
+		CE932AEA0D6DFDDA00B3D251 /* libboost_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932AE60D6DFDCB00B3D251 /* libboost_threads.a */; };
+		CE932AEB0D6DFDDF00B3D251 /* libadobe_source.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932AD40D6DFDCB00B3D251 /* libadobe_source.a */; };
+		CE932AEC0D6DFDDF00B3D251 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932ADA0D6DFDCB00B3D251 /* libboost_filesystem.a */; };
+		CE932AED0D6DFDDF00B3D251 /* libboost_signals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932AE00D6DFDCB00B3D251 /* libboost_signals.a */; };
+		CE932AEE0D6DFDDF00B3D251 /* libboost_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE932AE60D6DFDCB00B3D251 /* libboost_threads.a */; };
+		CEDECB9A0D6CC86800F8E767 /* CustomDataViews.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDECB990D6CC86800F8E767 /* CustomDataViews.plist */; };
+		CEF0E1130D6CAB3E00911007 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF0E1120D6CAB3E00911007 /* main.cpp */; };
+		CEF0E1310D6CABC300911007 /* asl_data_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF0E1300D6CABC300911007 /* asl_data_formatter.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE932AD30D6DFDCB00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC30D6DFDCB00B3D251 /* adobe_source.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		CE932AD90D6DFDCB00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC60D6DFDCB00B3D251 /* boost_filesystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_filesystem;
+		};
+		CE932ADF0D6DFDCB00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC90D6DFDCB00B3D251 /* boost_signals.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_signals;
+		};
+		CE932AE50D6DFDCB00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932ACC0D6DFDCB00B3D251 /* boost_threads.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_threads;
+		};
+		CE932AEF0D6DFDE700B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC60D6DFDCB00B3D251 /* boost_filesystem.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_filesystem;
+		};
+		CE932AF10D6DFDE700B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC30D6DFDCB00B3D251 /* adobe_source.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		CE932AF30D6DFDE700B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932ACC0D6DFDCB00B3D251 /* boost_threads.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_threads;
+		};
+		CE932AF50D6DFDE700B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC90D6DFDCB00B3D251 /* boost_signals.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_signals;
+		};
+		CE932AF70D6DFDED00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC60D6DFDCB00B3D251 /* boost_filesystem.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_filesystem;
+		};
+		CE932AF90D6DFDED00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC30D6DFDCB00B3D251 /* adobe_source.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		CE932AFB0D6DFDED00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932ACC0D6DFDCB00B3D251 /* boost_threads.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_threads;
+		};
+		CE932AFD0D6DFDED00B3D251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE932AC90D6DFDCB00B3D251 /* boost_signals.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_signals;
+		};
+		CEB7E3000D6CB97D0036A3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7;
+			remoteInfo = asl_data_formatter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8D01CCD10486CAD60068D4B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE932AC30D6DFDCB00B3D251 /* adobe_source.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = adobe_source.xcodeproj; path = ../../../adobe_source_libraries/xcode_ide/adobe_source.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CE932AC60D6DFDCB00B3D251 /* boost_filesystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_filesystem.xcodeproj; path = ../../../adobe_source_libraries/xcode_ide/boost_filesystem.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CE932AC90D6DFDCB00B3D251 /* boost_signals.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_signals.xcodeproj; path = ../../../adobe_source_libraries/xcode_ide/boost_signals.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CE932ACC0D6DFDCB00B3D251 /* boost_threads.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_threads.xcodeproj; path = ../../../adobe_source_libraries/xcode_ide/boost_threads.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CEDECB990D6CC86800F8E767 /* CustomDataViews.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomDataViews.plist; sourceTree = "<group>"; };
+		CEF0E1120D6CAB3E00911007 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CEF0E1300D6CABC300911007 /* asl_data_formatter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = asl_data_formatter.cpp; sourceTree = "<group>"; };
+		CEF0E1320D6CABC700911007 /* asl_data_formatter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = asl_data_formatter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF0E1340D6CABC700911007 /* test_asl_data_formatter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test_asl_data_formatter; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D01CCCD0486CAD60068D4B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE932AE70D6DFDDA00B3D251 /* libadobe_source.a in Frameworks */,
+				CE932AE80D6DFDDA00B3D251 /* libboost_filesystem.a in Frameworks */,
+				CE932AE90D6DFDDA00B3D251 /* libboost_signals.a in Frameworks */,
+				CE932AEA0D6DFDDA00B3D251 /* libboost_threads.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF02A49B094A5623002B0BF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE932AEB0D6DFDDF00B3D251 /* libadobe_source.a in Frameworks */,
+				CE932AEC0D6DFDDF00B3D251 /* libboost_filesystem.a in Frameworks */,
+				CE932AED0D6DFDDF00B3D251 /* libboost_signals.a in Frameworks */,
+				CE932AEE0D6DFDDF00B3D251 /* libboost_threads.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* wchardataformatter */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0E19B0D6CB65200911007 /* Libraries */,
+				08FB77ADFE841716C02AAC07 /* Source */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				CEF0E1330D6CABC700911007 /* Products */,
+			);
+			name = wchardataformatter;
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEDECB990D6CC86800F8E767 /* CustomDataViews.plist */,
+				8D01CCD10486CAD60068D4B7 /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77ADFE841716C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0E1300D6CABC300911007 /* asl_data_formatter.cpp */,
+				CEF0E1120D6CAB3E00911007 /* main.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		CE932AC40D6DFDCB00B3D251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE932AD40D6DFDCB00B3D251 /* libadobe_source.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE932AC70D6DFDCB00B3D251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE932ADA0D6DFDCB00B3D251 /* libboost_filesystem.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE932ACA0D6DFDCB00B3D251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE932AE00D6DFDCB00B3D251 /* libboost_signals.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE932ACD0D6DFDCB00B3D251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE932AE60D6DFDCB00B3D251 /* libboost_threads.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF0E1330D6CABC700911007 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0E1320D6CABC700911007 /* asl_data_formatter.bundle */,
+				CEF0E1340D6CABC700911007 /* test_asl_data_formatter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF0E19B0D6CB65200911007 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				CE932AC30D6DFDCB00B3D251 /* adobe_source.xcodeproj */,
+				CE932AC60D6DFDCB00B3D251 /* boost_filesystem.xcodeproj */,
+				CE932AC90D6DFDCB00B3D251 /* boost_signals.xcodeproj */,
+				CE932ACC0D6DFDCB00B3D251 /* boost_threads.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D01CCC60486CAD60068D4B7 /* asl_data_formatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FADC23308B4156C00ABE55E /* Build configuration list for PBXNativeTarget "asl_data_formatter" */;
+			buildPhases = (
+				8D01CCC90486CAD60068D4B7 /* Resources */,
+				8D01CCCB0486CAD60068D4B7 /* Sources */,
+				8D01CCCD0486CAD60068D4B7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE932AF00D6DFDE700B3D251 /* PBXTargetDependency */,
+				CE932AF20D6DFDE700B3D251 /* PBXTargetDependency */,
+				CE932AF40D6DFDE700B3D251 /* PBXTargetDependency */,
+				CE932AF60D6DFDE700B3D251 /* PBXTargetDependency */,
+			);
+			name = asl_data_formatter;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = wchardataformatter;
+			productReference = CEF0E1320D6CABC700911007 /* asl_data_formatter.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		EF02A49C094A5623002B0BF1 /* test_asl_data_formatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF02A4A6094A563E002B0BF1 /* Build configuration list for PBXNativeTarget "test_asl_data_formatter" */;
+			buildPhases = (
+				EF02A49A094A5623002B0BF1 /* Sources */,
+				EF02A49B094A5623002B0BF1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB7E3010D6CB97D0036A3FF /* PBXTargetDependency */,
+				CE932AF80D6DFDED00B3D251 /* PBXTargetDependency */,
+				CE932AFA0D6DFDED00B3D251 /* PBXTargetDependency */,
+				CE932AFC0D6DFDED00B3D251 /* PBXTargetDependency */,
+				CE932AFE0D6DFDED00B3D251 /* PBXTargetDependency */,
+			);
+			name = test_asl_data_formatter;
+			productName = wcharTest;
+			productReference = CEF0E1340D6CABC700911007 /* test_asl_data_formatter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4FADC23708B4156C00ABE55E /* Build configuration list for PBXProject "asl_data_formatter" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* wchardataformatter */;
+			productRefGroup = CEF0E1330D6CABC700911007 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE932AC40D6DFDCB00B3D251 /* Products */;
+					ProjectRef = CE932AC30D6DFDCB00B3D251 /* adobe_source.xcodeproj */;
+				},
+				{
+					ProductGroup = CE932AC70D6DFDCB00B3D251 /* Products */;
+					ProjectRef = CE932AC60D6DFDCB00B3D251 /* boost_filesystem.xcodeproj */;
+				},
+				{
+					ProductGroup = CE932ACA0D6DFDCB00B3D251 /* Products */;
+					ProjectRef = CE932AC90D6DFDCB00B3D251 /* boost_signals.xcodeproj */;
+				},
+				{
+					ProductGroup = CE932ACD0D6DFDCB00B3D251 /* Products */;
+					ProjectRef = CE932ACC0D6DFDCB00B3D251 /* boost_threads.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8D01CCC60486CAD60068D4B7 /* asl_data_formatter */,
+				EF02A49C094A5623002B0BF1 /* test_asl_data_formatter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE932AD40D6DFDCB00B3D251 /* libadobe_source.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libadobe_source.a;
+			remoteRef = CE932AD30D6DFDCB00B3D251 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE932ADA0D6DFDCB00B3D251 /* libboost_filesystem.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_filesystem.a;
+			remoteRef = CE932AD90D6DFDCB00B3D251 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE932AE00D6DFDCB00B3D251 /* libboost_signals.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_signals.a;
+			remoteRef = CE932ADF0D6DFDCB00B3D251 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE932AE60D6DFDCB00B3D251 /* libboost_threads.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_threads.a;
+			remoteRef = CE932AE50D6DFDCB00B3D251 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D01CCC90486CAD60068D4B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D01CCCA0486CAD60068D4B7 /* InfoPlist.strings in Resources */,
+				CEDECB9A0D6CC86800F8E767 /* CustomDataViews.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D01CCCB0486CAD60068D4B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF0E1310D6CABC300911007 /* asl_data_formatter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF02A49A094A5623002B0BF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF0E1130D6CAB3E00911007 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE932AF00D6DFDE700B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_filesystem;
+			targetProxy = CE932AEF0D6DFDE700B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AF20D6DFDE700B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = adobe_source;
+			targetProxy = CE932AF10D6DFDE700B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AF40D6DFDE700B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_threads;
+			targetProxy = CE932AF30D6DFDE700B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AF60D6DFDE700B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_signals;
+			targetProxy = CE932AF50D6DFDE700B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AF80D6DFDED00B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_filesystem;
+			targetProxy = CE932AF70D6DFDED00B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AFA0D6DFDED00B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = adobe_source;
+			targetProxy = CE932AF90D6DFDED00B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AFC0D6DFDED00B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_threads;
+			targetProxy = CE932AFB0D6DFDED00B3D251 /* PBXContainerItemProxy */;
+		};
+		CE932AFE0D6DFDED00B3D251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_signals;
+			targetProxy = CE932AFD0D6DFDED00B3D251 /* PBXContainerItemProxy */;
+		};
+		CEB7E3010D6CB97D0036A3FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D01CCC60486CAD60068D4B7 /* asl_data_formatter */;
+			targetProxy = CEB7E3000D6CB97D0036A3FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FADC23408B4156C00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Apple/Developer Tools/CustomDataViews";
+				PRODUCT_NAME = asl_data_formatter;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		4FADC23508B4156C00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = asl_data_formatter;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		4FADC23808B4156C00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				USER_HEADER_SEARCH_PATHS = "../../../adobe_source_libraries/ ../../../boost_libraries/";
+			};
+			name = Debug;
+		};
+		4FADC23908B4156C00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				USER_HEADER_SEARCH_PATHS = "../../../adobe_source_libraries/ ../../../boost_libraries/";
+			};
+			name = Release;
+		};
+		EF02A4A7094A563E002B0BF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = test_asl_data_formatter;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		EF02A4A8094A563E002B0BF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = test_asl_data_formatter;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FADC23308B4156C00ABE55E /* Build configuration list for PBXNativeTarget "asl_data_formatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC23408B4156C00ABE55E /* Debug */,
+				4FADC23508B4156C00ABE55E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FADC23708B4156C00ABE55E /* Build configuration list for PBXProject "asl_data_formatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC23808B4156C00ABE55E /* Debug */,
+				4FADC23908B4156C00ABE55E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF02A4A6094A563E002B0BF1 /* Build configuration list for PBXNativeTarget "test_asl_data_formatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF02A4A7094A563E002B0BF1 /* Debug */,
+				EF02A4A8094A563E002B0BF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

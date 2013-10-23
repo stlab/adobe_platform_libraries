@@ -1,0 +1,61 @@
+/*
+    Copyright 2005-2007 Adobe Systems Incorporated
+    Distributed under the MIT License (see accompanying file LICENSE_1_0_0.txt
+    or a copy at http://stlab.adobe.com/licenses.html)
+*/
+
+layout chmod
+{
+    view dialog(name: "chmod", placement: place_row)
+    {
+        column()
+        {
+            row(guide_mask: [@guide_label], horizontal: align_fill)
+            {
+                edit_text(name: "File:", bind: @filename, horizontal: align_fill);
+            }
+
+            group(name: "Options")
+            {
+                checkbox(name: "Recursive", bind: @recurse);
+
+                popup(name: "Symbolic Links:", bind: @symbolic_links,
+                      items: [
+                          { name: "Don't Follow", value: @dont_follow },
+                          { name: "Always Follow", value: @always_follow },
+                          { name: "Command-Line Specified Only", value: @cli_follow }
+                      ]);
+            }
+
+            row()
+            {
+                group(name: "Owner")
+                {
+                    checkbox(name: "R:", bind: @owner_r);
+                    checkbox(name: "W:", bind: @owner_w);
+                    checkbox(name: "X:", bind: @owner_x);
+                }
+    
+                group(name: "Group")
+                {
+                    checkbox(name: "R:", bind: @group_r);
+                    checkbox(name: "W:", bind: @group_w);
+                    checkbox(name: "X:", bind: @group_x);
+                }
+    
+                group(name: "Other")
+                {
+                    checkbox(name: "R:", bind: @other_r);
+                    checkbox(name: "W:", bind: @other_w);
+                    checkbox(name: "X:", bind: @other_x);
+                }
+            }
+        }
+
+        column()
+        {
+            button(name: "OK", bind: @result, action: @ok, default: true);
+            button(name: "Cancel", action: @cancel, cancel: true);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+import testing ;
+
+project adobe/property_model_tidy
+    : requirements
+        <library>/adobe//asl_dev
+        <include>../../../adobe_platform_libraries/
+    : default-build
+        <link>static
+        <threading>multi
+    ;
+
+SOURCE_FILE_SET =
+    ./property_model_tidy_main.cpp
+    ../../source/formatter_tokens.cpp
+    ../../source/expression_formatter.cpp
+    ../../source/property_model_formatter.cpp
+    ../../adobe/future/widgets/sources/widget_tokens.cpp
+    ;
+
+exe property_model_tidy
+    : $(SOURCE_FILE_SET)
+    ;
+
+run $(SOURCE_FILE_SET)
+    :
+    : testfile.adm
+	;
+

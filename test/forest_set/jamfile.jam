@@ -1,0 +1,11 @@
+project adobe/forest_set
+    : requirements
+        <include>../..
+    ;
+
+exe forest_set
+    : main.cpp
+    ;
+
+run main.cpp
+    ;

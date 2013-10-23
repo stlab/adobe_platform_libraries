@@ -1,0 +1,26 @@
+layout testfile_eve
+{
+interface:
+    /* This is a cell note */
+    cell_dict : { }; // empty dictionary
+    cell_array : [ ]; // empty array
+    cell_nonempty_array : [ 42, !5 + -3, foo_var ]; // nonempty array
+    cell_third : 42;
+    cell_fourth : { foo: [ ], bar: { }, baz: [ { } ] } ? { foo: [ ], bar: { }, baz: [ { } ] } : [ { foo: [ @bar, { foo: { foo: [ @bar, @baz ] } } ] } ];
+
+constant:
+    ifelse_cell : 4 == 5 ? -3 / 4 : -(2 * 3); // test ifelse
+    index_cell : (my_foo[2] + my_bar.number) / my_baz[4 + 1] % my_foo();
+
+    view dialog(name: localize("My Dialog"))
+    {
+        /* this is a lead comment */
+        slider(bind: @my_value, format: { first: 0, last: 100 }); // this is a trail comment
+        separator(); // test empty parameter set
+        edit_number(name: 'Value:', bind: @my_value, format: '#', alt: 'Alters the value of the slider');
+        button (items: [
+                           { name: 'OK', action: @ok, bind: @result, alt: 'Perform the command with the current settings' },
+                           { name: 'Reset', action: @reset, modifiers: @opt, alt: 'Reset the dialog settings' }
+                       ]);
+    }
+}

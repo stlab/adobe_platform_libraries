@@ -1,0 +1,22 @@
+import testing ;
+
+project adobe/function_pack
+    : requirements
+        <include>../../../adobe_source_libraries/
+        <include>../../../adobe_platform_libraries/
+        <include>../../../boost_libraries/
+    : default-build
+        <link>static
+        <threading>multi
+    : build-dir
+        ../../../built_artifacts
+    ;
+
+# Uncomment this to get a binary to debug
+# exe function_pack
+#     : main.cpp
+#     ;
+
+run main.cpp
+	;
+

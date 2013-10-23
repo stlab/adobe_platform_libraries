@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		882093040BFEF663008A4788 /* platform_metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882093030BFEF663008A4788 /* platform_metrics.cpp */; };
+		8915F80E0AD830A3001A1AAD /* number_unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8915F80C0AD830A3001A1AAD /* number_unit.cpp */; };
+		8915F80F0AD830A3001A1AAD /* widget_tokens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8915F80D0AD830A3001A1AAD /* widget_tokens.cpp */; };
+		8915F8130AD83B57001A1AAD /* display_number_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8915F8120AD83B57001A1AAD /* display_number_factory.cpp */; };
+		8915F81F0AD83BCA001A1AAD /* platform_display_number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8915F81E0AD83BCA001A1AAD /* platform_display_number.cpp */; };
+		892D1B3A0B0E5F1A00D23ECA /* tab_group_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 892D1B390B0E5F1A00D23ECA /* tab_group_factory.cpp */; };
+		892D1B420B0E60AF00D23ECA /* platform_tab_group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 892D1B410B0E60AF00D23ECA /* platform_tab_group.cpp */; };
+		893E1CAB0B127BD10046E6BF /* progress_bar_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 893E1CAA0B127BD10046E6BF /* progress_bar_factory.cpp */; };
+		893E1CAD0B127BFC0046E6BF /* platform_progress_bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 893E1CAC0B127BFC0046E6BF /* platform_progress_bar.cpp */; };
+		894C3E790A8FAF8E006A5F6E /* edit_number_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 894C3E760A8FAF8E006A5F6E /* edit_number_factory.cpp */; };
+		894C3E7A0A8FAF8E006A5F6E /* edit_text_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 894C3E770A8FAF8E006A5F6E /* edit_text_factory.cpp */; };
+		89862A2C0C6E86D20036A6B8 /* keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A2A0C6E86D20036A6B8 /* keyboard.cpp */; };
+		89862A2D0C6E86D20036A6B8 /* sequence_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A2B0C6E86D20036A6B8 /* sequence_model.cpp */; };
+		89862A380C6E86FC0036A6B8 /* behavior.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A2F0C6E86FC0036A6B8 /* behavior.cpp */; };
+		89862A390C6E86FC0036A6B8 /* cmd_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A300C6E86FC0036A6B8 /* cmd_system.cpp */; };
+		89862A3A0C6E86FC0036A6B8 /* cursor_stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A310C6E86FC0036A6B8 /* cursor_stack.cpp */; };
+		89862A3B0C6E86FC0036A6B8 /* image_slurp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A330C6E86FC0036A6B8 /* image_slurp.cpp */; };
+		89862A3C0C6E86FC0036A6B8 /* locale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A340C6E86FC0036A6B8 /* locale.cpp */; };
+		89862A3D0C6E86FC0036A6B8 /* menu_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A350C6E86FC0036A6B8 /* menu_system.cpp */; };
+		89862A3E0C6E86FC0036A6B8 /* resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A360C6E86FC0036A6B8 /* resources.cpp */; };
+		89862A4A0C6E87240036A6B8 /* macintosh_cocoa_bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89862A3F0C6E87240036A6B8 /* macintosh_cocoa_bridge.mm */; };
+		89862A4B0C6E87240036A6B8 /* macintosh_controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A400C6E87240036A6B8 /* macintosh_controls.cpp */; };
+		89862A4C0C6E87240036A6B8 /* macintosh_error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A410C6E87240036A6B8 /* macintosh_error.cpp */; };
+		89862A4D0C6E87240036A6B8 /* macintosh_events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A420C6E87240036A6B8 /* macintosh_events.cpp */; };
+		89862A4E0C6E87240036A6B8 /* macintosh_filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A430C6E87240036A6B8 /* macintosh_filesystem.cpp */; };
+		89862A4F0C6E87240036A6B8 /* macintosh_graphic_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A440C6E87240036A6B8 /* macintosh_graphic_utils.cpp */; };
+		89862A500C6E87240036A6B8 /* platform_cursor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89862A450C6E87240036A6B8 /* platform_cursor.mm */; };
+		89862A510C6E87240036A6B8 /* platform_file_monitor_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A460C6E87240036A6B8 /* platform_file_monitor_impl.cpp */; };
+		89862A520C6E87240036A6B8 /* platform_locale_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A470C6E87240036A6B8 /* platform_locale_data.cpp */; };
+		89862A530C6E87240036A6B8 /* platform_number_formatter_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A480C6E87240036A6B8 /* platform_number_formatter_data.cpp */; };
+		89862A540C6E87240036A6B8 /* platform_periodical_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89862A490C6E87240036A6B8 /* platform_periodical_data.cpp */; };
+		89E4B3BD0B1B8B75006585F7 /* alert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89E4B3BC0B1B8B75006585F7 /* alert.cpp */; };
+		89F4DEFE0B13A71A0060C3D3 /* panel_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89F4DEFD0B13A71A0060C3D3 /* panel_factory.cpp */; };
+		89F4DF000B13A7340060C3D3 /* platform_panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89F4DEFF0B13A7340060C3D3 /* platform_panel.cpp */; };
+		89F4DF090B13B9340060C3D3 /* platform_separator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89F4DF080B13B9340060C3D3 /* platform_separator.cpp */; };
+		89F4DF0B0B13B9810060C3D3 /* separator_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89F4DF0A0B13B9810060C3D3 /* separator_factory.cpp */; };
+		CE16A8B60B1BA3F800CC325B /* default_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE16A8B50B1BA3F800CC325B /* default_factory.cpp */; };
+		CE16A8D40B1BA52B00CC325B /* widget_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE16A8D30B1BA52B00CC325B /* widget_factory.cpp */; };
+		CE2438250B0E484100DEF9C2 /* window_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2438240B0E484100DEF9C2 /* window_factory.cpp */; };
+		CE2438270B0E484E00DEF9C2 /* platform_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2438260B0E484E00DEF9C2 /* platform_window.cpp */; };
+		CE251FED0B8246BB007C210B /* sublayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE251FEC0B8246BB007C210B /* sublayout.cpp */; };
+		CE2D954E0A9F889400B307D5 /* platform_edit_number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2D954D0A9F889400B307D5 /* platform_edit_number.cpp */; };
+		CE3721740A432A64001856F0 /* presets_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE3721730A432A64001856F0 /* presets_factory.cpp */; };
+		CE3721760A432A6D001856F0 /* platform_presets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE3721750A432A6D001856F0 /* platform_presets.cpp */; };
+		CE3EAFEB0C566119003A6AA9 /* virtual_machine_extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE3EAFEA0C566119003A6AA9 /* virtual_machine_extension.cpp */; };
+		CE466FD40A94CFFB0099935E /* platform_edit_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE466FD30A94CFFB0099935E /* platform_edit_text.cpp */; };
+		CE46706C0A94E6E70099935E /* edit_number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE46706B0A94E6E70099935E /* edit_number.cpp */; };
+		CE478F450A781D2800D527ED /* platform_popup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE478F440A781D2800D527ED /* platform_popup.cpp */; };
+		CE4CCD8B0A79883700300B52 /* popup_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4CCD8A0A79883700300B52 /* popup_factory.cpp */; };
+		CE4F703E0C567D41002EDBBB /* control_button_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4F703C0C567D41002EDBBB /* control_button_factory.cpp */; };
+		CE4F703F0C567D41002EDBBB /* control_button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4F703D0C567D41002EDBBB /* control_button.cpp */; };
+		CE5654040B12543E0061A620 /* radio_button_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE5654030B12543E0061A620 /* radio_button_factory.cpp */; };
+		CE5654060B12544E0061A620 /* platform_radio_button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE5654050B12544E0061A620 /* platform_radio_button.cpp */; };
+		CE56547E0B1384E50061A620 /* link_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56547D0B1384E50061A620 /* link_factory.cpp */; };
+		CE5654800B1384F30061A620 /* platform_link.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56547F0B1384F30061A620 /* platform_link.cpp */; };
+		CE5B0C890AE3407C005EFE4A /* modal_dialog_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE5B0C880AE3407C005EFE4A /* modal_dialog_interface.cpp */; };
+		CE7AE2220C02657B009C055C /* platform_toggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE7AE2210C02657B009C055C /* platform_toggle.cpp */; };
+		CE85A87D0AB8A76100C54438 /* widget_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE85A87C0AB8A76100C54438 /* widget_utils.cpp */; };
+		CE981C310A4C48F900AC53EF /* presets_common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE981C300A4C48F900AC53EF /* presets_common.cpp */; };
+		CEA277AB0E3A4DE100F90E62 /* dictionary_set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA277AA0E3A4DE100F90E62 /* dictionary_set.cpp */; };
+		CEA5D2380B0D2A34008CB089 /* group_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA5D2370B0D2A34008CB089 /* group_factory.cpp */; };
+		CEA5D23A0B0D2A47008CB089 /* platform_group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA5D2390B0D2A47008CB089 /* platform_group.cpp */; };
+		CEA70F3D0B091F4A00A07A2D /* platform_slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA70F3C0B091F4A00A07A2D /* platform_slider.cpp */; };
+		CEA70F420B091F5800A07A2D /* slider_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA70F410B091F5800A07A2D /* slider_factory.cpp */; };
+		CEA70FD40A9E10D0009E08C2 /* platform_widget_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA70FD30A9E10D0009E08C2 /* platform_widget_utils.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
+		CEB0202F0B15029600DD84BF /* window_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB0202E0B15029600DD84BF /* window_server.cpp */; };
+		CEB020310B1502B500DD84BF /* platform_optional_panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB020300B1502B500DD84BF /* platform_optional_panel.cpp */; };
+		CEB020330B1502C900DD84BF /* optional_panel_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB020320B1502C900DD84BF /* optional_panel_factory.cpp */; };
+		CEB8748F0A1BC94F0014F4A8 /* checkbox_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB874860A1BC94F0014F4A8 /* checkbox_factory.cpp */; };
+		CEB874920A1BC94F0014F4A8 /* image_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB874890A1BC94F0014F4A8 /* image_factory.cpp */; };
+		CEB874930A1BC94F0014F4A8 /* label_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB8748A0A1BC94F0014F4A8 /* label_factory.cpp */; };
+		CEB874970A1BC94F0014F4A8 /* widget_factory_registry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB8748E0A1BC94F0014F4A8 /* widget_factory_registry.cpp */; };
+		CEB874A00A1BC9560014F4A8 /* platform_checkbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB874980A1BC9560014F4A8 /* platform_checkbox.cpp */; };
+		CEB874A10A1BC9560014F4A8 /* platform_display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB874990A1BC9560014F4A8 /* platform_display.cpp */; };
+		CEB874A20A1BC9560014F4A8 /* platform_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB8749A0A1BC9560014F4A8 /* platform_image.cpp */; };
+		CEB874A30A1BC9560014F4A8 /* platform_label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB8749B0A1BC9560014F4A8 /* platform_label.cpp */; };
+		CEC14CBF0A35EC09002D0E3E /* platform_reveal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC14CBE0A35EC09002D0E3E /* platform_reveal.cpp */; };
+		CEC14CC10A35EC10002D0E3E /* reveal_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC14CC00A35EC10002D0E3E /* reveal_factory.cpp */; };
+		CEC4260C0C0394FA00A5CCF6 /* drag_and_drop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC4260B0C0394FA00A5CCF6 /* drag_and_drop.cpp */; };
+		CEC4260E0C03950500A5CCF6 /* platform_drag_and_drop_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC4260D0C03950500A5CCF6 /* platform_drag_and_drop_data.cpp */; };
+		CEC69E3F0C31DBD800B73805 /* platform_preview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3D0C31DBD800B73805 /* platform_preview.cpp */; };
+		CEC69E400C31DBD800B73805 /* preview_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC69E3E0C31DBD800B73805 /* preview_factory.cpp */; };
+		CEEFBF1A0BD7D189007BCCF7 /* toggle_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEEFBF180BD7D189007BCCF7 /* toggle_factory.cpp */; };
+		CEFF5D690B0B97E700DC05BE /* platform_button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D680B0B97E700DC05BE /* platform_button.cpp */; };
+		CEFF5D6B0B0B97F400DC05BE /* button_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D6A0B0B97F400DC05BE /* button_factory.cpp */; };
+		CEFF5D840B0B9D8C00DC05BE /* button_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D830B0B9D8C00DC05BE /* button_helper.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		882093030BFEF663008A4788 /* platform_metrics.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_metrics.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_metrics.cpp; sourceTree = SOURCE_ROOT; };
+		8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = adobe_platform_xconfig_staticlib.xcconfig; sourceTree = SOURCE_ROOT; };
+		8915F80C0AD830A3001A1AAD /* number_unit.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = number_unit.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/number_unit.cpp; sourceTree = SOURCE_ROOT; };
+		8915F80D0AD830A3001A1AAD /* widget_tokens.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = widget_tokens.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/widget_tokens.cpp; sourceTree = SOURCE_ROOT; };
+		8915F8120AD83B57001A1AAD /* display_number_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = display_number_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/display_number_factory.cpp; sourceTree = SOURCE_ROOT; };
+		8915F81E0AD83BCA001A1AAD /* platform_display_number.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_display_number.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_display_number.cpp; sourceTree = SOURCE_ROOT; };
+		892D1B390B0E5F1A00D23ECA /* tab_group_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = tab_group_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/tab_group_factory.cpp; sourceTree = SOURCE_ROOT; };
+		892D1B410B0E60AF00D23ECA /* platform_tab_group.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_tab_group.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_tab_group.cpp; sourceTree = SOURCE_ROOT; };
+		893E1CAA0B127BD10046E6BF /* progress_bar_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = progress_bar_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/progress_bar_factory.cpp; sourceTree = SOURCE_ROOT; };
+		893E1CAC0B127BFC0046E6BF /* platform_progress_bar.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_progress_bar.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_progress_bar.cpp; sourceTree = SOURCE_ROOT; };
+		894C3E760A8FAF8E006A5F6E /* edit_number_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = edit_number_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/edit_number_factory.cpp; sourceTree = SOURCE_ROOT; };
+		894C3E770A8FAF8E006A5F6E /* edit_text_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = edit_text_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/edit_text_factory.cpp; sourceTree = SOURCE_ROOT; };
+		89862A2A0C6E86D20036A6B8 /* keyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = keyboard.cpp; path = ../../adobe_platform_libraries/source/keyboard.cpp; sourceTree = SOURCE_ROOT; };
+		89862A2B0C6E86D20036A6B8 /* sequence_model.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = sequence_model.cpp; path = ../../adobe_platform_libraries/source/sequence_model.cpp; sourceTree = SOURCE_ROOT; };
+		89862A2F0C6E86FC0036A6B8 /* behavior.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = behavior.cpp; path = ../../adobe_platform_libraries/adobe/future/source/behavior.cpp; sourceTree = SOURCE_ROOT; };
+		89862A300C6E86FC0036A6B8 /* cmd_system.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = cmd_system.cpp; path = ../../adobe_platform_libraries/adobe/future/source/cmd_system.cpp; sourceTree = SOURCE_ROOT; };
+		89862A310C6E86FC0036A6B8 /* cursor_stack.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = cursor_stack.cpp; path = ../../adobe_platform_libraries/adobe/future/source/cursor_stack.cpp; sourceTree = SOURCE_ROOT; };
+		89862A320C6E86FC0036A6B8 /* cursor_stack.hpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = cursor_stack.hpp; path = ../../adobe_platform_libraries/adobe/future/source/cursor_stack.hpp; sourceTree = SOURCE_ROOT; };
+		89862A330C6E86FC0036A6B8 /* image_slurp.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = image_slurp.cpp; path = ../../adobe_platform_libraries/adobe/future/source/image_slurp.cpp; sourceTree = SOURCE_ROOT; };
+		89862A340C6E86FC0036A6B8 /* locale.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = locale.cpp; path = ../../adobe_platform_libraries/adobe/future/source/locale.cpp; sourceTree = SOURCE_ROOT; };
+		89862A350C6E86FC0036A6B8 /* menu_system.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = menu_system.cpp; path = ../../adobe_platform_libraries/adobe/future/source/menu_system.cpp; sourceTree = SOURCE_ROOT; };
+		89862A360C6E86FC0036A6B8 /* resources.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = resources.cpp; path = ../../adobe_platform_libraries/adobe/future/source/resources.cpp; sourceTree = SOURCE_ROOT; };
+		89862A3F0C6E87240036A6B8 /* macintosh_cocoa_bridge.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; name = macintosh_cocoa_bridge.mm; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/macintosh_cocoa_bridge.mm; sourceTree = SOURCE_ROOT; };
+		89862A400C6E87240036A6B8 /* macintosh_controls.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = macintosh_controls.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/macintosh_controls.cpp; sourceTree = SOURCE_ROOT; };
+		89862A410C6E87240036A6B8 /* macintosh_error.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = macintosh_error.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/macintosh_error.cpp; sourceTree = SOURCE_ROOT; };
+		89862A420C6E87240036A6B8 /* macintosh_events.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = macintosh_events.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/macintosh_events.cpp; sourceTree = SOURCE_ROOT; };
+		89862A430C6E87240036A6B8 /* macintosh_filesystem.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = macintosh_filesystem.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/macintosh_filesystem.cpp; sourceTree = SOURCE_ROOT; };
+		89862A440C6E87240036A6B8 /* macintosh_graphic_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = macintosh_graphic_utils.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/macintosh_graphic_utils.cpp; sourceTree = SOURCE_ROOT; };
+		89862A450C6E87240036A6B8 /* platform_cursor.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; name = platform_cursor.mm; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/platform_cursor.mm; sourceTree = SOURCE_ROOT; };
+		89862A460C6E87240036A6B8 /* platform_file_monitor_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_file_monitor_impl.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/platform_file_monitor_impl.cpp; sourceTree = SOURCE_ROOT; };
+		89862A470C6E87240036A6B8 /* platform_locale_data.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_locale_data.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/platform_locale_data.cpp; sourceTree = SOURCE_ROOT; };
+		89862A480C6E87240036A6B8 /* platform_number_formatter_data.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_number_formatter_data.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/platform_number_formatter_data.cpp; sourceTree = SOURCE_ROOT; };
+		89862A490C6E87240036A6B8 /* platform_periodical_data.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_periodical_data.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/platform_periodical_data.cpp; sourceTree = SOURCE_ROOT; };
+		89E4B3BC0B1B8B75006585F7 /* alert.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = alert.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/alert.cpp; sourceTree = SOURCE_ROOT; };
+		89F4DEFD0B13A71A0060C3D3 /* panel_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = panel_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/panel_factory.cpp; sourceTree = SOURCE_ROOT; };
+		89F4DEFF0B13A7340060C3D3 /* platform_panel.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_panel.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_panel.cpp; sourceTree = SOURCE_ROOT; };
+		89F4DF080B13B9340060C3D3 /* platform_separator.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platform_separator.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_separator.cpp; sourceTree = SOURCE_ROOT; };
+		89F4DF0A0B13B9810060C3D3 /* separator_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = separator_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/separator_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE16A8B50B1BA3F800CC325B /* default_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = default_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/default_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE16A8D30B1BA52B00CC325B /* widget_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = widget_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/widget_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE2438240B0E484100DEF9C2 /* window_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = window_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/window_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE2438260B0E484E00DEF9C2 /* platform_window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_window.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_window.cpp; sourceTree = SOURCE_ROOT; };
+		CE251FEC0B8246BB007C210B /* sublayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sublayout.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/sublayout.cpp; sourceTree = SOURCE_ROOT; };
+		CE2D954D0A9F889400B307D5 /* platform_edit_number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_edit_number.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_edit_number.cpp; sourceTree = SOURCE_ROOT; };
+		CE3721730A432A64001856F0 /* presets_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = presets_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/presets_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE3721750A432A6D001856F0 /* platform_presets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_presets.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_presets.cpp; sourceTree = SOURCE_ROOT; };
+		CE3EAFEA0C566119003A6AA9 /* virtual_machine_extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = virtual_machine_extension.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/virtual_machine_extension.cpp; sourceTree = SOURCE_ROOT; };
+		CE466FD30A94CFFB0099935E /* platform_edit_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_edit_text.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_edit_text.cpp; sourceTree = SOURCE_ROOT; };
+		CE46706B0A94E6E70099935E /* edit_number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = edit_number.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/edit_number.cpp; sourceTree = SOURCE_ROOT; };
+		CE478F440A781D2800D527ED /* platform_popup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_popup.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_popup.cpp; sourceTree = SOURCE_ROOT; };
+		CE4CCD8A0A79883700300B52 /* popup_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = popup_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/popup_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE4F703C0C567D41002EDBBB /* control_button_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = control_button_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/control_button_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE4F703D0C567D41002EDBBB /* control_button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = control_button.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/control_button.cpp; sourceTree = SOURCE_ROOT; };
+		CE5654030B12543E0061A620 /* radio_button_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radio_button_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/radio_button_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE5654050B12544E0061A620 /* platform_radio_button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_radio_button.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_radio_button.cpp; sourceTree = SOURCE_ROOT; };
+		CE56547D0B1384E50061A620 /* link_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = link_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/link_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CE56547F0B1384F30061A620 /* platform_link.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_link.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_link.cpp; sourceTree = SOURCE_ROOT; };
+		CE5B0C880AE3407C005EFE4A /* modal_dialog_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = modal_dialog_interface.cpp; path = ../../adobe_platform_libraries/adobe/future/source/modal_dialog_interface.cpp; sourceTree = SOURCE_ROOT; };
+		CE5C2036094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig; sourceTree = "<group>"; };
+		CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig; sourceTree = "<group>"; };
+		CE7AE2210C02657B009C055C /* platform_toggle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_toggle.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_toggle.cpp; sourceTree = SOURCE_ROOT; };
+		CE85A87C0AB8A76100C54438 /* widget_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = widget_utils.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/widget_utils.cpp; sourceTree = SOURCE_ROOT; };
+		CE981C300A4C48F900AC53EF /* presets_common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = presets_common.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/presets_common.cpp; sourceTree = SOURCE_ROOT; };
+		CEA277AA0E3A4DE100F90E62 /* dictionary_set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dictionary_set.cpp; path = ../source/dictionary_set.cpp; sourceTree = SOURCE_ROOT; };
+		CEA5D2370B0D2A34008CB089 /* group_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = group_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/group_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEA5D2390B0D2A47008CB089 /* platform_group.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_group.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_group.cpp; sourceTree = SOURCE_ROOT; };
+		CEA70F3C0B091F4A00A07A2D /* platform_slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_slider.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_slider.cpp; sourceTree = SOURCE_ROOT; };
+		CEA70F410B091F5800A07A2D /* slider_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = slider_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/slider_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEA70FD30A9E10D0009E08C2 /* platform_widget_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_widget_utils.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_widget_utils.cpp; sourceTree = SOURCE_ROOT; };
+		CEB0202E0B15029600DD84BF /* window_server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = window_server.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/window_server.cpp; sourceTree = SOURCE_ROOT; };
+		CEB020300B1502B500DD84BF /* platform_optional_panel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_optional_panel.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_optional_panel.cpp; sourceTree = SOURCE_ROOT; };
+		CEB020320B1502C900DD84BF /* optional_panel_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = optional_panel_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/optional_panel_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEB874860A1BC94F0014F4A8 /* checkbox_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = checkbox_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/checkbox_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEB874890A1BC94F0014F4A8 /* image_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = image_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/image_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEB8748A0A1BC94F0014F4A8 /* label_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = label_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/label_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEB8748E0A1BC94F0014F4A8 /* widget_factory_registry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = widget_factory_registry.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/widget_factory_registry.cpp; sourceTree = SOURCE_ROOT; };
+		CEB874980A1BC9560014F4A8 /* platform_checkbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_checkbox.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_checkbox.cpp; sourceTree = SOURCE_ROOT; };
+		CEB874990A1BC9560014F4A8 /* platform_display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_display.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_display.cpp; sourceTree = SOURCE_ROOT; };
+		CEB8749A0A1BC9560014F4A8 /* platform_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_image.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_image.cpp; sourceTree = SOURCE_ROOT; };
+		CEB8749B0A1BC9560014F4A8 /* platform_label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_label.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_label.cpp; sourceTree = SOURCE_ROOT; };
+		CEC14CBE0A35EC09002D0E3E /* platform_reveal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_reveal.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_reveal.cpp; sourceTree = SOURCE_ROOT; };
+		CEC14CC00A35EC10002D0E3E /* reveal_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = reveal_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/reveal_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEC4260B0C0394FA00A5CCF6 /* drag_and_drop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = drag_and_drop.cpp; path = ../../adobe_platform_libraries/adobe/future/source/drag_and_drop.cpp; sourceTree = SOURCE_ROOT; };
+		CEC4260D0C03950500A5CCF6 /* platform_drag_and_drop_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_drag_and_drop_data.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/source/platform_drag_and_drop_data.cpp; sourceTree = SOURCE_ROOT; };
+		CEC69E3D0C31DBD800B73805 /* platform_preview.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_preview.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_preview.cpp; sourceTree = SOURCE_ROOT; };
+		CEC69E3E0C31DBD800B73805 /* preview_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = preview_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/preview_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEEFBF180BD7D189007BCCF7 /* toggle_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = toggle_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/toggle_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEFF5D680B0B97E700DC05BE /* platform_button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_button.cpp; path = ../../adobe_platform_libraries/macintosh/adobe/future/widgets/sources/platform_button.cpp; sourceTree = SOURCE_ROOT; };
+		CEFF5D6A0B0B97F400DC05BE /* button_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = button_factory.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/button_factory.cpp; sourceTree = SOURCE_ROOT; };
+		CEFF5D830B0B9D8C00DC05BE /* button_helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = button_helper.cpp; path = ../../adobe_platform_libraries/adobe/future/widgets/sources/button_helper.cpp; sourceTree = SOURCE_ROOT; };
+		D2AAC046055464E500DB518D /* libadobe_platform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libadobe_platform.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* boost_signals */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C1FF1094795E800EB4BB6 /* xcconfigs */,
+				CEC069F90948A53300AFC610 /* asl_projects */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6A0FF2B0290797F04C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = boost_signals;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CEA277AA0E3A4DE100F90E62 /* dictionary_set.cpp */,
+				89862A3F0C6E87240036A6B8 /* macintosh_cocoa_bridge.mm */,
+				89862A400C6E87240036A6B8 /* macintosh_controls.cpp */,
+				89862A410C6E87240036A6B8 /* macintosh_error.cpp */,
+				89862A420C6E87240036A6B8 /* macintosh_events.cpp */,
+				89862A430C6E87240036A6B8 /* macintosh_filesystem.cpp */,
+				89862A440C6E87240036A6B8 /* macintosh_graphic_utils.cpp */,
+				89862A450C6E87240036A6B8 /* platform_cursor.mm */,
+				89862A460C6E87240036A6B8 /* platform_file_monitor_impl.cpp */,
+				89862A470C6E87240036A6B8 /* platform_locale_data.cpp */,
+				89862A480C6E87240036A6B8 /* platform_number_formatter_data.cpp */,
+				89862A490C6E87240036A6B8 /* platform_periodical_data.cpp */,
+				89862A2F0C6E86FC0036A6B8 /* behavior.cpp */,
+				89862A300C6E86FC0036A6B8 /* cmd_system.cpp */,
+				89862A310C6E86FC0036A6B8 /* cursor_stack.cpp */,
+				89862A320C6E86FC0036A6B8 /* cursor_stack.hpp */,
+				89862A330C6E86FC0036A6B8 /* image_slurp.cpp */,
+				89862A340C6E86FC0036A6B8 /* locale.cpp */,
+				89862A350C6E86FC0036A6B8 /* menu_system.cpp */,
+				89862A360C6E86FC0036A6B8 /* resources.cpp */,
+				89862A2A0C6E86D20036A6B8 /* keyboard.cpp */,
+				89862A2B0C6E86D20036A6B8 /* sequence_model.cpp */,
+				CE4F703C0C567D41002EDBBB /* control_button_factory.cpp */,
+				CE4F703D0C567D41002EDBBB /* control_button.cpp */,
+				CE3EAFEA0C566119003A6AA9 /* virtual_machine_extension.cpp */,
+				CEC69E3D0C31DBD800B73805 /* platform_preview.cpp */,
+				CEC69E3E0C31DBD800B73805 /* preview_factory.cpp */,
+				CEC4260D0C03950500A5CCF6 /* platform_drag_and_drop_data.cpp */,
+				CEC4260B0C0394FA00A5CCF6 /* drag_and_drop.cpp */,
+				CE7AE2210C02657B009C055C /* platform_toggle.cpp */,
+				882093030BFEF663008A4788 /* platform_metrics.cpp */,
+				CEEFBF180BD7D189007BCCF7 /* toggle_factory.cpp */,
+				CE251FEC0B8246BB007C210B /* sublayout.cpp */,
+				89E4B3BC0B1B8B75006585F7 /* alert.cpp */,
+				CE16A8D30B1BA52B00CC325B /* widget_factory.cpp */,
+				CE16A8B50B1BA3F800CC325B /* default_factory.cpp */,
+				CEB020320B1502C900DD84BF /* optional_panel_factory.cpp */,
+				CEB020300B1502B500DD84BF /* platform_optional_panel.cpp */,
+				CEB0202E0B15029600DD84BF /* window_server.cpp */,
+				89F4DF0A0B13B9810060C3D3 /* separator_factory.cpp */,
+				89F4DF080B13B9340060C3D3 /* platform_separator.cpp */,
+				89F4DEFF0B13A7340060C3D3 /* platform_panel.cpp */,
+				89F4DEFD0B13A71A0060C3D3 /* panel_factory.cpp */,
+				CE56547F0B1384F30061A620 /* platform_link.cpp */,
+				CE56547D0B1384E50061A620 /* link_factory.cpp */,
+				893E1CAC0B127BFC0046E6BF /* platform_progress_bar.cpp */,
+				893E1CAA0B127BD10046E6BF /* progress_bar_factory.cpp */,
+				CE5654050B12544E0061A620 /* platform_radio_button.cpp */,
+				CE5654030B12543E0061A620 /* radio_button_factory.cpp */,
+				892D1B410B0E60AF00D23ECA /* platform_tab_group.cpp */,
+				892D1B390B0E5F1A00D23ECA /* tab_group_factory.cpp */,
+				CE2438260B0E484E00DEF9C2 /* platform_window.cpp */,
+				CE2438240B0E484100DEF9C2 /* window_factory.cpp */,
+				CEA5D2390B0D2A47008CB089 /* platform_group.cpp */,
+				CEA5D2370B0D2A34008CB089 /* group_factory.cpp */,
+				CEFF5D830B0B9D8C00DC05BE /* button_helper.cpp */,
+				CEFF5D6A0B0B97F400DC05BE /* button_factory.cpp */,
+				CEFF5D680B0B97E700DC05BE /* platform_button.cpp */,
+				CEA70F410B091F5800A07A2D /* slider_factory.cpp */,
+				CEA70F3C0B091F4A00A07A2D /* platform_slider.cpp */,
+				8915F8120AD83B57001A1AAD /* display_number_factory.cpp */,
+				8915F81E0AD83BCA001A1AAD /* platform_display_number.cpp */,
+				8915F80C0AD830A3001A1AAD /* number_unit.cpp */,
+				8915F80D0AD830A3001A1AAD /* widget_tokens.cpp */,
+				CE46706B0A94E6E70099935E /* edit_number.cpp */,
+				CE2D954D0A9F889400B307D5 /* platform_edit_number.cpp */,
+				CEB874860A1BC94F0014F4A8 /* checkbox_factory.cpp */,
+				CEB874890A1BC94F0014F4A8 /* image_factory.cpp */,
+				CEB8748A0A1BC94F0014F4A8 /* label_factory.cpp */,
+				CE4CCD8A0A79883700300B52 /* popup_factory.cpp */,
+				CE3721730A432A64001856F0 /* presets_factory.cpp */,
+				CEC14CC00A35EC10002D0E3E /* reveal_factory.cpp */,
+				CEB8748E0A1BC94F0014F4A8 /* widget_factory_registry.cpp */,
+				CEB874980A1BC9560014F4A8 /* platform_checkbox.cpp */,
+				CEB874990A1BC9560014F4A8 /* platform_display.cpp */,
+				CE466FD30A94CFFB0099935E /* platform_edit_text.cpp */,
+				CEB8749A0A1BC9560014F4A8 /* platform_image.cpp */,
+				CEB8749B0A1BC9560014F4A8 /* platform_label.cpp */,
+				CE478F440A781D2800D527ED /* platform_popup.cpp */,
+				CE3721750A432A6D001856F0 /* platform_presets.cpp */,
+				CE981C300A4C48F900AC53EF /* presets_common.cpp */,
+				CEC14CBE0A35EC09002D0E3E /* platform_reveal.cpp */,
+				894C3E760A8FAF8E006A5F6E /* edit_number_factory.cpp */,
+				894C3E770A8FAF8E006A5F6E /* edit_text_factory.cpp */,
+				CE85A87C0AB8A76100C54438 /* widget_utils.cpp */,
+				CEA70FD30A9E10D0009E08C2 /* platform_widget_utils.cpp */,
+				CE5B0C880AE3407C005EFE4A /* modal_dialog_interface.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC046055464E500DB518D /* libadobe_platform.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6A0FF2B0290797F04C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		CE5C1FF1094795E800EB4BB6 /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */,
+				CE5C2036094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */,
+				CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */,
+			);
+			name = xcconfigs;
+			sourceTree = "<group>";
+		};
+		CEC069F90948A53300AFC610 /* asl_projects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = asl_projects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC045055464E500DB518D /* adobe_platform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91EB08733DB70010E9CD /* Build configuration list for PBXNativeTarget "adobe_platform" */;
+			buildPhases = (
+				D2AAC044055464E500DB518D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = adobe_platform;
+			productName = boost_signals;
+			productReference = D2AAC046055464E500DB518D /* libadobe_platform.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "adobe_platform" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* boost_signals */;
+			projectDirPath = "";
+			projectRoot = ../..;
+			targets = (
+				D2AAC045055464E500DB518D /* adobe_platform */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC044055464E500DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB8748F0A1BC94F0014F4A8 /* checkbox_factory.cpp in Sources */,
+				CEB874920A1BC94F0014F4A8 /* image_factory.cpp in Sources */,
+				CEB874930A1BC94F0014F4A8 /* label_factory.cpp in Sources */,
+				CEB874970A1BC94F0014F4A8 /* widget_factory_registry.cpp in Sources */,
+				CEB874A00A1BC9560014F4A8 /* platform_checkbox.cpp in Sources */,
+				CEB874A10A1BC9560014F4A8 /* platform_display.cpp in Sources */,
+				CEB874A20A1BC9560014F4A8 /* platform_image.cpp in Sources */,
+				CEB874A30A1BC9560014F4A8 /* platform_label.cpp in Sources */,
+				CEC14CBF0A35EC09002D0E3E /* platform_reveal.cpp in Sources */,
+				CEC14CC10A35EC10002D0E3E /* reveal_factory.cpp in Sources */,
+				CE3721740A432A64001856F0 /* presets_factory.cpp in Sources */,
+				CE3721760A432A6D001856F0 /* platform_presets.cpp in Sources */,
+				CE981C310A4C48F900AC53EF /* presets_common.cpp in Sources */,
+				CE478F450A781D2800D527ED /* platform_popup.cpp in Sources */,
+				CE4CCD8B0A79883700300B52 /* popup_factory.cpp in Sources */,
+				894C3E790A8FAF8E006A5F6E /* edit_number_factory.cpp in Sources */,
+				894C3E7A0A8FAF8E006A5F6E /* edit_text_factory.cpp in Sources */,
+				CE466FD40A94CFFB0099935E /* platform_edit_text.cpp in Sources */,
+				CE46706C0A94E6E70099935E /* edit_number.cpp in Sources */,
+				CEA70FD40A9E10D0009E08C2 /* platform_widget_utils.cpp in Sources */,
+				CE2D954E0A9F889400B307D5 /* platform_edit_number.cpp in Sources */,
+				CE85A87D0AB8A76100C54438 /* widget_utils.cpp in Sources */,
+				8915F80E0AD830A3001A1AAD /* number_unit.cpp in Sources */,
+				8915F80F0AD830A3001A1AAD /* widget_tokens.cpp in Sources */,
+				8915F8130AD83B57001A1AAD /* display_number_factory.cpp in Sources */,
+				8915F81F0AD83BCA001A1AAD /* platform_display_number.cpp in Sources */,
+				CE5B0C890AE3407C005EFE4A /* modal_dialog_interface.cpp in Sources */,
+				CEA70F3D0B091F4A00A07A2D /* platform_slider.cpp in Sources */,
+				CEA70F420B091F5800A07A2D /* slider_factory.cpp in Sources */,
+				CEFF5D690B0B97E700DC05BE /* platform_button.cpp in Sources */,
+				CEFF5D6B0B0B97F400DC05BE /* button_factory.cpp in Sources */,
+				CEFF5D840B0B9D8C00DC05BE /* button_helper.cpp in Sources */,
+				CEA5D2380B0D2A34008CB089 /* group_factory.cpp in Sources */,
+				CEA5D23A0B0D2A47008CB089 /* platform_group.cpp in Sources */,
+				892D1B3A0B0E5F1A00D23ECA /* tab_group_factory.cpp in Sources */,
+				892D1B420B0E60AF00D23ECA /* platform_tab_group.cpp in Sources */,
+				CE2438250B0E484100DEF9C2 /* window_factory.cpp in Sources */,
+				CE2438270B0E484E00DEF9C2 /* platform_window.cpp in Sources */,
+				CE5654040B12543E0061A620 /* radio_button_factory.cpp in Sources */,
+				CE5654060B12544E0061A620 /* platform_radio_button.cpp in Sources */,
+				893E1CAB0B127BD10046E6BF /* progress_bar_factory.cpp in Sources */,
+				893E1CAD0B127BFC0046E6BF /* platform_progress_bar.cpp in Sources */,
+				CE56547E0B1384E50061A620 /* link_factory.cpp in Sources */,
+				CE5654800B1384F30061A620 /* platform_link.cpp in Sources */,
+				89F4DEFE0B13A71A0060C3D3 /* panel_factory.cpp in Sources */,
+				89F4DF000B13A7340060C3D3 /* platform_panel.cpp in Sources */,
+				89F4DF090B13B9340060C3D3 /* platform_separator.cpp in Sources */,
+				89F4DF0B0B13B9810060C3D3 /* separator_factory.cpp in Sources */,
+				CEB0202F0B15029600DD84BF /* window_server.cpp in Sources */,
+				CEB020310B1502B500DD84BF /* platform_optional_panel.cpp in Sources */,
+				CEB020330B1502C900DD84BF /* optional_panel_factory.cpp in Sources */,
+				89E4B3BD0B1B8B75006585F7 /* alert.cpp in Sources */,
+				CE16A8B60B1BA3F800CC325B /* default_factory.cpp in Sources */,
+				CE16A8D40B1BA52B00CC325B /* widget_factory.cpp in Sources */,
+				CE251FED0B8246BB007C210B /* sublayout.cpp in Sources */,
+				882093040BFEF663008A4788 /* platform_metrics.cpp in Sources */,
+				CEEFBF1A0BD7D189007BCCF7 /* toggle_factory.cpp in Sources */,
+				CE7AE2220C02657B009C055C /* platform_toggle.cpp in Sources */,
+				CEC4260C0C0394FA00A5CCF6 /* drag_and_drop.cpp in Sources */,
+				CEC4260E0C03950500A5CCF6 /* platform_drag_and_drop_data.cpp in Sources */,
+				CEC69E3F0C31DBD800B73805 /* platform_preview.cpp in Sources */,
+				CEC69E400C31DBD800B73805 /* preview_factory.cpp in Sources */,
+				CE3EAFEB0C566119003A6AA9 /* virtual_machine_extension.cpp in Sources */,
+				CE4F703E0C567D41002EDBBB /* control_button_factory.cpp in Sources */,
+				CE4F703F0C567D41002EDBBB /* control_button.cpp in Sources */,
+				89862A2C0C6E86D20036A6B8 /* keyboard.cpp in Sources */,
+				89862A2D0C6E86D20036A6B8 /* sequence_model.cpp in Sources */,
+				89862A380C6E86FC0036A6B8 /* behavior.cpp in Sources */,
+				89862A390C6E86FC0036A6B8 /* cmd_system.cpp in Sources */,
+				89862A3A0C6E86FC0036A6B8 /* cursor_stack.cpp in Sources */,
+				89862A3B0C6E86FC0036A6B8 /* image_slurp.cpp in Sources */,
+				89862A3C0C6E86FC0036A6B8 /* locale.cpp in Sources */,
+				89862A3D0C6E86FC0036A6B8 /* menu_system.cpp in Sources */,
+				89862A3E0C6E86FC0036A6B8 /* resources.cpp in Sources */,
+				89862A4A0C6E87240036A6B8 /* macintosh_cocoa_bridge.mm in Sources */,
+				89862A4B0C6E87240036A6B8 /* macintosh_controls.cpp in Sources */,
+				89862A4C0C6E87240036A6B8 /* macintosh_error.cpp in Sources */,
+				89862A4D0C6E87240036A6B8 /* macintosh_events.cpp in Sources */,
+				89862A4E0C6E87240036A6B8 /* macintosh_filesystem.cpp in Sources */,
+				89862A4F0C6E87240036A6B8 /* macintosh_graphic_utils.cpp in Sources */,
+				89862A500C6E87240036A6B8 /* platform_cursor.mm in Sources */,
+				89862A510C6E87240036A6B8 /* platform_file_monitor_impl.cpp in Sources */,
+				89862A520C6E87240036A6B8 /* platform_locale_data.cpp in Sources */,
+				89862A530C6E87240036A6B8 /* platform_number_formatter_data.cpp in Sources */,
+				89862A540C6E87240036A6B8 /* platform_periodical_data.cpp in Sources */,
+				CEA277AB0E3A4DE100F90E62 /* dictionary_set.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91EC08733DB70010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2036094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1DEB91ED08733DB70010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1DEB91F008733DB70010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Debug;
+		};
+		1DEB91F108733DB70010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Release;
+		};
+		CE9297EB0A8AA92600D13B7B /* Debug_PPC */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2036094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Debug_PPC;
+		};
+		CE9297EC0A8AA92600D13B7B /* Debug_i386 */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2036094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Debug_i386;
+		};
+		CE9297ED0A8AA92600D13B7B /* Debug_Universal */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2036094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Debug_Universal;
+		};
+		CE9297EE0A8AA92600D13B7B /* Release_PPC */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
+			buildSettings = {
+				ARCHS = ppc;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Release_PPC;
+		};
+		CE9297EF0A8AA92600D13B7B /* Release_i386 */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
+			buildSettings = {
+				ARCHS = i386;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Release_i386;
+		};
+		CE9297F00A8AA92600D13B7B /* Release_Universal */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = adobe_platform;
+				SDKROOT = macosx;
+			};
+			name = Release_Universal;
+		};
+		CE9297F10A8AA92600D13B7B /* Debug_PPC */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				ARCHS = ppc;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Debug_PPC;
+		};
+		CE9297F20A8AA92600D13B7B /* Debug_i386 */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				ARCHS = i386;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Debug_i386;
+		};
+		CE9297F30A8AA92600D13B7B /* Debug_Universal */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Debug_Universal;
+		};
+		CE9297F40A8AA92600D13B7B /* Release_PPC */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				ARCHS = ppc;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Release_PPC;
+		};
+		CE9297F50A8AA92600D13B7B /* Release_i386 */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				ARCHS = i386;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Release_i386;
+		};
+		CE9297F60A8AA92600D13B7B /* Release_Universal */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = asl_widgets;
+			};
+			name = Release_Universal;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91EB08733DB70010E9CD /* Build configuration list for PBXNativeTarget "adobe_platform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91EC08733DB70010E9CD /* Debug */,
+				CE9297EB0A8AA92600D13B7B /* Debug_PPC */,
+				CE9297EC0A8AA92600D13B7B /* Debug_i386 */,
+				CE9297ED0A8AA92600D13B7B /* Debug_Universal */,
+				1DEB91ED08733DB70010E9CD /* Release */,
+				CE9297EE0A8AA92600D13B7B /* Release_PPC */,
+				CE9297EF0A8AA92600D13B7B /* Release_i386 */,
+				CE9297F00A8AA92600D13B7B /* Release_Universal */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "adobe_platform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91F008733DB70010E9CD /* Debug */,
+				CE9297F10A8AA92600D13B7B /* Debug_PPC */,
+				CE9297F20A8AA92600D13B7B /* Debug_i386 */,
+				CE9297F30A8AA92600D13B7B /* Debug_Universal */,
+				1DEB91F108733DB70010E9CD /* Release */,
+				CE9297F40A8AA92600D13B7B /* Release_PPC */,
+				CE9297F50A8AA92600D13B7B /* Release_i386 */,
+				CE9297F60A8AA92600D13B7B /* Release_Universal */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

@@ -1,0 +1,12 @@
+# Jamfile for building the GIL test app for the targa extension
+
+project adobe/targa
+	;
+
+run     main.cpp
+        ../../..//asl_dev
+        ../../..//boost_filesystem
+    :   #args
+    :   ./test.tga
+   	:   #requirements
+    ;

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\..\adobe_source_libraries\msvc_ide\adobe_source.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <ASLPlatformDir>$(ASLRoot)adobe_platform_libraries\</ASLPlatformDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ASLPlatformDir);$(ASLPlatformDir)windows\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINVER=0x560;_WIN32_WINNT=0x560;_WIN32_IE=0x560;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="ASLPlatformDir">
+      <Value>$(ASLPlatformDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

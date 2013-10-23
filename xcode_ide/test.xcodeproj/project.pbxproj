@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		CECA1CA00B6683FB00D623B7 /* build_all_tests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CECA1CAE0B66842A00D623B7 /* Build configuration list for PBXAggregateTarget "build_all_tests" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = build_all_tests;
+			productName = build_all_tests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		E50E62EA0CECEB1C0090EFDE /* libboost_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E50E62E40CECEAAB0090EFDE /* libboost_test.a */; };
+		E53D573A0D454BED0018C8C5 /* libboost_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E50E62E40CECEAAB0090EFDE /* libboost_test.a */; };
+		E53D573B0D454BED0018C8C5 /* libadobe_source.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BA9A240CC72B9900833626 /* libadobe_source.a */; };
+		E53D57490D454C3C0018C8C5 /* string_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53D57480D454C3C0018C8C5 /* string_test.cpp */; };
+		E577FBA60CEBB6AB0008EEF6 /* lower_bound_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E5D8BC750CEBB00F001FCD26 /* lower_bound_test.cpp */; };
+		E5E6DB440D0211E100F9FA5B /* equal_range_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E5E6DB430D0211E100F9FA5B /* equal_range_test.cpp */; };
+		E5E6DB470D02124800F9FA5B /* libboost_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E50E62E40CECEAAB0090EFDE /* libboost_test.a */; };
+		E5F1574C0D36CB0300CBDFD0 /* libboost_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E50E62E40CECEAAB0090EFDE /* libboost_test.a */; };
+		E5F157520D36CB2300CBDFD0 /* conversion_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E5F157410D36CADC00CBDFD0 /* conversion_test.cpp */; };
+		E5F157840D36E41B00CBDFD0 /* libboost_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E50E62E40CECEAAB0090EFDE /* libboost_test.a */; };
+		E5F1578A0D36E46900CBDFD0 /* any_regular_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E5F1577D0D36E40C00CBDFD0 /* any_regular_test.cpp */; };
+		E5F157AB0D36E55A00CBDFD0 /* libadobe_source.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BA9A240CC72B9900833626 /* libadobe_source.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E50E62E30CECEAAB0090EFDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_test;
+		};
+		E50E62E50CECEACF0090EFDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_test;
+		};
+		E53D57340D454BED0018C8C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_test;
+		};
+		E53D57360D454BED0018C8C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		E577FBA40CEBB6700008EEF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		E5BA9A1A0CC72B9900833626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A0A0CC72B9900833626 /* boost_signals.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_signals;
+		};
+		E5BA9A1D0CC72B9900833626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A0D0CC72B9900833626 /* boost_threads.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_threads;
+		};
+		E5BA9A200CC72B9900833626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A100CC72B9900833626 /* boost_filesystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = boost_filesystem;
+		};
+		E5BA9A230CC72B9900833626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		E5BA9A260CC72B9900833626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A160CC72B9900833626 /* adobe_platform.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = adobe_platform;
+		};
+		E5E6DB200D02119200F9FA5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+		E5E6DB220D02119200F9FA5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_test;
+		};
+		E5F157480D36CB0300CBDFD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_test;
+		};
+		E5F157800D36E41B00CBDFD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = boost_test;
+		};
+		E5F157A90D36E51400CBDFD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = adobe_source;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEF5A6ED0C2C7D040088E35B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		CEF5A6F20C2C7D0E0088E35B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_test.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_test.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E52A75620D3884290020EFC0 /* lower_bound_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lower_bound_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52A75650D3884290020EFC0 /* equal_range_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = equal_range_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52A75670D3884290020EFC0 /* conversion_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = conversion_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52A75690D3884290020EFC0 /* conversion_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = conversion_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		E53D573F0D454BED0018C8C5 /* conversion_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = conversion_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		E53D57480D454C3C0018C8C5 /* string_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = string_test.cpp; path = ../../adobe_source_libraries/test/unit_tests/string/string_test.cpp; sourceTree = SOURCE_ROOT; };
+		E5BA99FF0CC72A8A00833626 /* adobe_xconfig_application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = adobe_xconfig_application.xcconfig; path = ../../adobe_source_libraries/xcode_ide/adobe_xconfig_application.xcconfig; sourceTree = SOURCE_ROOT; };
+		E5BA9A000CC72A8A00833626 /* adobe_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = adobe_debug.xcconfig; path = ../../adobe_source_libraries/xcode_ide/adobe_debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		E5BA9A010CC72A8A00833626 /* adobe_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = adobe_release.xcconfig; path = ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig; sourceTree = SOURCE_ROOT; };
+		E5BA9A0A0CC72B9900833626 /* boost_signals.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_signals.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_signals.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E5BA9A0D0CC72B9900833626 /* boost_threads.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_threads.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_threads.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E5BA9A100CC72B9900833626 /* boost_filesystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost_filesystem.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/boost_filesystem.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = adobe_source.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/adobe_source.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E5BA9A160CC72B9900833626 /* adobe_platform.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = adobe_platform.xcodeproj; sourceTree = "<group>"; };
+		E5D8BC750CEBB00F001FCD26 /* lower_bound_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lower_bound_test.cpp; path = ../../adobe_source_libraries/test/unit_tests/lower_bound/lower_bound_test.cpp; sourceTree = SOURCE_ROOT; };
+		E5E6DB430D0211E100F9FA5B /* equal_range_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = equal_range_test.cpp; path = ../../adobe_source_libraries/test/unit_tests/equal_range/equal_range_test.cpp; sourceTree = SOURCE_ROOT; };
+		E5F157410D36CADC00CBDFD0 /* conversion_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = conversion_test.cpp; path = ../../adobe_source_libraries/test/unit_tests/conversion/conversion_test.cpp; sourceTree = SOURCE_ROOT; };
+		E5F1577D0D36E40C00CBDFD0 /* any_regular_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = any_regular_test.cpp; path = ../../adobe_source_libraries/test/unit_tests/any_regular/any_regular_test.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E53D57390D454BED0018C8C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E53D573A0D454BED0018C8C5 /* libboost_test.a in Frameworks */,
+				E53D573B0D454BED0018C8C5 /* libadobe_source.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E577FB9C0CEBB6390008EEF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E50E62EA0CECEB1C0090EFDE /* libboost_test.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5E6DB190D02116500F9FA5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5E6DB470D02124800F9FA5B /* libboost_test.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5F1574B0D36CB0300CBDFD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5F1574C0D36CB0300CBDFD0 /* libboost_test.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5F157830D36E41B00CBDFD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5F157840D36E41B00CBDFD0 /* libboost_test.a in Frameworks */,
+				E5F157AB0D36E55A00CBDFD0 /* libadobe_source.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0249A662FF388D9811CA2CEA /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				CEF5A6F20C2C7D0E0088E35B /* Cocoa.framework */,
+				CEF5A6ED0C2C7D040088E35B /* Carbon.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB7794FE84155DC02AAC07 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				CECA19900B614AC500D623B7 /* xcconfig */,
+				E5BA9A090CC72B9900833626 /* asl_projects */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				0249A662FF388D9811CA2CEA /* External Frameworks and Libraries */,
+				E52A75630D3884290020EFC0 /* Products */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E5F1577D0D36E40C00CBDFD0 /* any_regular_test.cpp */,
+				E5D8BC750CEBB00F001FCD26 /* lower_bound_test.cpp */,
+				E5E6DB430D0211E100F9FA5B /* equal_range_test.cpp */,
+				E5F157410D36CADC00CBDFD0 /* conversion_test.cpp */,
+				E53D57480D454C3C0018C8C5 /* string_test.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		CECA19900B614AC500D623B7 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA99FF0CC72A8A00833626 /* adobe_xconfig_application.xcconfig */,
+				E5BA9A000CC72A8A00833626 /* adobe_debug.xcconfig */,
+				E5BA9A010CC72A8A00833626 /* adobe_release.xcconfig */,
+			);
+			name = xcconfig;
+			sourceTree = "<group>";
+		};
+		E50E62E00CECEAAB0090EFDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E50E62E40CECEAAB0090EFDE /* libboost_test.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E52A75630D3884290020EFC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E52A75620D3884290020EFC0 /* lower_bound_test */,
+				E52A75650D3884290020EFC0 /* equal_range_test */,
+				E52A75670D3884290020EFC0 /* conversion_test */,
+				E52A75690D3884290020EFC0 /* conversion_test */,
+				E53D573F0D454BED0018C8C5 /* conversion_test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5BA9A090CC72B9900833626 /* asl_projects */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA9A0A0CC72B9900833626 /* boost_signals.xcodeproj */,
+				E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */,
+				E5BA9A0D0CC72B9900833626 /* boost_threads.xcodeproj */,
+				E5BA9A100CC72B9900833626 /* boost_filesystem.xcodeproj */,
+				E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */,
+				E5BA9A160CC72B9900833626 /* adobe_platform.xcodeproj */,
+			);
+			name = asl_projects;
+			sourceTree = "<group>";
+		};
+		E5BA9A0B0CC72B9900833626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA9A1B0CC72B9900833626 /* libboost_signals.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5BA9A0E0CC72B9900833626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA9A1E0CC72B9900833626 /* libboost_threads.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5BA9A110CC72B9900833626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA9A210CC72B9900833626 /* libboost_filesystem.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5BA9A140CC72B9900833626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA9A240CC72B9900833626 /* libadobe_source.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5BA9A170CC72B9900833626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5BA9A270CC72B9900833626 /* libadobe_platform.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E53D57320D454BED0018C8C5 /* string_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E53D573C0D454BED0018C8C5 /* Build configuration list for PBXNativeTarget "string_test" */;
+			buildPhases = (
+				E53D57370D454BED0018C8C5 /* Sources */,
+				E53D57390D454BED0018C8C5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E53D57330D454BED0018C8C5 /* PBXTargetDependency */,
+				E53D57350D454BED0018C8C5 /* PBXTargetDependency */,
+			);
+			name = string_test;
+			productName = upper_bound_test;
+			productReference = E53D573F0D454BED0018C8C5 /* conversion_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		E577FB9D0CEBB6390008EEF6 /* lower_bound_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E577FBA30CEBB6610008EEF6 /* Build configuration list for PBXNativeTarget "lower_bound_test" */;
+			buildPhases = (
+				E577FB9B0CEBB6390008EEF6 /* Sources */,
+				E577FB9C0CEBB6390008EEF6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E577FBA50CEBB6700008EEF6 /* PBXTargetDependency */,
+				E50E62E60CECEACF0090EFDE /* PBXTargetDependency */,
+			);
+			name = lower_bound_test;
+			productName = lower_bound_test;
+			productReference = E52A75620D3884290020EFC0 /* lower_bound_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		E5E6DB1A0D02116500F9FA5B /* equal_range_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5E6DB1F0D02118400F9FA5B /* Build configuration list for PBXNativeTarget "equal_range_test" */;
+			buildPhases = (
+				E5E6DB180D02116500F9FA5B /* Sources */,
+				E5E6DB190D02116500F9FA5B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5E6DB210D02119200F9FA5B /* PBXTargetDependency */,
+				E5E6DB230D02119200F9FA5B /* PBXTargetDependency */,
+			);
+			name = equal_range_test;
+			productName = upper_bound_test;
+			productReference = E52A75650D3884290020EFC0 /* equal_range_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		E5F157440D36CB0300CBDFD0 /* conversion_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5F1574D0D36CB0300CBDFD0 /* Build configuration list for PBXNativeTarget "conversion_test" */;
+			buildPhases = (
+				E5F157490D36CB0300CBDFD0 /* Sources */,
+				E5F1574B0D36CB0300CBDFD0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5F157470D36CB0300CBDFD0 /* PBXTargetDependency */,
+			);
+			name = conversion_test;
+			productName = upper_bound_test;
+			productReference = E52A75670D3884290020EFC0 /* conversion_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		E5F1577E0D36E41B00CBDFD0 /* any_regular_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5F157850D36E41B00CBDFD0 /* Build configuration list for PBXNativeTarget "any_regular_test" */;
+			buildPhases = (
+				E5F157810D36E41B00CBDFD0 /* Sources */,
+				E5F157830D36E41B00CBDFD0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5F1577F0D36E41B00CBDFD0 /* PBXTargetDependency */,
+				E5F157AA0D36E51400CBDFD0 /* PBXTargetDependency */,
+			);
+			name = any_regular_test;
+			productName = upper_bound_test;
+			productReference = E52A75690D3884290020EFC0 /* conversion_test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = CECA19870B6149A100D623B7 /* Build configuration list for PBXProject "test" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* test */;
+			productRefGroup = E52A75630D3884290020EFC0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E5BA9A170CC72B9900833626 /* Products */;
+					ProjectRef = E5BA9A160CC72B9900833626 /* adobe_platform.xcodeproj */;
+				},
+				{
+					ProductGroup = E5BA9A140CC72B9900833626 /* Products */;
+					ProjectRef = E5BA9A130CC72B9900833626 /* adobe_source.xcodeproj */;
+				},
+				{
+					ProductGroup = E5BA9A110CC72B9900833626 /* Products */;
+					ProjectRef = E5BA9A100CC72B9900833626 /* boost_filesystem.xcodeproj */;
+				},
+				{
+					ProductGroup = E5BA9A0B0CC72B9900833626 /* Products */;
+					ProjectRef = E5BA9A0A0CC72B9900833626 /* boost_signals.xcodeproj */;
+				},
+				{
+					ProductGroup = E50E62E00CECEAAB0090EFDE /* Products */;
+					ProjectRef = E50E62DF0CECEAAB0090EFDE /* boost_test.xcodeproj */;
+				},
+				{
+					ProductGroup = E5BA9A0E0CC72B9900833626 /* Products */;
+					ProjectRef = E5BA9A0D0CC72B9900833626 /* boost_threads.xcodeproj */;
+				},
+			);
+			projectRoot = ../..;
+			targets = (
+				CECA1CA00B6683FB00D623B7 /* build_all_tests */,
+				E577FB9D0CEBB6390008EEF6 /* lower_bound_test */,
+				E5E6DB1A0D02116500F9FA5B /* equal_range_test */,
+				E5F157440D36CB0300CBDFD0 /* conversion_test */,
+				E5F1577E0D36E41B00CBDFD0 /* any_regular_test */,
+				E53D57320D454BED0018C8C5 /* string_test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E50E62E40CECEAAB0090EFDE /* libboost_test.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_test.a;
+			remoteRef = E50E62E30CECEAAB0090EFDE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E5BA9A1B0CC72B9900833626 /* libboost_signals.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_signals.a;
+			remoteRef = E5BA9A1A0CC72B9900833626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E5BA9A1E0CC72B9900833626 /* libboost_threads.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_threads.a;
+			remoteRef = E5BA9A1D0CC72B9900833626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E5BA9A210CC72B9900833626 /* libboost_filesystem.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libboost_filesystem.a;
+			remoteRef = E5BA9A200CC72B9900833626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E5BA9A240CC72B9900833626 /* libadobe_source.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libadobe_source.a;
+			remoteRef = E5BA9A230CC72B9900833626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E5BA9A270CC72B9900833626 /* libadobe_platform.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libadobe_platform.a;
+			remoteRef = E5BA9A260CC72B9900833626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E53D57370D454BED0018C8C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E53D57490D454C3C0018C8C5 /* string_test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E577FB9B0CEBB6390008EEF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E577FBA60CEBB6AB0008EEF6 /* lower_bound_test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5E6DB180D02116500F9FA5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5E6DB440D0211E100F9FA5B /* equal_range_test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5F157490D36CB0300CBDFD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5F157520D36CB2300CBDFD0 /* conversion_test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5F157810D36E41B00CBDFD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5F1578A0D36E46900CBDFD0 /* any_regular_test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E50E62E60CECEACF0090EFDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_test;
+			targetProxy = E50E62E50CECEACF0090EFDE /* PBXContainerItemProxy */;
+		};
+		E53D57330D454BED0018C8C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_test;
+			targetProxy = E53D57340D454BED0018C8C5 /* PBXContainerItemProxy */;
+		};
+		E53D57350D454BED0018C8C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = adobe_source;
+			targetProxy = E53D57360D454BED0018C8C5 /* PBXContainerItemProxy */;
+		};
+		E577FBA50CEBB6700008EEF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = adobe_source;
+			targetProxy = E577FBA40CEBB6700008EEF6 /* PBXContainerItemProxy */;
+		};
+		E5E6DB210D02119200F9FA5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = adobe_source;
+			targetProxy = E5E6DB200D02119200F9FA5B /* PBXContainerItemProxy */;
+		};
+		E5E6DB230D02119200F9FA5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_test;
+			targetProxy = E5E6DB220D02119200F9FA5B /* PBXContainerItemProxy */;
+		};
+		E5F157470D36CB0300CBDFD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_test;
+			targetProxy = E5F157480D36CB0300CBDFD0 /* PBXContainerItemProxy */;
+		};
+		E5F1577F0D36E41B00CBDFD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = boost_test;
+			targetProxy = E5F157800D36E41B00CBDFD0 /* PBXContainerItemProxy */;
+		};
+		E5F157AA0D36E51400CBDFD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = adobe_source;
+			targetProxy = E5F157A90D36E51400CBDFD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CECA198A0B6149A100D623B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5BA99FF0CC72A8A00833626 /* adobe_xconfig_application.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		CECA1CB10B66842A00D623B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = build_all_tests;
+			};
+			name = Debug;
+		};
+		E53D573D0D454BED0018C8C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = conversion_test;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E53D573E0D454BED0018C8C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = upper_bound_test;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		E577FBA20CEBB63A0008EEF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = lower_bound_test;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E577FBAD0CEBB9E50008EEF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5BA99FF0CC72A8A00833626 /* adobe_xconfig_application.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E577FBAE0CEBB9E50008EEF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = build_all_tests;
+			};
+			name = Release;
+		};
+		E577FBAF0CEBB9E50008EEF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = lower_bound_test;
+				ZERO_LINK = YES;
+			};
+			name = Release;
+		};
+		E5E6DB1D0D02116600F9FA5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = equal_range_test;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E5E6DB1E0D02116600F9FA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = upper_bound_test;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		E5F1574E0D36CB0300CBDFD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = conversion_test;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E5F1574F0D36CB0300CBDFD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = upper_bound_test;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		E5F157860D36E41B00CBDFD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = conversion_test;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E5F157870D36E41B00CBDFD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = upper_bound_test;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CECA19870B6149A100D623B7 /* Build configuration list for PBXProject "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECA198A0B6149A100D623B7 /* Debug */,
+				E577FBAD0CEBB9E50008EEF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CECA1CAE0B66842A00D623B7 /* Build configuration list for PBXAggregateTarget "build_all_tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECA1CB10B66842A00D623B7 /* Debug */,
+				E577FBAE0CEBB9E50008EEF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E53D573C0D454BED0018C8C5 /* Build configuration list for PBXNativeTarget "string_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E53D573D0D454BED0018C8C5 /* Debug */,
+				E53D573E0D454BED0018C8C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E577FBA30CEBB6610008EEF6 /* Build configuration list for PBXNativeTarget "lower_bound_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E577FBA20CEBB63A0008EEF6 /* Debug */,
+				E577FBAF0CEBB9E50008EEF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E5E6DB1F0D02118400F9FA5B /* Build configuration list for PBXNativeTarget "equal_range_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5E6DB1D0D02116600F9FA5B /* Debug */,
+				E5E6DB1E0D02116600F9FA5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E5F1574D0D36CB0300CBDFD0 /* Build configuration list for PBXNativeTarget "conversion_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5F1574E0D36CB0300CBDFD0 /* Debug */,
+				E5F1574F0D36CB0300CBDFD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E5F157850D36E41B00CBDFD0 /* Build configuration list for PBXNativeTarget "any_regular_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5F157860D36E41B00CBDFD0 /* Debug */,
+				E5F157870D36E41B00CBDFD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

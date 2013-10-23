@@ -1,0 +1,5 @@
+# Jamfile for building the sentences test app
+
+project adobe/sentences ;
+
+run [ glob *.cpp ] ;

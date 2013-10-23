@@ -1,0 +1,23 @@
+import testing ;
+
+project adobe/sequence_mvc_muldex
+    : requirements
+        <include>../../../adobe_source_libraries/
+        <include>../../../adobe_platform_libraries/
+        <include>../../../boost_libraries/
+	    <library>/boost/test//boost_unit_test_framework 
+    : default-build
+        <link>static
+        <threading>multi
+    : build-dir
+        ../../../built_artifacts
+    ;
+
+# Uncomment this to get a binary to debug
+# exe sequence_mvc_muldex
+#     : main.cpp
+#     ;
+
+run main.cpp
+	;
+
