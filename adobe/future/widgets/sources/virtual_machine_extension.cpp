@@ -19,6 +19,8 @@
 #include <adobe/name.hpp>
 #include <adobe/string.hpp>
 
+#include <boost/gil/image.hpp>
+
 /**************************************************************************************************/
 
 namespace {

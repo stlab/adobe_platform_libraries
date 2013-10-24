@@ -301,7 +301,7 @@
 		20286C28FDCF999611CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "begin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -449,7 +449,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE5C21A70947A71400EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LIBRARY_SEARCH_PATHS = (
@@ -466,12 +465,17 @@
 			buildSettings = {
 				ASL_HEADER_SEARCH_PATHS = "../../adobe_source_libraries/ ../../adobe_platform_libraries/ ../../adobe_platform_libraries/macintosh/";
 				BOOST_HEADER_SEARCH_PATHS = ../../boost_libraries/;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = ../../adobe_platform_libraries/test/begin/Info.plist;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Adobe Begin";
 				SDKROOT = "";
 				USER_HEADER_SEARCH_PATHS = "../../adobe_platform_libraries/test/begin/headers/ ../../adobe_platform_libraries/adobe_platform_libraries/future/";
@@ -485,10 +489,14 @@
 			buildSettings = {
 				ASL_HEADER_SEARCH_PATHS = "../../adobe_source_libraries/ ../../adobe_platform_libraries/ ../../adobe_platform_libraries/macintosh/";
 				BOOST_HEADER_SEARCH_PATHS = ../../boost_libraries/;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = ../../adobe_platform_libraries/test/begin/Info.plist;
 				PRODUCT_NAME = "Adobe Begin";

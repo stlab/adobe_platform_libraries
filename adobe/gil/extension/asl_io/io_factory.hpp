@@ -14,6 +14,7 @@
 #include <boost/gil/image_view_factory.hpp>
 #include <boost/gil/color_convert.hpp>
 #include <boost/gil/algorithm.hpp>
+#include <boost/gil/image.hpp>
 
 #include <adobe/algorithm/find.hpp>
 #include <adobe/poly.hpp>

@@ -18,6 +18,7 @@
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
 #include <boost/version.hpp>
+#include <boost/gil/image.hpp>
 
 #include <adobe/adam_evaluate.hpp>
 #include <adobe/adam_parser.hpp>

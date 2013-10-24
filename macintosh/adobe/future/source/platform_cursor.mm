@@ -16,6 +16,7 @@
 #include <adobe/macintosh_carbon_safe.hpp>
 
 #include <boost/filesystem/path.hpp>
+#include <boost/gil/image.hpp>
 
 #include <stdexcept>
 

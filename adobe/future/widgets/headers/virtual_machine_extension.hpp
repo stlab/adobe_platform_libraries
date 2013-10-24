@@ -21,7 +21,7 @@
 
 #include <boost/bind.hpp>
 #include <boost/function.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil/typedefs.hpp>
 
 /**************************************************************************************************/
 

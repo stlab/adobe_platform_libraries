@@ -11,6 +11,8 @@
 
 /****************************************************************************************************/
 
+#include <boost/gil/image.hpp>
+
 #include <adobe/future/widgets/headers/widget_utils.hpp>
 #include <adobe/future/widgets/headers/macintosh_metric_extractor.hpp>
 

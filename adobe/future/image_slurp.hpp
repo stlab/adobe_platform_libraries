@@ -14,12 +14,6 @@
 #include <adobe/config.hpp>
 
 #include <boost/filesystem/path.hpp>
-
-#include <boost/gil/algorithm.hpp>
-#include <boost/gil/color_convert.hpp>
-#include <boost/gil/image.hpp>
-#include <boost/gil/image_view_factory.hpp>
-#include <boost/gil/rgba.hpp>
 #include <boost/gil/typedefs.hpp>
 
 /**************************************************************************************************/

@@ -352,7 +352,7 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "adobe_platform" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -493,11 +493,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
 			name = Debug;
@@ -506,10 +511,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
@@ -552,7 +561,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
 			buildSettings = {
-				ARCHS = ppc;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = adobe_platform;
@@ -564,7 +572,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE5C2037094797C700EB4BB6 /* ../../adobe_source_libraries/xcode_ide/adobe_release.xcconfig */;
 			buildSettings = {
-				ARCHS = i386;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = adobe_platform;
@@ -587,11 +594,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
-				ARCHS = ppc;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
@@ -601,11 +611,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
-				ARCHS = i386;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
@@ -615,14 +628,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
@@ -632,11 +645,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
-				ARCHS = ppc;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
@@ -646,11 +662,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
-				ARCHS = i386;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};
@@ -660,14 +679,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8912B83C0C7245B300EB6973 /* adobe_platform_xconfig_staticlib.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = asl_widgets;
 			};

@@ -14,6 +14,8 @@
 #include <adobe/future/widgets/headers/display.hpp>
 #include <adobe/future/widgets/headers/widget_utils.hpp>
 
+#include <boost/gil/image.hpp>
+
 /****************************************************************************************************/
 
 namespace {

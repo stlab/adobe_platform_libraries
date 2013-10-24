@@ -13,7 +13,7 @@
 
 #include <adobe/macintosh_carbon_safe.hpp>
 #include <adobe/macintosh_memory.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil/typedefs.hpp>
 
 /****************************************************************************************************/
 
