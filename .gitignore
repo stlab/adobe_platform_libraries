@@ -1,0 +1,7 @@
+.DS_Store
+xcuserdata
+boost_*/
+boost*.tar.gz
+build/
+built_artifacts/
+*.xccheckout
