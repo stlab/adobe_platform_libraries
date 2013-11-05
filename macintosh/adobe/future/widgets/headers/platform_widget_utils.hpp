@@ -59,22 +59,22 @@ typedef ::ControlRef platform_control_type;
 
 /****************************************************************************************************/
 
-extern aggregate_name_t     k_attribute_theme;
-extern aggregate_name_t     k_attribute_theme_large;
-extern aggregate_name_t     k_attribute_theme_normal;
-extern aggregate_name_t     k_attribute_theme_small;
-extern aggregate_name_t     k_attribute_theme_mini;
+extern static_name_t k_attribute_theme;
+extern static_name_t k_attribute_theme_large;
+extern static_name_t k_attribute_theme_normal;
+extern static_name_t k_attribute_theme_small;
+extern static_name_t k_attribute_theme_mini;
 
-extern aggregate_name_t k_metric_gap;
+extern static_name_t k_metric_gap;
 
-extern aggregate_name_t k_metric_size;
-extern aggregate_name_t k_metric_adjust_position;
-extern aggregate_name_t k_metric_adjust_size;
-extern aggregate_name_t k_metric_adjust_baseline;
-extern aggregate_name_t k_metric_outset;
-extern aggregate_name_t k_metric_frame;
-extern aggregate_name_t k_metric_inset;
-extern aggregate_name_t k_metric_spacing;
+extern static_name_t k_metric_size;
+extern static_name_t k_metric_adjust_position;
+extern static_name_t k_metric_adjust_size;
+extern static_name_t k_metric_adjust_baseline;
+extern static_name_t k_metric_outset;
+extern static_name_t k_metric_frame;
+extern static_name_t k_metric_inset;
+extern static_name_t k_metric_spacing;
 
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -429,8 +429,8 @@ void set_metric_extractor(Widget& w)
     if (!w.metrics_m.empty())
         return;
 
-    name_t    attribute_theme_value(static_name_t("unknown"));
-    dictionary_t     context;
+    name_t       attribute_theme_value("unknown"_name);
+    dictionary_t context;
 
     switch (w.theme_m & theme_mask_s)
     {
@@ -558,16 +558,16 @@ extents_t::slice_t merge_slices_with(const extents_t&                 src_retang
 /****************************************************************************************************/
 /****************************************************************************************************/
 
-extern aggregate_name_t k_metric_gap;
+extern static_name_t k_metric_gap;
 
-extern aggregate_name_t k_metric_size;
-extern aggregate_name_t k_metric_adjust_position;
-extern aggregate_name_t k_metric_adjust_size;
-extern aggregate_name_t k_metric_adjust_baseline;
-extern aggregate_name_t k_metric_outset;
-extern aggregate_name_t k_metric_frame;
-extern aggregate_name_t k_metric_inset;
-extern aggregate_name_t k_metric_spacing;
+extern static_name_t k_metric_size;
+extern static_name_t k_metric_adjust_position;
+extern static_name_t k_metric_adjust_size;
+extern static_name_t k_metric_adjust_baseline;
+extern static_name_t k_metric_outset;
+extern static_name_t k_metric_frame;
+extern static_name_t k_metric_inset;
+extern static_name_t k_metric_spacing;
 
 const metric_extractor_t& global_metrics();
 

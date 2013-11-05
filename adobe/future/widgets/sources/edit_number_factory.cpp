@@ -192,9 +192,9 @@ widget_node_t make_edit_number(const dictionary_t&     parameters,
                                const factory_token_t&  token,
                                const widget_factory_t& factory)
 {
-    bool is_container(factory.is_container(static_name_t("edit_number")));
+    bool is_container(factory.is_container("edit_number"_name));
     const layout_attributes_t& layout_attributes(
-        factory.layout_attributes(static_name_t("edit_number")));
+        factory.layout_attributes("edit_number"_name));
 
     size_enum_t   size(parameters.count(key_size) ?
                        implementation::enumerate_size(get_value(parameters, key_size).cast<name_t>()) :

@@ -142,9 +142,9 @@ struct converter_echo
 
 /**************************************************************************************************/
 
-extern aggregate_name_t key_drag_ref;
-extern aggregate_name_t key_drag_item;
-extern aggregate_name_t key_flavor;
+extern static_name_t key_drag_ref;
+extern static_name_t key_drag_item;
+extern static_name_t key_flavor;
 
 /**************************************************************************************************/
 

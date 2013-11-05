@@ -278,7 +278,7 @@ BOOST_AUTO_TEST_CASE(muldex_property_model)
         sequence model itself. The primary view will be the view portion
         of the list widget.
     */
-    sequence_view_property_model.add_interface(adobe::static_name_t("line"), true,
+    sequence_view_property_model.add_interface(adobe::"line"_name, true,
                                                adobe::line_position_t(), dictionary_initializer,
                                                adobe::line_position_t(), adobe::array_t());
 
@@ -291,7 +291,7 @@ BOOST_AUTO_TEST_CASE(muldex_property_model)
         widget(s) connected to the sequence model. The primary view will
         be the sequence model.
     */
-    sequence_controller_property_model.add_interface(adobe::static_name_t("line"), true,
+    sequence_controller_property_model.add_interface(adobe::"line"_name, true,
                                                      adobe::line_position_t(), dictionary_initializer,
                                                      adobe::line_position_t(), adobe::array_t());
 
@@ -303,13 +303,13 @@ BOOST_AUTO_TEST_CASE(muldex_property_model)
     attach_sequence_view_muldex(sequence_model,
                                 my_sequence_view,
                                 sequence_view_property_model,
-                                adobe::static_name_t("line"),
+                                adobe::"line"_name,
                                 assemblage);
 
     attach_sequence_controller_muldex(sequence_model,
                                       my_sequence_controller,
                                       sequence_controller_property_model,
-                                      adobe::static_name_t("line"),
+                                      adobe::"line"_name,
                                       assemblage);
 
     sequence_view_property_model.update();
@@ -339,8 +339,8 @@ BOOST_AUTO_TEST_CASE(muldex_basic_sheet)
         setting values for this cell will be the sequence model itself. The primary
         view will be the view portion of the list widget.
     */
-    basic_sheet.add_interface(adobe::static_name_t("line_in"), dictionary_initializer);
-    basic_sheet.add_interface(adobe::static_name_t("line_out"), dictionary_initializer);
+    basic_sheet.add_interface(adobe::"line_in"_name, dictionary_initializer);
+    basic_sheet.add_interface(adobe::"line_out"_name, dictionary_initializer);
 
     my_sequence_view<foo_t>       my_sequence_view;
     my_sequence_controller<foo_t> my_sequence_controller;
@@ -348,13 +348,13 @@ BOOST_AUTO_TEST_CASE(muldex_basic_sheet)
     attach_sequence_view_muldex(sequence_model,
                                 my_sequence_view,
                                 basic_sheet,
-                                adobe::static_name_t("line_out"),
+                                adobe::"line_out"_name,
                                 assemblage);
 
     attach_sequence_controller_muldex(sequence_model,
                                       my_sequence_controller,
                                       basic_sheet,
-                                      adobe::static_name_t("line_in"),
+                                      adobe::"line_in"_name,
                                       assemblage);
 
     flex(sequence_model, my_sequence_view, my_sequence_controller);

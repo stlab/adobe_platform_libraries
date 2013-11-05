@@ -116,8 +116,8 @@ void eve_node_forest_t::add_cell(cell_type_t            type,
 {
     dictionary_t cell;
 
-    static const name_t name_interface(static_name_t("interface"));
-    static const name_t name_constant(static_name_t("constant"));
+    static const name_t name_interface("interface"_name);
+    static const name_t name_constant("constant"_name);
 
     if (type == eve_callback_suite_t::interface_k)
         cell[key_cell_type] = any_regular_t(name_interface);

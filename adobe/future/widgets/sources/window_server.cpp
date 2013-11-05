@@ -142,23 +142,23 @@ void window_server_t::set_action_fallback(action_fallback_proc_t proc)
 
 void window_server_t::dispatch_window_action(iterator window, name_t action, const any_regular_t& parameter)
 {
-    if (action == static_name_t("reset"))
+    if (action == "reset"_name)
     {
         sheet_m.set((*window)->contributing_m);
         sheet_m.update();
     }
-    else if (action == static_name_t("dialog"))
+    else if (action == "dialog"_name)
     {
         push_back(parameter.cast<std::string>().c_str(), size_normal_s);
     }
-    else if (action == static_name_t("cancel"))
+    else if (action == "cancel"_name)
     {
         sheet_m.set((*window)->contributing_m);
         sheet_m.update();
 
         general_deferred_proc_queue().insert(boost::bind(&window_server_t::erase, boost::ref(*this), window));
     }
-    else if (action == static_name_t("ok"))
+    else if (action == "ok"_name)
     {
         general_deferred_proc_queue().insert(boost::bind(&window_server_t::erase, boost::ref(*this), window));
     }

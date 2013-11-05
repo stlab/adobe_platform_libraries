@@ -58,8 +58,8 @@ widget_node_t make_checkbox(const dictionary_t&     parameters,
                             const factory_token_t&  token,
                             const widget_factory_t& factory)
     { return create_and_hookup_widget<checkbox_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("checkbox")), 
-        factory.layout_attributes(static_name_t("checkbox"))); }
+        factory.is_container("checkbox"_name), 
+        factory.layout_attributes("checkbox"_name)); }
 
 /****************************************************************************************************/
 

@@ -234,8 +234,8 @@ widget_node_t make_presets(const dictionary_t&     parameters,
                            const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<presets_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("preset")), 
-        factory.layout_attributes(static_name_t("preset"))); 
+        factory.is_container("preset"_name), 
+        factory.layout_attributes("preset"_name)); 
 }
 
 /****************************************************************************************************/

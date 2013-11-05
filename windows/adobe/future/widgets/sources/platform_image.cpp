@@ -89,11 +89,11 @@ image_t::image_t(const view_model_type& image) :
     handler_m.reset(new message_handler_t(boost::bind(&image_t::handle_event,
                                                       boost::ref(*this), _1, _2, _3, _4, _5)));
 
-    metadata_m.insert(dictionary_t::value_type(static_name_t("delta_x"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("delta_y"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("dragging"), any_regular_t(false)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("x"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("y"), any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("delta_x"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("delta_y"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("dragging"_name, any_regular_t(false)));
+    metadata_m.insert(dictionary_t::value_type("x"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("y"_name, any_regular_t(0)));
 }
 
 /****************************************************************************************************/
@@ -116,14 +116,14 @@ LRESULT image_t::handle_event(HWND window, UINT message, WPARAM wparam, LPARAM l
             double delta_x(last_point_m.x - cur_point.x);
             double delta_y(last_point_m.y - cur_point.y);
 
-            get_value(metadata_m, static_name_t("x"), x);
-            get_value(metadata_m, static_name_t("y"), y);
+            get_value(metadata_m, "x"_name, x);
+            get_value(metadata_m, "y"_name, y);
 
-            metadata_m.insert(dictionary_t::value_type(static_name_t("delta_x"), any_regular_t(delta_x)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("delta_y"), any_regular_t(delta_y)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("dragging"), any_regular_t(true)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("x"), any_regular_t(x + delta_x)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("y"), any_regular_t(y + delta_y)));
+            metadata_m.insert(dictionary_t::value_type("delta_x"_name, any_regular_t(delta_x)));
+            metadata_m.insert(dictionary_t::value_type("delta_y"_name, any_regular_t(delta_y)));
+            metadata_m.insert(dictionary_t::value_type("dragging"_name, any_regular_t(true)));
+            metadata_m.insert(dictionary_t::value_type("x"_name, any_regular_t(x + delta_x)));
+            metadata_m.insert(dictionary_t::value_type("y"_name, any_regular_t(y + delta_y)));
 
             callback_m(metadata_m);
         }
@@ -143,9 +143,9 @@ LRESULT image_t::handle_event(HWND window, UINT message, WPARAM wparam, LPARAM l
         tracking_m = false;
         ::SetCapture(prev_capture_m);
 
-		metadata_m.insert(dictionary_t::value_type(static_name_t("delta_x"), any_regular_t(0)));
-        metadata_m.insert(dictionary_t::value_type(static_name_t("delta_y"), any_regular_t(0)));
-        metadata_m.insert(dictionary_t::value_type(static_name_t("dragging"), any_regular_t(false)));
+		metadata_m.insert(dictionary_t::value_type("delta_x"_name, any_regular_t(0)));
+        metadata_m.insert(dictionary_t::value_type("delta_y"_name, any_regular_t(0)));
+        metadata_m.insert(dictionary_t::value_type("dragging"_name, any_regular_t(false)));
 
 		callback_m(metadata_m);
 
@@ -225,8 +225,8 @@ void place(image_t& value, const place_data_t& place_data)
         double width(std::min<double>(fixed_width, value.image_m.width()));
         double height(std::min<double>(fixed_height, value.image_m.height()));
 
-        value.metadata_m.insert(dictionary_t::value_type(static_name_t("width"), any_regular_t(width)));
-        value.metadata_m.insert(dictionary_t::value_type(static_name_t("height"), any_regular_t(height)));
+        value.metadata_m.insert(dictionary_t::value_type("width"_name, any_regular_t(width)));
+        value.metadata_m.insert(dictionary_t::value_type("height"_name, any_regular_t(height)));
 
         if (old_metadata != value.metadata_m)
             value.callback_m(value.metadata_m);

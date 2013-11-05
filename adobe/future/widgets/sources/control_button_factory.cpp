@@ -62,7 +62,7 @@ create_and_hookup_widget<control_button_t, poly_placeable_t>(const dictionary_t&
 
     get_value(parameters, key_name, name);
     get_value(parameters, key_alt_text, alt_text);
-    get_value(parameters, static_name_t("expression"), expression_string);
+    get_value(parameters, "expression"_name, expression_string);
 
     control_button_t* widget(NULL);
 
@@ -104,8 +104,8 @@ widget_node_t make_control_button(const dictionary_t&     parameters,
                                   const widget_factory_t& factory)
 {
     return create_and_hookup_widget<control_button_t, poly_placeable_t>(parameters, parent, token, 
-               factory.is_container(static_name_t("control_button")), 
-               factory.layout_attributes(static_name_t("control_button")));
+               factory.is_container("control_button"_name), 
+               factory.layout_attributes("control_button"_name));
 }
 
 

@@ -81,8 +81,8 @@ widget_node_t make_display_number(const dictionary_t&     parameters,
 { 
     return create_and_hookup_widget<display_number_t, poly_placeable_twopass_t>(
         parameters, parent, token, 
-        factory.is_container(static_name_t("display_number")), 
-        factory.layout_attributes(static_name_t("display_number"))); 
+        factory.is_container("display_number"_name), 
+        factory.layout_attributes("display_number"_name)); 
 }
  
 /****************************************************************************************************/

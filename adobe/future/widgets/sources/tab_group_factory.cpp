@@ -57,8 +57,8 @@ widget_node_t make_tab_group(const dictionary_t&     parameters,
 { 
     return create_and_hookup_widget<tab_group_t, poly_placeable_t>(
         parameters, parent, token, 
-        factory.is_container(static_name_t("tab_group")), 
-        factory.layout_attributes(static_name_t("tab_group"))); }
+        factory.is_container("tab_group"_name), 
+        factory.layout_attributes("tab_group"_name)); }
 
 /*************************************************************************************************/
 

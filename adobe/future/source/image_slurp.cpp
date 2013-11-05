@@ -33,11 +33,13 @@ boost::gil::image_factory_t<boost::gil::rgba8_view_t>& gil_image_factory()
     static factory_type factory_s;
     static bool         inited(false);
 
+    using namespace adobe::literals;
+
     if (!inited)
     {
         inited = true;
 
-        factory_s.register_format(format_type(adobe::static_name_t("targa"), boost::gil::targa_t<view_type>()));
+        factory_s.register_format(format_type("targa"_name, boost::gil::targa_t<view_type>()));
     }
 
     return factory_s;

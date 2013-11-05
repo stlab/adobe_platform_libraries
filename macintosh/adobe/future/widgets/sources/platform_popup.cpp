@@ -124,10 +124,10 @@ namespace implementation {
 template <>
 inline dictionary_t extra_widget_context(const popup_t& w)
 {
-    static_name_t has_label(w.using_label_m ? "true" : "false");
+    static_name_t has_label(w.using_label_m ? "true"_name : "false"_name);
     dictionary_t  result;
 
-    result.insert(std::make_pair(static_name_t("label"), any_regular_t(has_label)));
+    result.insert(std::make_pair("label"_name, any_regular_t(has_label)));
 
     return result;
 }

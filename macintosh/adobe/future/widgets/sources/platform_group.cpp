@@ -24,10 +24,10 @@ namespace implementation {
 template <>
 inline dictionary_t extra_widget_context(const group_t& w)
 {
-    static_name_t has_label(w.name_m.empty() ? "false" : "true");
+    static_name_t has_label(w.name_m.empty() ? "false"_name : "true"_name);
     dictionary_t  result;
 
-    result.insert(std::make_pair(static_name_t("label"), any_regular_t(has_label)));
+    result.insert(std::make_pair("label"_name, any_regular_t(has_label)));
 
     return result;
 }

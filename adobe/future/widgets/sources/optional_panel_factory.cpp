@@ -104,8 +104,8 @@ widget_node_t make_optional_panel(const dictionary_t&     parameters,
     eve_t::iterator eve_token;
     eve_token = attach_placeable<poly_placeable_t>(parent.eve_token_m, 
         *widget, parameters, token, 
-        factory.is_container(static_name_t("optional")), 
-        factory.layout_attributes(static_name_t("optional")));
+        factory.is_container("optional"_name), 
+        factory.layout_attributes("optional"_name));
 
     widget->set_optional_display_procs(boost::bind(&optional_display_show,
                                                    boost::ref(token.client_holder_m.visible_change_queue_m),

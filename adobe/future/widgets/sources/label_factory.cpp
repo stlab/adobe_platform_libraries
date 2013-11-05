@@ -65,8 +65,8 @@ widget_node_t make_label_hack(const dictionary_t&     parameters,
 { 
     return create_and_hookup_widget<label_t, poly_placeable_twopass_t>(
         parameters, parent, token, 
-        factory.is_container(static_name_t("label")), 
-        factory.layout_attributes(static_name_t("label"))); 
+        factory.is_container("label"_name),
+        factory.layout_attributes("label"_name));
 }
 
 /****************************************************************************************************/

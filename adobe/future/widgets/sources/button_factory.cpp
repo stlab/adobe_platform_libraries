@@ -277,8 +277,8 @@ widget_node_t make_button(const dictionary_t&     parameters,
 
     eve_t::iterator eve_token;
     eve_token = attach_placeable<poly_placeable_t>(parent.eve_token_m, *widget, parameters, 
-        token, factory.is_container(static_name_t("button")),
-        factory.layout_attributes(static_name_t("button")));
+        token, factory.is_container("button"_name),
+        factory.layout_attributes("button"_name));
 
     //
     // Return the widget_node_t that comprises the tokens created for this widget by the various components

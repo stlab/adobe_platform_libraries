@@ -46,7 +46,7 @@ void preview_t::place(const place_data_t& place_data)
 
 void preview_t::display(const view_model_type& value)
 {
-    sublayout_m.sublayout_sheet_set_update(static_name_t("image"), value);
+    sublayout_m.sublayout_sheet_set_update("image"_name, value);
 }
 
 /****************************************************************************************************/

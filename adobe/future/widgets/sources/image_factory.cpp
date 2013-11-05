@@ -80,8 +80,8 @@ widget_node_t make_image_hack(const dictionary_t&     parameters,
                               const widget_factory_t& factory)
     { return create_and_hookup_widget<image_t, poly_placeable_twopass_t>(
         parameters, parent, token, 
-        factory.is_container(static_name_t("image")), 
-        factory.layout_attributes(static_name_t("image"))); }
+        factory.is_container("image"_name), 
+        factory.layout_attributes("image"_name)); }
 
 /*************************************************************************************************/
 

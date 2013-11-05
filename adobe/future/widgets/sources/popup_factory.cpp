@@ -95,8 +95,8 @@ widget_node_t make_popup(const dictionary_t&     parameters,
                          const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<popup_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("popup")), 
-        factory.layout_attributes(static_name_t("popup"))); 
+        factory.is_container("popup"_name), 
+        factory.layout_attributes("popup"_name)); 
 }
 
 /****************************************************************************************************/

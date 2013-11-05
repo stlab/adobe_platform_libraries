@@ -154,8 +154,8 @@ ADOBE_WIDGET_TAG_BOILERPLATE(presets_t, "<xstr id='metric:presets'/>");
     name_t add_preset(implementation::localization_value(widget_m, key_preset_menu_item_add_preset, "Add Preset...").c_str());
     name_t delete_preset(implementation::localization_value(widget_m, key_preset_menu_item_delete_preset, "Delete Preset...").c_str());
 #ifndef NDEBUG
-    static_name_t separator("-");
-    static_name_t resave_presets("(debug) Re-save Presets To File");
+    static_name_t separator("-"_name);
+    static_name_t resave_presets("(debug) Re-save Presets To File"_name);
 #endif
 
     name_t menu_options[] =

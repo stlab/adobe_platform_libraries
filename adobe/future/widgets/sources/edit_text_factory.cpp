@@ -55,8 +55,8 @@ widget_node_t make_edit_text(const dictionary_t&     parameters,
         parameters,
         parent,
         token, 
-        factory.is_container(static_name_t("edit_text")),
-        factory.layout_attributes(static_name_t("edit_text"))); 
+        factory.is_container("edit_text"_name),
+        factory.layout_attributes("edit_text"_name)); 
 }
 
 /****************************************************************************************************/

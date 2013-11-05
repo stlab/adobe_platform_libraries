@@ -27,12 +27,12 @@ using namespace adobe;
 
 /******************************************************************************/
 
-const aggregate_name_t cell_type_constant  = { "constant" };
-const aggregate_name_t cell_type_input     = { "input" };
-const aggregate_name_t cell_type_interface = { "interface" };
-const aggregate_name_t cell_type_invariant = { "invariant" };
-const aggregate_name_t cell_type_logic     = { "logic" };
-const aggregate_name_t cell_type_output    = { "output" };
+const static_name_t cell_type_constant  = "constant"_name;
+const static_name_t cell_type_input     = "input"_name;
+const static_name_t cell_type_interface = "interface"_name;
+const static_name_t cell_type_invariant = "invariant"_name;
+const static_name_t cell_type_logic     = "logic"_name;
+const static_name_t cell_type_output    = "output"_name;
 
 /******************************************************************************/
 

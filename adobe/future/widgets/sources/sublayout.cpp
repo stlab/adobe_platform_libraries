@@ -30,7 +30,7 @@ widget_node_t sublayout_t::evaluate(const std::string&       sheet_description,
                                     const button_notifier_t& notifier,
                                     behavior_t&              behavior)
 {
-    static const name_t               panel_name_s(static_name_t("panel"));
+    static const name_t               panel_name_s("panel"_name);
     static const layout_attributes_t& attrs_s(factory.layout_attributes(panel_name_s));
 
     std::stringstream sheet_stream(sheet_description);
@@ -45,7 +45,7 @@ widget_node_t sublayout_t::evaluate(const std::string&       sheet_description,
 
     std::stringstream layout_stream(layout_description);
 
-    sublayout_holder_m = make_view(static_name_t("sublayout layout"),
+    sublayout_holder_m = make_view("sublayout layout"_name,
                                    line_position_t::getline_proc_t(),
                                    layout_stream,
                                    sublayout_sheet_m,

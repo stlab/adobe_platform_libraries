@@ -433,7 +433,7 @@ bool context_menu(HWND parent,
     {
         MENUITEMINFOA item = { 0 };
         std::size_t   length(std::strlen(first->c_str()));
-        bool          is_separator(*first == static_name_t("-"));
+        bool          is_separator(*first == "-"_name);
 
         item.cbSize = sizeof(item);
         item.fMask = MIIM_FTYPE | MIIM_ID | (is_separator ? 0 : MIIM_STRING);

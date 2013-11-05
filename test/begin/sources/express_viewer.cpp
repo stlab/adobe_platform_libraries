@@ -68,35 +68,37 @@ namespace {
 
 /****************************************************************************************************/
 
-const adobe::static_name_t  value_key_g                    ( "value" );
-const adobe::static_name_t  version_info_name_g            ( "version_info" );
-const adobe::static_name_t  update_adam_name_g             ( "update_adam" );
-const adobe::static_name_t  update_eve_name_g              ( "update_eve" );
-const adobe::static_name_t  save_adam_name_g               ( "save_adam" );
-const adobe::static_name_t  save_eve_name_g                ( "save_eve" );
-const adobe::static_name_t  clear_window_action_g          ( "clear_frames" );
-const adobe::static_name_t  frame_widgets_action_g         ( "frame_widgets" );
-const adobe::static_name_t  editor_adam_cell_g             ( "adam_source" );
-const adobe::static_name_t  editor_eve_cell_g              ( "eve_source" );
-const adobe::static_name_t  editor_adam_dirty_cell_g       ( "adam_dirty" );
-const adobe::static_name_t  editor_eve_dirty_cell_g        ( "eve_dirty" );
-const adobe::static_name_t  editor_error_cell_g            ( "errors" );
-const adobe::static_name_t  editor_results_cell_g          ( "results" );
-const adobe::static_name_t  editor_visible_tab_cell_g      ( "editor_tab_group" );
-const adobe::static_name_t  editor_key_errors_tab_g        ( "errors" );
-const adobe::static_name_t  editor_key_results_tab_g       ( "results" );
+using namespace adobe::literals;
 
-const adobe::static_name_t  editor_action_ls_inspect       ( "ls_inspect" );
-const adobe::static_name_t  editor_action_ls_set           ( "ls_set" );
-const adobe::static_name_t  editor_action_pm_dump          ( "pm_dump" );
-const adobe::static_name_t  editor_action_pm_evaluate      ( "pm_evaluate" );
-const adobe::static_name_t  editor_action_pm_set           ( "pm_set" );
-const adobe::static_name_t  editor_ls_expression           ( "ls_expression" );
-const adobe::static_name_t  editor_ls_results              ( "ls_results" );
-const adobe::static_name_t  editor_ls_to_cell              ( "ls_to_cell" );
-const adobe::static_name_t  editor_pm_expression           ( "pm_expression" );
-const adobe::static_name_t  editor_pm_results              ( "pm_results" );
-const adobe::static_name_t  editor_pm_to_cell              ( "pm_to_cell" );
+const adobe::static_name_t value_key_g               = "value"_name;
+const adobe::static_name_t version_info_name_g       = "version_info"_name;
+const adobe::static_name_t update_adam_name_g        = "update_adam"_name;
+const adobe::static_name_t update_eve_name_g         = "update_eve"_name;
+const adobe::static_name_t save_adam_name_g          = "save_adam"_name;
+const adobe::static_name_t save_eve_name_g           = "save_eve"_name;
+const adobe::static_name_t clear_window_action_g     = "clear_frames"_name;
+const adobe::static_name_t frame_widgets_action_g    = "frame_widgets"_name;
+const adobe::static_name_t editor_adam_cell_g        = "adam_source"_name;
+const adobe::static_name_t editor_eve_cell_g         = "eve_source"_name;
+const adobe::static_name_t editor_adam_dirty_cell_g  = "adam_dirty"_name;
+const adobe::static_name_t editor_eve_dirty_cell_g   = "eve_dirty"_name;
+const adobe::static_name_t editor_error_cell_g       = "errors"_name;
+const adobe::static_name_t editor_results_cell_g     = "results"_name;
+const adobe::static_name_t editor_visible_tab_cell_g = "editor_tab_group"_name;
+const adobe::static_name_t editor_key_errors_tab_g   = "errors"_name;
+const adobe::static_name_t editor_key_results_tab_g  = "results"_name;
+
+const adobe::static_name_t editor_action_ls_inspect  = "ls_inspect"_name;
+const adobe::static_name_t editor_action_ls_set      = "ls_set"_name;
+const adobe::static_name_t editor_action_pm_dump     = "pm_dump"_name;
+const adobe::static_name_t editor_action_pm_evaluate = "pm_evaluate"_name;
+const adobe::static_name_t editor_action_pm_set      = "pm_set"_name;
+const adobe::static_name_t editor_ls_expression      = "ls_expression"_name;
+const adobe::static_name_t editor_ls_results         = "ls_results"_name;
+const adobe::static_name_t editor_ls_to_cell         = "ls_to_cell"_name;
+const adobe::static_name_t editor_pm_expression      = "pm_expression"_name;
+const adobe::static_name_t editor_pm_results         = "pm_results"_name;
+const adobe::static_name_t editor_pm_to_cell         = "pm_to_cell"_name;
 
 /****************************************************************************************************/
 
@@ -188,9 +190,9 @@ adobe::any_regular_t channel_invert(const adobe::array_t& arg_set)
     boost::gil::rgba8_view_t::iterator last(filtered_image._view.end());
     const adobe::dictionary_t&         param_set(arg_set[1].cast<adobe::dictionary_t>());
 
-    bool invert_red(get_value(param_set, adobe::static_name_t("invert_red")).cast<bool>());
-    bool invert_green(get_value(param_set, adobe::static_name_t("invert_green")).cast<bool>());
-    bool invert_blue(get_value(param_set, adobe::static_name_t("invert_blue")).cast<bool>());
+    bool invert_red(get_value(param_set, "invert_red"_name).cast<bool>());
+    bool invert_green(get_value(param_set, "invert_green"_name).cast<bool>());
+    bool invert_blue(get_value(param_set, "invert_blue"_name).cast<bool>());
 
     for (; iter != last; ++iter)
     {
@@ -258,10 +260,10 @@ application_t::application_t() :
     _vm_lookup_m.attach_to(_editor_sheet_m);
     _vm_lookup_m.attach_to(_editor_sheet_m.machine_m);
 
-    _vm_lookup_m.insert_array_function(adobe::static_name_t("ps_finalize"), ps_finalize);
-    _vm_lookup_m.insert_array_function(adobe::static_name_t("channel_invert"), channel_invert);
-    _vm_lookup_m.insert_array_function(adobe::static_name_t("pi_filter_op"), pi_filter_op);
-    _vm_lookup_m.insert_array_function(adobe::static_name_t("serialize"), serialize_);
+    _vm_lookup_m.insert_array_function("ps_finalize"_name, ps_finalize);
+    _vm_lookup_m.insert_array_function("channel_invert"_name, channel_invert);
+    _vm_lookup_m.insert_array_function("pi_filter_op"_name, pi_filter_op);
+    _vm_lookup_m.insert_array_function("serialize"_name, serialize_);
 }
 
 /****************************************************************************************************/
@@ -392,7 +394,7 @@ bool application_t::_initialize()
 
 void application_t::_button_notifier( const adobe::name_t& name, const adobe::any_regular_t& value )
 {
-    if (name == adobe::static_name_t("ok"))
+    if (name == "ok"_name)
     {
 #if defined(ADOBE_STD_SERIALIZATION)
         std::stringstream result;
@@ -424,7 +426,7 @@ void application_t::_sheet_ops( adobe::name_t name, const adobe::any_regular_t& 
     if (_sheet_m == 0)
         return;
 
-    adobe::dictionary_t value_dictionary(get_value(value.cast<adobe::dictionary_t>(), adobe::static_name_t("value")).cast<adobe::dictionary_t>());
+    adobe::dictionary_t value_dictionary(get_value(value.cast<adobe::dictionary_t>(), "value"_name).cast<adobe::dictionary_t>());
 
     if (name == editor_action_pm_evaluate ||
         name == editor_action_pm_set ||
@@ -872,10 +874,10 @@ void application_t::run_current_as_modal()
     dialog.display_options_m = adobe::dialog_display_s;
     dialog.callback_m = &always_break;
     dialog.working_directory_m = _eve_file_m.directory_path();
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("ps_finalize"), ps_finalize);
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("channel_invert"), channel_invert);
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("pi_filter_op"), pi_filter_op);
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("serialize"), serialize_);
+    dialog.vm_lookup_m.insert_array_function("ps_finalize"_name, ps_finalize);
+    dialog.vm_lookup_m.insert_array_function("channel_invert"_name, channel_invert);
+    dialog.vm_lookup_m.insert_array_function("pi_filter_op"_name, pi_filter_op);
+    dialog.vm_lookup_m.insert_array_function("serialize"_name, serialize_);
 
     adobe::dialog_result_t result(dialog.go(eve_stream, adam_stream));
 
