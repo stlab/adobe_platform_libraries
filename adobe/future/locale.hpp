@@ -34,9 +34,9 @@ const dictionary_t& current_locale();
 
 /*************************************************************************************************/
 
-extern aggregate_name_t key_locale_identifier;
-extern aggregate_name_t key_locale_decimal_point;
-extern aggregate_name_t key_locale_thousands_separator;
+extern static_name_t key_locale_identifier;
+extern static_name_t key_locale_decimal_point;
+extern static_name_t key_locale_thousands_separator;
 
 /*************************************************************************************************/
 

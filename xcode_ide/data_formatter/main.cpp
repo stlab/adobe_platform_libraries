@@ -37,14 +37,14 @@ void test0()
     adobe::any_regular_t number(5);
     adobe::any_regular_t text(adobe::string_t("Hello, world!"));
     adobe::any_regular_t boolean(true);
-    adobe::any_regular_t identifier(adobe::static_name_t("some_identifier"));
+    adobe::any_regular_t identifier(adobe::"some_identifier"_name);
 
     adobe::dictionary_t  dictionary;
     adobe::array_t       array;
     adobe::string_t      string("Hello, world!");
 
-    dictionary[adobe::static_name_t("key_1")] = number;
-    dictionary[adobe::static_name_t("key_2")] = text;
+    dictionary[adobe::"key_1"_name] = number;
+    dictionary[adobe::"key_2"_name] = text;
 
     array.push_back(boolean);
     array.push_back(identifier);
@@ -91,9 +91,9 @@ void test1()
     my_custom_type_t     custom_type;
     adobe::any_regular_t custom_regular(custom_type);
 
-    dictionary[adobe::static_name_t("key_0")].assign(custom_type);
-    dictionary[adobe::static_name_t("key_1")].assign(42);
-    dictionary[adobe::static_name_t("key_2")].assign(string);
+    dictionary[adobe::"key_0"_name].assign(custom_type);
+    dictionary[adobe::"key_1"_name].assign(42);
+    dictionary[adobe::"key_2"_name].assign(string);
 
     array.push_back(number);
     array.push_back(adobe::any_regular_t(string));

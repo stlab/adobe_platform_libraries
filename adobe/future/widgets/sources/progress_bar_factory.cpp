@@ -72,8 +72,8 @@ widget_node_t make_progress_bar(const dictionary_t&     parameters,
                                 const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<progress_bar_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("progress_bar")), 
-        factory.layout_attributes(static_name_t("progress_bar"))); 
+        factory.is_container("progress_bar"_name), 
+        factory.layout_attributes("progress_bar"_name)); 
 }
 
 /*************************************************************************************************/

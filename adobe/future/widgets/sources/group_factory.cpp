@@ -51,7 +51,13 @@ widget_node_t make_group(const dictionary_t&     parameters,
                          const widget_node_t&    parent, 
                          const factory_token_t&  token,
                          const widget_factory_t& factory)
-    { return create_and_hookup_widget<group_t, poly_placeable_t>(parameters, parent, token, factory.is_container(static_name_t("group")), factory.layout_attributes(static_name_t("group"))); }
+{
+    return create_and_hookup_widget<group_t, poly_placeable_t>(parameters,
+                                                               parent,
+                                                               token,
+                                                               factory.is_container("group"_name),
+                                                               factory.layout_attributes("group"_name));
+}
 
 /****************************************************************************************************/
 

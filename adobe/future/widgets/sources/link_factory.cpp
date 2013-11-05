@@ -45,8 +45,8 @@ widget_node_t make_link(const dictionary_t&     parameters,
                         const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<link_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("link")), 
-        factory.layout_attributes(static_name_t("link"))); 
+        factory.is_container("link"_name), 
+        factory.layout_attributes("link"_name)); 
 }
 
 /****************************************************************************************************/

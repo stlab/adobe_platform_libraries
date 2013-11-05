@@ -29,11 +29,11 @@ namespace implementation {
 
 /****************************************************************************************************/
 
-aggregate_name_t	k_attribute_theme = { "theme" };
-aggregate_name_t    k_attribute_theme_large = { "large" };
-aggregate_name_t    k_attribute_theme_normal = { "normal" };
-aggregate_name_t    k_attribute_theme_small = { "small" };
-aggregate_name_t    k_attribute_theme_mini = { "mini" };
+static_name_t k_attribute_theme = "theme"_name;
+static_name_t k_attribute_theme_large = "large"_name;
+static_name_t k_attribute_theme_normal = "normal"_name;
+static_name_t k_attribute_theme_small = "small"_name;
+static_name_t k_attribute_theme_mini = "mini"_name;
 
 /****************************************************************************************************/
 
@@ -236,16 +236,16 @@ extents_t::slice_t merge_slices_with(const extents_t&                 src_retang
 
 /****************************************************************************************************/
 
-aggregate_name_t k_metric_gap = { "gap" };
+static_name_t k_metric_gap = "gap"_name;
 
-aggregate_name_t k_metric_size = { "size" };
-aggregate_name_t k_metric_adjust_position = { "adjust_position" };
-aggregate_name_t k_metric_adjust_size = { "adjust_size" };
-aggregate_name_t k_metric_adjust_baseline = { "adjust_baseline" };
-aggregate_name_t k_metric_outset = { "outset" };
-aggregate_name_t k_metric_frame = { "frame" };
-aggregate_name_t k_metric_inset = { "inset" };
-aggregate_name_t k_metric_spacing = { "spacing" };
+static_name_t k_metric_size = "size"_name;
+static_name_t k_metric_adjust_position = "adjust_position"_name;
+static_name_t k_metric_adjust_size = "adjust_size"_name;
+static_name_t k_metric_adjust_baseline = "adjust_baseline"_name;
+static_name_t k_metric_outset = "outset"_name;
+static_name_t k_metric_frame = "frame"_name;
+static_name_t k_metric_inset = "inset"_name;
+static_name_t k_metric_spacing = "spacing"_name;
 
 /****************************************************************************************************/
 

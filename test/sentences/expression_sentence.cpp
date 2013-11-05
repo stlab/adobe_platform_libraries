@@ -102,7 +102,7 @@ adobe::any_regular_t array_function(adobe::name_t              function_name,
 
         return adobe::any_regular_t(success);
     }
-    else if (function_name == adobe::static_name_t("require"))
+    else if (function_name == adobe::"require"_name)
     {
         // grab the first parameter, make sure it's a name, then check to make sure it
         // exists in the attribute dictionary. Then take the second parameter and compare

@@ -106,9 +106,9 @@ void signal_locale_change(const dictionary_t& new_locale_data)
 
 /**************************************************************************************************/
 
-aggregate_name_t key_locale_identifier 			= { "key_locale_identifier" };
-aggregate_name_t key_locale_decimal_point       = { "key_locale_decimal_point" };
-aggregate_name_t key_locale_thousands_separator = { "key_locale_thousands_separator" };
+static_name_t key_locale_identifier          = "key_locale_identifier"_name;
+static_name_t key_locale_decimal_point       = "key_locale_decimal_point"_name;
+static_name_t key_locale_thousands_separator = "key_locale_thousands_separator"_name;
 
 /**************************************************************************************************/
 

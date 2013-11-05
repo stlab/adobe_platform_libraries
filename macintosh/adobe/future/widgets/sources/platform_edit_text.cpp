@@ -28,10 +28,10 @@ namespace implementation {
 template <>
 inline dictionary_t extra_widget_context(const edit_text_t& w)
 {
-    static_name_t    is_scrollable(w.scrollable_m ? "true" : "false");
+    static_name_t    is_scrollable(w.scrollable_m ? "true"_name : "false"_name);
     dictionary_t     result;
 
-    result.insert(std::make_pair(static_name_t("scroll"), any_regular_t(is_scrollable)));
+    result.insert(std::make_pair("scroll"_name, any_regular_t(is_scrollable)));
 
     return result;
 }

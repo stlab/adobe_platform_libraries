@@ -163,11 +163,11 @@ image_t::image_t(const view_model_type& image) :
     enabled_m(false),
     handler_m(*this)
 {
-    metadata_m.insert(dictionary_t::value_type(static_name_t("delta_x"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("delta_y"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("dragging"), any_regular_t(false)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("x"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("y"), any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("delta_x"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("delta_y"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("dragging"_name, any_regular_t(false)));
+    metadata_m.insert(dictionary_t::value_type("x"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("y"_name, any_regular_t(0)));
 }
 
 /****************************************************************************************************/
@@ -247,8 +247,8 @@ void image_t::place(const place_data_t& place_data)
         double width(callback_m ? std::min<long>(fixed_width, image_m.width()) : image_m.width());
         double height(callback_m ? std::min<long>(fixed_height, image_m.height()) : image_m.height());
     
-        metadata_m.insert(dictionary_t::value_type(static_name_t("width"), any_regular_t(width)));
-        metadata_m.insert(dictionary_t::value_type(static_name_t("height"), any_regular_t(height)));
+        metadata_m.insert(dictionary_t::value_type("width"_name, any_regular_t(width)));
+        metadata_m.insert(dictionary_t::value_type("height"_name, any_regular_t(height)));
 
         if (old_metadata != metadata_m)
             callback_m(metadata_m);
@@ -294,8 +294,8 @@ void image_t::place(const place_data_t& place_data)
             double delta_x(last_point.h - cur_point.h);
             double delta_y(last_point.v - cur_point.v);
 
-            get_value(metadata_m, static_name_t("x"), x);
-            get_value(metadata_m, static_name_t("y"), y);
+            get_value(metadata_m, "x"_name, x);
+            get_value(metadata_m, "y"_name, y);
 
             if (image_m.width() < fixed_width)
                 x = 0;
@@ -307,11 +307,11 @@ void image_t::place(const place_data_t& place_data)
             else
                 y = adobe::clamp<long>(y + delta_y, 0, image_m.height() - fixed_height);
 
-            metadata_m.insert(dictionary_t::value_type(static_name_t("delta_x"), any_regular_t(delta_x)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("delta_y"), any_regular_t(delta_y)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("dragging"), any_regular_t(true)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("x"), any_regular_t(x)));
-            metadata_m.insert(dictionary_t::value_type(static_name_t("y"), any_regular_t(y)));
+            metadata_m.insert(dictionary_t::value_type("delta_x"_name, any_regular_t(delta_x)));
+            metadata_m.insert(dictionary_t::value_type("delta_y"_name, any_regular_t(delta_y)));
+            metadata_m.insert(dictionary_t::value_type("dragging"_name, any_regular_t(true)));
+            metadata_m.insert(dictionary_t::value_type("x"_name, any_regular_t(x)));
+            metadata_m.insert(dictionary_t::value_type("y"_name, any_regular_t(y)));
 
             callback_m(metadata_m);
 
@@ -327,9 +327,9 @@ void image_t::place(const place_data_t& place_data)
         last_point = cur_point;
     }
 
-    metadata_m.insert(dictionary_t::value_type(static_name_t("delta_x"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("delta_y"), any_regular_t(0)));
-    metadata_m.insert(dictionary_t::value_type(static_name_t("dragging"), any_regular_t(false)));
+    metadata_m.insert(dictionary_t::value_type("delta_x"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("delta_y"_name, any_regular_t(0)));
+    metadata_m.insert(dictionary_t::value_type("dragging"_name, any_regular_t(false)));
 
     callback_m(metadata_m);
 

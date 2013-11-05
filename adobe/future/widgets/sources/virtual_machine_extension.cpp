@@ -107,7 +107,7 @@ std::ostream& operator<<(std::ostream& s, const boost::gil::rgba8_image_t& /*ima
 any_regular_t asl_standard_dictionary_function_lookup(name_t              function_name,
                                                       const dictionary_t& named_argument_set)
 {
-    if (function_name == static_name_t("image"))
+    if (function_name == "image"_name)
     {
         return implementation::vm_dictionary_image_proc(named_argument_set);
     }
@@ -124,7 +124,7 @@ any_regular_t asl_standard_dictionary_function_lookup(name_t              functi
 any_regular_t asl_standard_array_function_lookup(name_t         function_name,
                                                  const array_t& argument_set)
 {
-    if (function_name == static_name_t("image"))
+    if (function_name == "image"_name)
     {
         return implementation::vm_array_image_proc(argument_set);
     }
@@ -144,15 +144,15 @@ any_regular_t asl_standard_array_function_lookup(name_t         function_name,
 
 vm_lookup_t::vm_lookup_t()
 {
-    insert_dictionary_function(adobe::static_name_t("image"), &implementation::vm_dictionary_image_proc);
-    insert_array_function(adobe::static_name_t("image"), &implementation::vm_array_image_proc);
+    insert_dictionary_function("image"_name, &implementation::vm_dictionary_image_proc);
+    insert_array_function("image"_name, &implementation::vm_array_image_proc);
 }
 
 /**************************************************************************************************/
 
 void vm_lookup_t::attach_to(sheet_t& sheet)
 {
-    insert_array_function(adobe::static_name_t("contributing"),
+    insert_array_function("contributing"_name,
         boost::bind(&contributing_adaptor, boost::cref(sheet), _1));
         
     variable_lookup_m = boost::bind(&sheet_t::get, &sheet, _1);

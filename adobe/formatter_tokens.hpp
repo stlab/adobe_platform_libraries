@@ -22,7 +22,7 @@ namespace adobe {
 
 /******************************************************************************/
 
-#define ADOBE_TOKEN(x) extern const aggregate_name_t key_##x;
+#define ADOBE_TOKEN(x) extern const static_name_t key_##x;
 
 ADOBE_TOKEN(cell_type)
 ADOBE_TOKEN(comment_brief)
@@ -35,7 +35,6 @@ ADOBE_TOKEN(linked)
 ADOBE_TOKEN(name_set)
 ADOBE_TOKEN(parameters)
 ADOBE_TOKEN(relation_set)
-
 
 // The meta type values do not come from the parser; instead it is a type
 // used to denote the type of adam node added with "this node". We use the

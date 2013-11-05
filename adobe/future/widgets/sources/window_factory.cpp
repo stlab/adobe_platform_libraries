@@ -57,9 +57,9 @@ widget_node_t make_window(const dictionary_t&     parameters,
                           const factory_token_t&  token,
                           const widget_factory_t& factory)
 {
-    bool is_container(factory.is_container(static_name_t("dialog")));
+    bool is_container(factory.is_container("dialog"_name));
     const layout_attributes_t& layout_attributes(
-        factory.layout_attributes(static_name_t("dialog")));
+        factory.layout_attributes("dialog"_name));
     size_enum_t size(parameters.count(key_size) ?
                      implementation::enumerate_size(get_value(parameters, key_size).cast<name_t>()) :
                      parent.size_m);

@@ -42,8 +42,8 @@ widget_node_t make_radio_button(const dictionary_t&     parameters,
                                 const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<radio_button_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("radio_button")), 
-        factory.layout_attributes(static_name_t("radio_button"))); 
+        factory.is_container("radio_button"_name), 
+        factory.layout_attributes("radio_button"_name)); 
 }
 
 /****************************************************************************************************/

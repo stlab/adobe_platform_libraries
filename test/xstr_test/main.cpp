@@ -137,9 +137,9 @@ int main(int argc, char* argv[])
         std::cout << "bad marker: " << bad_thing << std::endl;
         std::cout << "neutral marker: " << neutral_thing << std::endl;
 
-        std::cout << "Good: " << adobe::xstring_replace(adobe::static_name_t("replacement_test_1"), good_thing) << std::endl;
-        std::cout << "Bad: " << adobe::xstring_replace(adobe::static_name_t("replacement_test_1"), bad_thing) << std::endl;
-        std::cout << "Neutral: " << adobe::xstring_replace(adobe::static_name_t("replacement_test_1"), neutral_thing) << std::endl;
+        std::cout << "Good: " << adobe::xstring_replace(adobe::"replacement_test_1"_name, good_thing) << std::endl;
+        std::cout << "Bad: " << adobe::xstring_replace(adobe::"replacement_test_1"_name, bad_thing) << std::endl;
+        std::cout << "Neutral: " << adobe::xstring_replace(adobe::"replacement_test_1"_name, neutral_thing) << std::endl;
     }
     catch (const std::exception& error)
     {

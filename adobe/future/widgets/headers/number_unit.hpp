@@ -12,7 +12,7 @@
 /****************************************************************************************************/
 
 #include <adobe/algorithm/clamp.hpp>
-#include <adobe/name_fwd.hpp>
+#include <adobe/name.hpp>
 #include <adobe/dictionary_fwd.hpp>
 
 #include <string>

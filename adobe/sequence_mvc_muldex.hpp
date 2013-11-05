@@ -171,19 +171,19 @@ f
 
     adobe::any_regular_t       dictionary_initializer;
     dictionary_initializer = adobe::any_regular_t(adobe::dictionary_t());
-    basic_sheet.add_interface(adobe::static_name_t("line_in"), dictionary_initializer);
-    basic_sheet.add_interface(adobe::static_name_t("line_out"), dictionary_initializer);
+    basic_sheet.add_interface("line_in"_name, dictionary_initializer);
+    basic_sheet.add_interface("line_out"_name, dictionary_initializer);
 
     attach_sequence_view_muldex(sequence_model,
                                 my_sequence_view,
                                 basic_sheet,
-                                adobe::static_name_t("line_out"),
+                                "line_out"_name,
                                 assemblage);
 
     attach_sequence_controller_muldex(sequence_model,
                                       my_sequence_controller,
                                       basic_sheet,
-                                      adobe::static_name_t("line_in"),
+                                      "line_in"_name,
                                       assemblage);
 
     // Here, you can invoke controller commands in my_sequence_controller and
@@ -250,9 +250,9 @@ struct sequence_view_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("refresh"));
-        command[static_name_t("key")] = any_regular_t(key);
-        command[static_name_t("value")] = any_regular_t(value);
+        command["command"_name] = any_regular_t("refresh"_name);
+        command["key"_name] = any_regular_t(key);
+        command["value"_name] = any_regular_t(value);
 
         send(command);
     }
@@ -264,10 +264,10 @@ struct sequence_view_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("extend"));
-        command[static_name_t("before")] = any_regular_t(before);
-        command[static_name_t("key")] = any_regular_t(key);
-        command[static_name_t("value")] = any_regular_t(value);
+        command["command"_name] = any_regular_t("extend"_name);
+        command["before"_name] = any_regular_t(before);
+        command["key"_name] = any_regular_t(key);
+        command["value"_name] = any_regular_t(value);
 
         send(command);
     }
@@ -279,9 +279,9 @@ struct sequence_view_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("extend_set"));
-        command[static_name_t("before")] = any_regular_t(before);
-        command[static_name_t("key_set")] = any_regular_t(key_set);
+        command["command"_name] = any_regular_t("extend_set"_name);
+        command["before"_name] = any_regular_t(before);
+        command["key_set"_name] = any_regular_t(key_set);
 
         send(command);
     }
@@ -293,8 +293,8 @@ struct sequence_view_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("erase"));
-        command[static_name_t("key_set")] = any_regular_t(key_set);
+        command["command"_name] = any_regular_t("erase"_name);
+        command["key_set"_name] = any_regular_t(key_set);
 
         send(command);
     }
@@ -306,7 +306,7 @@ struct sequence_view_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("clear"));
+        command["command"_name] = any_regular_t("clear"_name);
 
         send(command);
     }
@@ -366,27 +366,27 @@ struct sequence_view_demultiplexer_t
             inline in the register_function routines. As it is they are wrapped
             in a boost::function and passed, which is a viable alternative.
         */
-        funnel_m.register_function(static_name_t("refresh"),
+        funnel_m.register_function("refresh"_name,
                                    boost::function<void (key_type, typename T::cow_value_type)>(boost::bind(&T::refresh, boost::ref(sequence_view), _1, _2)),
-                                   static_name_t("key"),
-                                   static_name_t("value"));
+                                   "key"_name,
+                                   "value"_name);
 
-        funnel_m.register_function(static_name_t("extend"),
+        funnel_m.register_function("extend"_name,
                                    boost::function<void (key_type, key_type, typename T::cow_value_type)>(boost::bind(&T::extend, boost::ref(sequence_view), _1, _2, _3)),
-                                   static_name_t("before"),
-                                   static_name_t("key"),
-                                   static_name_t("value"));
+                                   "before"_name,
+                                   "key"_name,
+                                   "value"_name);
 
-        funnel_m.register_function(static_name_t("extend_set"),
+        funnel_m.register_function("extend_set"_name,
                                    boost::function<void (key_type, const vector<key_type>&)>(boost::bind(&T::extend_set, boost::ref(sequence_view), _1, _2)),
-                                   static_name_t("before"),
-                                   static_name_t("key_set"));
+                                   "before"_name,
+                                   "key_set"_name);
 
-        funnel_m.register_function(static_name_t("erase"),
+        funnel_m.register_function("erase"_name,
                                    boost::function<void (const vector<key_type>&)>(boost::bind(&T::erase, boost::ref(sequence_view), _1)),
-                                   static_name_t("key_set"));
+                                   "key_set"_name);
 
-        funnel_m.register_named0_function(static_name_t("clear"),
+        funnel_m.register_named0_function("clear"_name,
                                    boost::function<void ()>(boost::bind(&T::clear, boost::ref(sequence_view))));
     }
 
@@ -551,8 +551,8 @@ struct sequence_model_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("push_back"));
-        command[static_name_t("value")] = any_regular_t(value);
+        command["command"_name] = any_regular_t("push_back"_name);
+        command["value"_name] = any_regular_t(value);
 
         send(command);
     }
@@ -564,9 +564,9 @@ struct sequence_model_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("set"));
-        command[static_name_t("key")] = any_regular_t(key);
-        command[static_name_t("value")] = any_regular_t(value);
+        command["command"_name] = any_regular_t("set"_name);
+        command["key"_name] = any_regular_t(key);
+        command["value"_name] = any_regular_t(value);
 
         send(command);
     }
@@ -578,9 +578,9 @@ struct sequence_model_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("insert"));
-        command[static_name_t("before")] = any_regular_t(before);
-        command[static_name_t("value")] = any_regular_t(value);
+        command["command"_name] = any_regular_t("insert"_name);
+        command["before"_name] = any_regular_t(before);
+        command["value"_name] = any_regular_t(value);
 
         send(command);
     }
@@ -592,9 +592,9 @@ struct sequence_model_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("insert_set"));
-        command[static_name_t("before")] = any_regular_t(before);
-        command[static_name_t("value_set")] = any_regular_t(value_set);
+        command["command"_name] = any_regular_t("insert_set"_name);
+        command["before"_name] = any_regular_t(before);
+        command["value_set"_name] = any_regular_t(value_set);
 
         send(command);
     }
@@ -606,8 +606,8 @@ struct sequence_model_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("erase"));
-        command[static_name_t("key_set")] = any_regular_t(key_set);
+        command["command"_name] = any_regular_t("erase"_name);
+        command["key_set"_name] = any_regular_t(key_set);
 
         send(command);
     }
@@ -619,7 +619,7 @@ struct sequence_model_multiplexer
 
         dictionary_t command;
 
-        command[static_name_t("command")] = any_regular_t(static_name_t("clear"));
+        command["command"_name] = any_regular_t("clear"_name);
 
         send(command);
     }
@@ -692,30 +692,30 @@ struct sequence_model_demultiplexer
     {
         sequence_m = &sequence;
 
-        funnel_m.register_function(static_name_t("push_back"),
+        funnel_m.register_function("push_back"_name,
                                    boost::function<void (const value_type&)>(boost::bind(&poly_sequence_model<T>::type::push_back, boost::ref(*sequence_m), _1)),
-                                   static_name_t("value"));
+                                   "value"_name);
 
-        funnel_m.register_function(static_name_t("set"),
+        funnel_m.register_function("set"_name,
                                    boost::function<void (key_type pos, const value_type&)>(boost::bind(&poly_sequence_model<T>::type::set, boost::ref(*sequence_m), _1, _2)),
-                                   static_name_t("key"),
-                                   static_name_t("value"));
+                                   "key"_name,
+                                   "value"_name);
 
-        funnel_m.register_function(static_name_t("insert"),
+        funnel_m.register_function("insert"_name,
                                    boost::function<void (key_type pos, const value_type&)>(boost::bind(&poly_sequence_model<T>::type::insert, boost::ref(*sequence_m), _1, _2)),
-                                   static_name_t("before"),
-                                   static_name_t("value"));
+                                   "before"_name,
+                                   "value"_name);
 
-        funnel_m.register_function(static_name_t("insert_set"),
+        funnel_m.register_function("insert_set"_name,
                                    boost::function<void (key_type pos, const vector<value_type>&)>(boost::bind(&poly_sequence_model<T>::type::insert_set, boost::ref(*sequence_m), _1, _2)),
-                                   static_name_t("before"),
-                                   static_name_t("value_set"));
+                                   "before"_name,
+                                   "value_set"_name);
 
-        funnel_m.register_function(static_name_t("erase"),
+        funnel_m.register_function("erase"_name,
                                    boost::function<void (const vector<key_type>& selection)>(boost::bind(&poly_sequence_model<T>::type::erase, boost::ref(*sequence_m), _1)),
-                                   static_name_t("key_set"));
+                                   "key_set"_name);
 
-        funnel_m.register_named0_function(static_name_t("clear"),
+        funnel_m.register_named0_function("clear"_name,
                                    boost::function<void ()>(boost::bind(&poly_sequence_model<T>::type::clear, boost::ref(*sequence_m))));
     }
 

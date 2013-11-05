@@ -54,8 +54,8 @@ widget_node_t make_reveal(const dictionary_t&     parameters,
                           const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<reveal_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("reveal")), 
-        factory.layout_attributes(static_name_t("reveal"))); 
+        factory.is_container("reveal"_name), 
+        factory.layout_attributes("reveal"_name)); 
 }
 
 

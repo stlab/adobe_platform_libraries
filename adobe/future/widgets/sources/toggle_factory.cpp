@@ -75,8 +75,8 @@ widget_node_t make_toggle(const dictionary_t&     parameters,
                           const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<toggle_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("toggle")), 
-        factory.layout_attributes(static_name_t("toggle"))); 
+        factory.is_container("toggle"_name), 
+        factory.layout_attributes("toggle"_name)); 
 }
 
 

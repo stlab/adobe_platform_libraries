@@ -42,7 +42,7 @@ inline void test_pack(adobe::function_pack_t& pack, adobe::name_t function, cons
 
         expression.push_back(adobe::any_regular_t(argument_set));
         expression.push_back(adobe::any_regular_t(function));
-        expression.push_back(adobe::any_regular_t(adobe::static_name_t(".function")));
+        expression.push_back(adobe::any_regular_t(adobe::".function"_name));
 
         vm.evaluate(expression);
 
@@ -78,21 +78,21 @@ inline void insert_argument(adobe::dictionary_t& dictionary, adobe::name_t name,
 /**************************************************************************************************/
 
 // function names
-const adobe::name_t name_fn_ptr(adobe::static_name_t("fn_ptr"));
-const adobe::name_t name_fn_obj(adobe::static_name_t("fn_obj"));
-const adobe::name_t name_mem_fn(adobe::static_name_t("mem_fn"));
-const adobe::name_t name_cmem_fn(adobe::static_name_t("cmem_fn"));
+const adobe::name_t name_fn_ptr(adobe::"fn_ptr"_name);
+const adobe::name_t name_fn_obj(adobe::"fn_obj"_name);
+const adobe::name_t name_mem_fn(adobe::"mem_fn"_name);
+const adobe::name_t name_cmem_fn(adobe::"cmem_fn"_name);
 
 // named parameters
-const adobe::name_t name_this(adobe::static_name_t("this"));
-const adobe::name_t name_integer(adobe::static_name_t("int"));
-const adobe::name_t name_string(adobe::static_name_t("str"));
-const adobe::name_t name_char_ptr(adobe::static_name_t("char_ptr"));
-const adobe::name_t name_integer_ptr(adobe::static_name_t("int_ptr"));
-const adobe::name_t name_name(adobe::static_name_t("name"));
-const adobe::name_t name_double(adobe::static_name_t("double"));
-const adobe::name_t name_double_ptr(adobe::static_name_t("double_ptr"));
-const adobe::name_t name_name_ptr(adobe::static_name_t("name_ptr"));
+const adobe::name_t name_this(adobe::"this"_name);
+const adobe::name_t name_integer(adobe::"int"_name);
+const adobe::name_t name_string(adobe::"str"_name);
+const adobe::name_t name_char_ptr(adobe::"char_ptr"_name);
+const adobe::name_t name_integer_ptr(adobe::"int_ptr"_name);
+const adobe::name_t name_name(adobe::"name"_name);
+const adobe::name_t name_double(adobe::"double"_name);
+const adobe::name_t name_double_ptr(adobe::"double_ptr"_name);
+const adobe::name_t name_name_ptr(adobe::"name_ptr"_name);
 
 // sample data
 const std::string    sample_string("Hello");

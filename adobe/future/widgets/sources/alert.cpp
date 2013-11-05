@@ -150,7 +150,7 @@ std::pair<const char*, bool> alert(const char*                    message_text,
                                          &always_break,
                                          icon_directory_path));
 
-    bool is_checked(get_value(result.command_m, static_name_t("checkbox_value")).cast<bool>());
+    bool is_checked(get_value(result.command_m, "checkbox_value"_name).cast<bool>());
 
     // NOTE (fbrereto) : Here is why we require the name of the action to be "bN", where N is the index
     std::size_t index(std::atoi(&result.terminating_action_m.c_str()[1]));

@@ -50,7 +50,7 @@ public:
         adobe::dictionary_t result;
 
         if (type_m != adobe::name_t())
-            result.insert(std::make_pair(adobe::static_name_t("type"), type_m));
+            result.insert(std::make_pair(adobe::"type"_name, type_m));
 
         result.insert(std::make_pair(adobe::receives_k, adobe::name_t("raster_mask")));
         result.insert(std::make_pair(adobe::emits_k, adobe::name_t("raster_mask")));
@@ -146,11 +146,11 @@ BOOST_AUTO_TEST_CASE( simple_command_system )
     /* Construct Sentence(s) */
 
     adobe::command_system_t::sentence_token_t diff_token =
-        system.insert(adobe::make_expression_sentence(adobe::static_name_t("diff_user_mask"),
+        system.insert(adobe::make_expression_sentence(adobe::"diff_user_mask"_name,
                                                       "receives(@raster_mask) && require(@has_user_mask)",
                                                       "emits(@raster_mask)"));
     adobe::command_system_t::sentence_token_t del_token =
-        system.insert(adobe::make_expression_sentence(adobe::static_name_t("delete_user_mask"),
+        system.insert(adobe::make_expression_sentence(adobe::"delete_user_mask"_name,
                                                       "require(@has_user_mask)"));
 
     /* Set up Notifiers */
@@ -164,14 +164,14 @@ BOOST_AUTO_TEST_CASE( simple_command_system )
     /* Construct Subject(s) */
 
     adobe::command_system_t::subject_token_t subj1 =
-        system.insert(system.no_parent_subject(), adobe::poly_subject_t(dictionary_sentence_thing_t(true, adobe::static_name_t("foo"))));
+        system.insert(system.no_parent_subject(), adobe::poly_subject_t(dictionary_sentence_thing_t(true, adobe::"foo"_name)));
     adobe::command_system_t::subject_token_t subj2 =
-        system.insert(system.no_parent_subject(), adobe::poly_subject_t(dictionary_sentence_thing_t(false, adobe::static_name_t("bar"))));
+        system.insert(system.no_parent_subject(), adobe::poly_subject_t(dictionary_sentence_thing_t(false, adobe::"bar"_name)));
 
     /* Construct Direct Object(s) */
 
     adobe::command_system_t::direct_object_token_t dirobj1 =
-        system.insert(system.no_parent_direct_object(), adobe::poly_direct_object_t(dictionary_sentence_thing_t(true, adobe::static_name_t("baz"))));
+        system.insert(system.no_parent_direct_object(), adobe::poly_direct_object_t(dictionary_sentence_thing_t(true, adobe::"baz"_name)));
 
     /* Test engine */
 	BOOST_CHECK(system.inspect(del_token, subj1) == exists_and_enabled);

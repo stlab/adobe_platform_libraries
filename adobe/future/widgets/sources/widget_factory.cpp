@@ -43,18 +43,18 @@ size_enum_t enumerate_size(const name_t& size)
 {
     typedef static_table<name_t, size_enum_t, 4> name_size_table_t;
 
-    aggregate_name_t key_size_large  = { "size_large" };
-    aggregate_name_t key_size_normal = { "size_normal" };
-    aggregate_name_t key_size_small  = { "size_small" };
-    aggregate_name_t key_size_mini   = { "size_mini" };
-    static bool          init(false);
+    static_name_t key_size_large  = "size_large"_name;
+    static_name_t key_size_normal = "size_normal"_name;
+    static_name_t key_size_small  = "size_small"_name;
+    static_name_t key_size_mini   = "size_mini"_name;
+    static bool   init(false);
 
     static name_size_table_t size_table =
     {{
-        name_size_table_t::entry_type(key_size_large,   size_normal_s), // REVISIT (fbrereto) : stubbed to normal
-        name_size_table_t::entry_type(key_size_normal,  size_normal_s),
-        name_size_table_t::entry_type(key_size_small,   size_small_s),
-        name_size_table_t::entry_type(key_size_mini,    size_mini_s)
+        name_size_table_t::entry_type(key_size_large,  size_normal_s), // REVISIT (fbrereto) : stubbed to normal
+        name_size_table_t::entry_type(key_size_normal, size_normal_s),
+        name_size_table_t::entry_type(key_size_small,  size_small_s),
+        name_size_table_t::entry_type(key_size_mini,   size_mini_s)
     }};
 
     if (!init)
@@ -71,11 +71,9 @@ size_enum_t enumerate_size(const name_t& size)
 
 theme_t size_to_theme(size_enum_t size)
 {
-    theme_t                       theme = theme_normal_s;
-    if (size == size_small_s)     theme = theme_small_s;
-    else if (size == size_mini_s) theme = theme_mini_s;
-
-    return theme;
+    return size == size_small_s ? theme_small_s :
+           size == size_mini_s  ? theme_mini_s :
+                                  theme_normal_s;
 }
 
 /*************************************************************************************************/

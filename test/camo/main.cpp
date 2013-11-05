@@ -215,11 +215,11 @@ try
 
     adobe::modal_dialog_t dialog;
 
-    dialog.input_m.insert(adobe::dictionary_t::value_type(adobe::static_name_t("argv"), adobe::any_regular_t(arg_set)));
-    dialog.input_m.insert(adobe::dictionary_t::value_type(adobe::static_name_t("argc"), adobe::any_regular_t(argc - 1)));
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("cat"), &cat);
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("string_find"), &string_find);
-    dialog.vm_lookup_m.insert_array_function(adobe::static_name_t("exec"), &exec);
+    dialog.input_m.insert(adobe::dictionary_t::value_type(adobe::"argv"_name, adobe::any_regular_t(arg_set)));
+    dialog.input_m.insert(adobe::dictionary_t::value_type(adobe::"argc"_name, adobe::any_regular_t(argc - 1)));
+    dialog.vm_lookup_m.insert_array_function(adobe::"cat"_name, &cat);
+    dialog.vm_lookup_m.insert_array_function(adobe::"string_find"_name, &string_find);
+    dialog.vm_lookup_m.insert_array_function(adobe::"exec"_name, &exec);
     dialog.callback_m = &always_true;
 
 #ifndef NDEBUG

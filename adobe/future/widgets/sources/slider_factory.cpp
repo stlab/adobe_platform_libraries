@@ -38,10 +38,10 @@ void create_widget(const dictionary_t& parameters,
     get_value(parameters, key_slider_ticks, num_ticks);
     get_value(parameters, key_slider_point, slider_pointing);
 
-    if (slider_pointing == static_name_t("up"))         style = slider_points_up_s;
-    else if (slider_pointing == static_name_t("down"))  style = slider_points_down_s;
-    else if (slider_pointing == static_name_t("left"))  style = slider_points_left_s;
-    else if (slider_pointing == static_name_t("right")) style = slider_points_right_s;
+    if (slider_pointing == "up"_name)         style = slider_points_up_s;
+    else if (slider_pointing == "down"_name)  style = slider_points_down_s;
+    else if (slider_pointing == "left"_name)  style = slider_points_left_s;
+    else if (slider_pointing == "right"_name) style = slider_points_right_s;
 
     widget = new slider_t(alt_text,
                                  orientation == key_vertical,
@@ -85,8 +85,8 @@ widget_node_t make_slider(const dictionary_t&     parameters,
                           const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<slider_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("slider")), 
-        factory.layout_attributes(static_name_t("slider"))); }
+        factory.is_container("slider"_name), 
+        factory.layout_attributes("slider"_name)); }
 
 /****************************************************************************************************/
 

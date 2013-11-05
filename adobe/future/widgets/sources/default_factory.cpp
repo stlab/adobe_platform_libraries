@@ -194,8 +194,8 @@ widget_node_t row_factory(const dictionary_t&     parameters,
                           const widget_factory_t& factory)
 {
     return wire_to_eve_noncreating(token, parent, parameters,
-                                   factory.is_container(static_name_t("row")),
-                                   factory.layout_attributes(static_name_t("row")));
+                                   factory.is_container("row"_name),
+                                   factory.layout_attributes("row"_name));
 }
 
 widget_node_t column_factory(const dictionary_t&     parameters,
@@ -204,8 +204,8 @@ widget_node_t column_factory(const dictionary_t&     parameters,
                              const widget_factory_t& factory)
 {
     return wire_to_eve_noncreating(token, parent, parameters,
-                                   factory.is_container(static_name_t("column")),
-                                   factory.layout_attributes(static_name_t("column")));
+                                   factory.is_container("column"_name),
+                                   factory.layout_attributes("column"_name));
 }
 
 widget_node_t overlay_factory(const dictionary_t&     parameters,
@@ -214,8 +214,8 @@ widget_node_t overlay_factory(const dictionary_t&     parameters,
                               const widget_factory_t& factory)
 {
     return wire_to_eve_noncreating(token, parent, parameters,
-                                   factory.is_container(static_name_t("overlay")),
-                                   factory.layout_attributes(static_name_t("overlay")));
+                                   factory.is_container("overlay"_name),
+                                   factory.layout_attributes("overlay"_name));
 }
 
 /*************************************************************************************************/
@@ -227,14 +227,14 @@ const widget_factory_t& default_asl_widget_factory()
 
     if (!inited)
     {
-        name_t name_row(static_name_t("row"));
-        name_t name_column(static_name_t("column"));
-        name_t name_overlay(static_name_t("overlay"));
-        name_t name_reveal(static_name_t("reveal"));
-        name_t name_preset(static_name_t("preset"));
-        name_t name_preview(static_name_t("preview"));
-        name_t name_static_text(static_name_t("static_text"));
-        name_t name_control_button(static_name_t("control_button"));
+        name_t name_row("row"_name);
+        name_t name_column("column"_name);
+        name_t name_overlay("overlay"_name);
+        name_t name_reveal("reveal"_name);
+        name_t name_preset("preset"_name);
+        name_t name_preview("preview"_name);
+        name_t name_static_text("static_text"_name);
+        name_t name_control_button("control_button"_name);
 
         default_factory_s.reg(name_column, &column_factory, true, column_layout_attributes());
         default_factory_s.reg(name_overlay, &overlay_factory, true, overlay_layout_attributes());

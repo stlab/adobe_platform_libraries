@@ -231,7 +231,7 @@ dialog_result_t modal_dialog_t::go(std::istream& layout, std::istream& sheet)
 
     try
     {
-        name_t result_cell(static_name_t("result"));
+        name_t result_cell("result"_name);
 
         attach_view(assemblage, result_cell, *this, sheet_m);
 
@@ -254,16 +254,16 @@ dialog_result_t modal_dialog_t::go(std::istream& layout, std::istream& sheet)
     {
         line_position_t::getline_proc_t getline_proc(new line_position_t::getline_proc_impl_t(boost::bind(&mdi_error_getline, boost::ref(layout), _1, _2)));
 
-        view_m.reset( make_view( static_name_t( "eve definition" ),
-                                        getline_proc,
-                                        layout,
-                                        sheet_m,
-                                        root_behavior_m,
-                                        boost::bind(&modal_dialog_t::latch_callback, boost::ref(*this), _1, _2),
-                                        size_normal_s,
-                                        default_widget_factory_proc(),
-                                        parent_m).release()
-                                        );
+        view_m.reset( make_view("eve definition"_name,
+                                getline_proc,
+                                layout,
+                                sheet_m,
+                                root_behavior_m,
+                                boost::bind(&modal_dialog_t::latch_callback, boost::ref(*this), _1, _2),
+                                size_normal_s,
+                                default_widget_factory_proc(),
+                                parent_m).release()
+                                );
 
         // Set up the view's sheet with display state values, etc.
         //
@@ -392,7 +392,7 @@ try
     assert(view_m);
     assert(callback_m);
 
-    if (action == static_name_t("reset"))
+    if (action == "reset"_name)
     {
         sheet_m.set(contributing_m);
         sheet_m.update();

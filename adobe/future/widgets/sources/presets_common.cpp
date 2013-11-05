@@ -550,7 +550,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
                                       boost::filesystem::path(),
                                       get_top_level_window(control.control_m));
 
-        if (result.terminating_action_m == static_name_t("cancel"))
+        if (result.terminating_action_m == "cancel"_name)
             return;
     }
     catch (const stream_error_t& err)
@@ -562,7 +562,7 @@ void append_user_preset(presets_t& control, const dictionary_t& snapshot)
         throw;
     }
 
-    static_name_t preset_name("preset__name__");
+    static_name_t preset_name("preset__name__"_name);
 
     assert(result.command_m.count(preset_name));
     assert(snapshot.count(key_preset_value));
@@ -693,7 +693,7 @@ void delete_user_preset(presets_t& control)
                                       boost::filesystem::path(),
                                       get_top_level_window(control.control_m));
 
-        if (result.terminating_action_m == static_name_t("cancel"))
+        if (result.terminating_action_m == "cancel"_name)
             return;
     }
     catch (const stream_error_t& err)
@@ -705,7 +705,7 @@ void delete_user_preset(presets_t& control)
         throw;
     }
 
-    static_name_t result_name("preset__name__");
+    static_name_t result_name("preset__name__"_name);
 
     assert(result.command_m.count(result_name));
 
@@ -833,34 +833,34 @@ bool operator==(const presets_t& /*x*/, const presets_t& /*y*/)
 /**************************************************************************************************/
 
 // these are for the localization set to be found in the eve description of the widget
-aggregate_name_t key_preset_add_dialog_group_name = { "add_dialog_group_name" };
-aggregate_name_t key_preset_add_dialog_message = { "add_dialog_message" };
-aggregate_name_t key_preset_add_dialog_name = { "add_dialog_name" };
-aggregate_name_t key_preset_add_subdialog_cancel_button_alt_text = { "add_subdialog_cancel_button_alt_text" };
-aggregate_name_t key_preset_add_subdialog_default_preset_name = { "add_subdialog_default_preset_name" };
-aggregate_name_t key_preset_add_subdialog_ok_button_alt_text = { "add_subdialog_ok_button_alt_text" };
-aggregate_name_t key_preset_category_popup_alt_text = { "category_popup_alt_text" };
-aggregate_name_t key_preset_category_popup_name = { "category_popup_name" };
-aggregate_name_t key_preset_custom_category_name = { "custom_category_name" };
-aggregate_name_t key_preset_delete_dialog_message = { "delete_dialog_message" };
-aggregate_name_t key_preset_delete_dialog_name = { "delete_dialog_name" };
-aggregate_name_t key_preset_delete_subdialog_cancel_button_alt_text = { "delete_subdialog_cancel_button_alt_text" };
-aggregate_name_t key_preset_delete_subdialog_ok_button_alt_text = { "delete_subdialog_ok_button_alt_text" };
-aggregate_name_t key_preset_file_extension = { "file_extension" };
-aggregate_name_t key_preset_menu_item_add_preset = { "menu_item_add_preset" };
-aggregate_name_t key_preset_menu_item_append_preset = { "menu_item_append_preset" };
-aggregate_name_t key_preset_menu_item_delete_preset = { "menu_item_delete_preset" };
-aggregate_name_t key_preset_preset_popup_alt_text = { "preset_popup_alt_text" };
-aggregate_name_t key_preset_preset_popup_name = { "preset_popup_name" };
-aggregate_name_t key_preset_subdialog_cancel_button_name = { "subdialog_cancel_button_name" };
-aggregate_name_t key_preset_subdialog_ok_button_name = { "subdialog_ok_button_name" };
-aggregate_name_t key_preset_top_folder_name = { "top_folder_name" };
-aggregate_name_t key_preset_user_preset_list_empty_warning = { "user_preset_list_empty_warning" };
-aggregate_name_t key_preset_user_presets_category_name = { "user_presets_category_name" };
+static_name_t key_preset_add_dialog_group_name = "add_dialog_group_name"_name;
+static_name_t key_preset_add_dialog_message = "add_dialog_message"_name;
+static_name_t key_preset_add_dialog_name = "add_dialog_name"_name;
+static_name_t key_preset_add_subdialog_cancel_button_alt_text = "add_subdialog_cancel_button_alt_text"_name;
+static_name_t key_preset_add_subdialog_default_preset_name = "add_subdialog_default_preset_name"_name;
+static_name_t key_preset_add_subdialog_ok_button_alt_text = "add_subdialog_ok_button_alt_text"_name;
+static_name_t key_preset_category_popup_alt_text = "category_popup_alt_text"_name;
+static_name_t key_preset_category_popup_name = "category_popup_name"_name;
+static_name_t key_preset_custom_category_name = "custom_category_name"_name;
+static_name_t key_preset_delete_dialog_message = "delete_dialog_message"_name;
+static_name_t key_preset_delete_dialog_name = "delete_dialog_name"_name;
+static_name_t key_preset_delete_subdialog_cancel_button_alt_text = "delete_subdialog_cancel_button_alt_text"_name;
+static_name_t key_preset_delete_subdialog_ok_button_alt_text = "delete_subdialog_ok_button_alt_text"_name;
+static_name_t key_preset_file_extension = "file_extension"_name;
+static_name_t key_preset_menu_item_add_preset = "menu_item_add_preset"_name;
+static_name_t key_preset_menu_item_append_preset = "menu_item_append_preset"_name;
+static_name_t key_preset_menu_item_delete_preset = "menu_item_delete_preset"_name;
+static_name_t key_preset_preset_popup_alt_text = "preset_popup_alt_text"_name;
+static_name_t key_preset_preset_popup_name = "preset_popup_name"_name;
+static_name_t key_preset_subdialog_cancel_button_name = "subdialog_cancel_button_name"_name;
+static_name_t key_preset_subdialog_ok_button_name = "subdialog_ok_button_name"_name;
+static_name_t key_preset_top_folder_name = "top_folder_name"_name;
+static_name_t key_preset_user_preset_list_empty_warning = "user_preset_list_empty_warning"_name;
+static_name_t key_preset_user_presets_category_name = "user_presets_category_name"_name;
 
-aggregate_name_t key_preset_value = { "value" };
-aggregate_name_t key_preset_name = { "name" };
-aggregate_name_t key_preset_items = { "items" };
+static_name_t key_preset_value = "value"_name;
+static_name_t key_preset_name = "name"_name;
+static_name_t key_preset_items = "items"_name;
 
 /**************************************************************************************************/
 

@@ -164,7 +164,7 @@ dictionary_t widget_metrics(const std::string& xstr, const dictionary_t& context
 
     std::vector<attribute_set_t::value_type> context_attribute_set;
 
-    if (!context.count(static_name_t("theme")))
+    if (!context.count("theme"_name))
         context_attribute_set.push_back(std::make_pair(static_token_range("theme"), static_token_range("normal")));
 
     for (   dictionary_t::const_iterator first(context.begin()), last(context.end());

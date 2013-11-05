@@ -58,7 +58,7 @@ typedef forest<dictionary_t> element_forest_t;
 /**************************************************************************************************/
 
 #define ADOBE_XML_NODE_METADATA_NAME(x) \
-inline name_t name_##x() { static const name_t name_s(static_name_t("> "#x)); return name_s; }
+inline name_t name_##x() { static const name_t name_s("> "#x_name); return name_s; }
 
 // These names are prefixed with a '> ' to prevent collisions with XML 
 // attribute names (which are not allowed to have the '>' in them).

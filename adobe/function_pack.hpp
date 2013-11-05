@@ -789,7 +789,7 @@ public:
     {
         adobe::name_t function;
 
-        get_value(named_argument_set, adobe::static_name_t("command"), function);
+        get_value(named_argument_set, "command"_name, function);
 
         return (*this)(function, named_argument_set);
     }
@@ -816,7 +816,7 @@ public:
     {
         adobe::name_t function;
 
-        get_value(named_argument_set, adobe::static_name_t("command"), function);
+        get_value(named_argument_set, "command"_name, function);
 
         return (*this)(function, named_argument_set);
     }

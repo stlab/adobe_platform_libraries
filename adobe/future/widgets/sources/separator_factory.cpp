@@ -51,8 +51,8 @@ widget_node_t make_separator(const dictionary_t&     parameters,
                              const widget_factory_t& factory)
 { 
     return create_and_hookup_widget<separator_t, poly_placeable_t>(parameters, parent, token, 
-        factory.is_container(static_name_t("separator")), 
-        factory.layout_attributes(static_name_t("separator"))); }
+        factory.is_container("separator"_name), 
+        factory.layout_attributes("separator"_name)); }
 
 /*************************************************************************************************/
 

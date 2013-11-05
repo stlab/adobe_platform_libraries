@@ -23,9 +23,9 @@ namespace adobe {
 
 /**************************************************************************************************/
 
-aggregate_name_t key_drag_ref  = { "drag_ref" };
-aggregate_name_t key_drag_item = { "drag_item" };
-aggregate_name_t key_flavor    = { "flavor" };
+static_name_t key_drag_ref  = "drag_ref"_name;
+static_name_t key_drag_item = "drag_item"_name;
+static_name_t key_flavor    = "flavor"_name;
 
 /**************************************************************************************************/
 
