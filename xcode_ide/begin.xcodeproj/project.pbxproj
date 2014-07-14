@@ -13,6 +13,7 @@
 		89862AC00C6E8D190036A6B8 /* libadobe_platform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8986289E0C6E75720036A6B8 /* libadobe_platform.a */; };
 		8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20286C33FDCF999611CA2CEA /* Carbon.framework */; };
 		9A9E70871474A8D3001E0671 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E70861474A8D3001E0671 /* libstdc++.dylib */; };
+		9ABC939A1927B7E900BDF84D /* libdouble-conversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABC93971927B79600BDF84D /* libdouble-conversion.a */; };
 		9AD738C30FC7B5180082DE5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD738C20FC7B5180082DE5C /* AudioToolbox.framework */; };
 		CE0E7A870AF692A20048FCBA /* small_warning_icon.tga in Resources */ = {isa = PBXBuildFile; fileRef = CE0E7A860AF692A20048FCBA /* small_warning_icon.tga */; };
 		CE0E7BCD0AF7D62E0048FCBA /* preset_button_u_d.tga in Resources */ = {isa = PBXBuildFile; fileRef = CE0E7BCC0AF7D62E0048FCBA /* preset_button_u_d.tga */; };
@@ -93,6 +94,20 @@
 			remoteGlobalIDString = D2AAC045055464E500DB518D;
 			remoteInfo = adobe_platform;
 		};
+		9ABC93961927B79600BDF84D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ABC93921927B79500BDF84D /* double_conversion.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A551F0E191173EE00C388E5;
+			remoteInfo = "double-conversion";
+		};
+		9ABC93981927B7DB00BDF84D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ABC93921927B79500BDF84D /* double_conversion.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A551F0D191173EE00C388E5;
+			remoteInfo = "double-conversion";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +120,7 @@
 		898628930C6E75710036A6B8 /* adobe_platform.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = adobe_platform.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8D0C4E970486CD37000505A6 /* Adobe Begin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adobe Begin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9E70861474A8D3001E0671 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "/usr/lib/libstdc++.dylib"; sourceTree = "<absolute>"; };
+		9ABC93921927B79500BDF84D /* double_conversion.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = double_conversion.xcodeproj; path = ../../adobe_source_libraries/xcode_ide/double_conversion.xcodeproj; sourceTree = "<group>"; };
 		9AD738C20FC7B5180082DE5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		CE0E7A860AF692A20048FCBA /* small_warning_icon.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = small_warning_icon.tga; path = ../../adobe_platform_libraries/adobe/future/widgets/resources/small_warning_icon.tga; sourceTree = SOURCE_ROOT; };
 		CE0E7BCC0AF7D62E0048FCBA /* preset_button_u_d.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = preset_button_u_d.tga; path = ../../adobe_platform_libraries/adobe/future/widgets/resources/preset_button_u_d.tga; sourceTree = SOURCE_ROOT; };
@@ -136,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABC939A1927B7E900BDF84D /* libdouble-conversion.a in Frameworks */,
 				9A9E70871474A8D3001E0671 /* libstdc++.dylib in Frameworks */,
 				89862AC00C6E8D190036A6B8 /* libadobe_platform.a in Frameworks */,
 				8912B7E50C72405E00EB6973 /* libadobe_source.a in Frameworks */,
@@ -249,6 +266,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9ABC93931927B79500BDF84D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9ABC93971927B79600BDF84D /* libdouble-conversion.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CE5C213909479FCD00EB4BB6 /* xcconfigs */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +287,7 @@
 		CE5C21570947A0DB00EB4BB6 /* asl_projects */ = {
 			isa = PBXGroup;
 			children = (
+				9ABC93921927B79500BDF84D /* double_conversion.xcodeproj */,
 				8912B7A80C723EB900EB6973 /* boost_threads.xcodeproj */,
 				8912B7AB0C723EB900EB6973 /* boost_filesystem.xcodeproj */,
 				8912B7AE0C723EB900EB6973 /* adobe_source.xcodeproj */,
@@ -284,6 +310,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9ABC93991927B7DB00BDF84D /* PBXTargetDependency */,
 				8912B7D80C723EDC00EB6973 /* PBXTargetDependency */,
 				89AFF3C00C6E93A90081A93D /* PBXTargetDependency */,
 				8912B7D20C723EDC00EB6973 /* PBXTargetDependency */,
@@ -329,6 +356,10 @@
 					ProductGroup = 8912B7A90C723EB900EB6973 /* Products */;
 					ProjectRef = 8912B7A80C723EB900EB6973 /* boost_threads.xcodeproj */;
 				},
+				{
+					ProductGroup = 9ABC93931927B79500BDF84D /* Products */;
+					ProjectRef = 9ABC93921927B79500BDF84D /* double_conversion.xcodeproj */;
+				},
 			);
 			projectRoot = ../..;
 			targets = (
@@ -364,6 +395,13 @@
 			fileType = archive.ar;
 			path = libadobe_platform.a;
 			remoteRef = 8986289D0C6E75720036A6B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9ABC93971927B79600BDF84D /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = 9ABC93961927B79600BDF84D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -427,6 +465,11 @@
 			isa = PBXTargetDependency;
 			name = adobe_platform;
 			targetProxy = 89AFF3BF0C6E93A90081A93D /* PBXContainerItemProxy */;
+		};
+		9ABC93991927B7DB00BDF84D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "double-conversion";
+			targetProxy = 9ABC93981927B7DB00BDF84D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

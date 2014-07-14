@@ -203,7 +203,7 @@ platform_display_type insert<button_t>(display_t&             display,
 {
     static const ::Rect bounds_s = { 0, 0, 1024, 1024 };
 
-    assert(element.control_m == false);
+    assert(element.control_m == nullptr);
 
     button_state_set_t::iterator state(button_default_state(element.state_set_m));
     ::HIViewRef                  parent_ref(parent);

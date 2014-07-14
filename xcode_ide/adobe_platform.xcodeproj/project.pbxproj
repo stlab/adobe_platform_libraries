@@ -473,6 +473,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -484,6 +488,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -530,6 +538,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -541,6 +553,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -552,6 +568,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -563,6 +583,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -574,6 +598,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
@@ -585,6 +613,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-ftemplate-depth-256",
+				);
 				PRODUCT_NAME = adobe_platform;
 				SDKROOT = macosx;
 			};
