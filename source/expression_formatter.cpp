@@ -83,7 +83,7 @@ void expression_formatter_t::assert_stack_ok() const
 
 /******************************************************************************/
 
-string_t expression_formatter_t::format(const array_t& expression,
+std::string expression_formatter_t::format(const array_t& expression,
                                         std::size_t    indent,
                                         bool           tight)
 {
@@ -100,17 +100,17 @@ string_t expression_formatter_t::format(const array_t& expression,
 
     for(array_t::const_iterator iter(expression.begin()); iter != expression.end(); ++iter)
     {
-        if (iter->type_info() == type_info<name_t>() && iter->cast<name_t>().c_str()[0] == '.')
+        if (iter->type_info() == typeid(name_t) && iter->cast<name_t>().c_str()[0] == '.')
             operator_table_m(iter->cast<name_t>())();
         else
         {
             std::stringstream stream;
 
-            if (iter->type_info() == type_info<name_t>())
+            if (iter->type_info() == typeid(name_t))
                 stream << "@" << *iter;
-            else if (iter->type_info() == type_info<string_t>())
+            else if (iter->type_info() == typeid(std::string))
                 stream << "\"" << *iter << "\"";
-            else if (iter->type_info() == type_info<array_t>())
+            else if (iter->type_info() == typeid(array_t))
             {
                 const array_t& array(iter->cast<array_t>());
 
@@ -119,9 +119,9 @@ string_t expression_formatter_t::format(const array_t& expression,
                 else
                     stream << format_expression(array, indent_m + 4);
             }
-            else if (iter->type_info() == type_info<dictionary_t>())
+            else if (iter->type_info() == typeid(dictionary_t))
                 stream << "{ }";
-            else if (iter->type_info() == type_info<bool>())
+            else if (iter->type_info() == typeid(bool))
                 stream << (iter->cast<bool>() ? "true" : "false");
             else
                 stream << *iter;
@@ -140,14 +140,14 @@ string_t expression_formatter_t::format(const array_t& expression,
     if (stack_m.size() != 1)
     {
         std::cerr << "Remainder of token stream: ";
-        copy(stack_m, std::ostream_iterator<string_t>(std::cerr, " << "));
+        copy(stack_m, std::ostream_iterator<std::string>(std::cerr, " << "));
     }
 #endif
 
     if (stack_m.size() != 1)
         throw std::runtime_error("Invalid expression token stream");
 
-    string_t result(strip_expression(stack_m.back()));
+    std::string result(strip_expression(stack_m.back()));
 
     stack_m.pop_back();
 
@@ -159,7 +159,7 @@ string_t expression_formatter_t::format(const array_t& expression,
 void expression_formatter_t::unary_operation(const char* operation)
 {
     assert_stack_ok();
-    string_t operand(stack_m.back());
+    std::string operand(stack_m.back());
     stack_m.pop_back();
 
     std::stringstream stream;
@@ -174,11 +174,11 @@ void expression_formatter_t::unary_operation(const char* operation)
 void expression_formatter_t::binary_operation(const char* operation)
 {
     assert_stack_ok();
-    string_t operand2(stack_m.back());
+    std::string operand2(stack_m.back());
     stack_m.pop_back();
 
     assert_stack_ok();
-    string_t operand1(stack_m.back());
+    std::string operand1(stack_m.back());
     stack_m.pop_back();
 
     std::stringstream stream;
@@ -193,15 +193,15 @@ void expression_formatter_t::binary_operation(const char* operation)
 void expression_formatter_t::op_ifelse()
 {
     assert_stack_ok();
-    string_t expr2(stack_m.back());
+    std::string expr2(stack_m.back());
     stack_m.pop_back();
 
     assert_stack_ok();
-    string_t expr1(stack_m.back());
+    std::string expr1(stack_m.back());
     stack_m.pop_back();
 
     assert_stack_ok();
-    string_t test(stack_m.back());
+    std::string test(stack_m.back());
     stack_m.pop_back();
 
     std::stringstream stream;
@@ -220,11 +220,11 @@ void expression_formatter_t::op_ifelse()
 void expression_formatter_t::op_index()
 {
     assert_stack_ok();
-    string_t index(stack_m.back());
+    std::string index(stack_m.back());
     stack_m.pop_back();
 
     assert_stack_ok();
-    string_t variable(stack_m.back());
+    std::string variable(stack_m.back());
     stack_m.pop_back();
 
     std::stringstream stream;
@@ -245,7 +245,7 @@ void expression_formatter_t::op_index()
 void expression_formatter_t::op_function()
 {
     assert_stack_ok();
-    string_t function_name(stack_m.back());
+    std::string function_name(stack_m.back());
     stack_m.pop_back();
 
     assert_stack_ok();
@@ -328,7 +328,7 @@ void expression_formatter_t::op_dictionary()
     stack_m.pop_back();
 
     // collect the kv pairs for later reversal and concatenation
-    vector<string_t> kv_pair_set;
+    std::vector<std::string> kv_pair_set;
 
     for (long i(0); i < count; ++i)
     {
@@ -339,7 +339,7 @@ void expression_formatter_t::op_dictionary()
         stack_m.pop_back();
 
         assert_stack_ok();
-        string_t key(stack_m.back());
+        std::string key(stack_m.back());
         stack_m.pop_back();
 
         key = key.c_str() + 1;
@@ -403,7 +403,7 @@ void expression_formatter_t::op_dictionary()
 void expression_formatter_t::op_variable()
 {
     assert_stack_ok();
-    string_t var(stack_m.back());
+    std::string var(stack_m.back());
     stack_m.pop_back();
 
     var = var.c_str() + 1;
@@ -413,7 +413,7 @@ void expression_formatter_t::op_variable()
 
 /******************************************************************************/
 
-string_t expression_formatter_t::strip_expression(const string_t& expr_str)
+std::string expression_formatter_t::strip_expression(const std::string& expr_str)
 {
     if (expr_str.size() < 2)
         return expr_str;
@@ -422,13 +422,13 @@ string_t expression_formatter_t::strip_expression(const string_t& expr_str)
     const char* back(boost::next(front, expr_str.size() - 1));
 
     return *front == '(' && *back == ')' ?
-               string_t(boost::next(front), back) :
+               std::string(boost::next(front), back) :
                expr_str;
 }
 
 /******************************************************************************/
 
-string_t expression_formatter_t::add_indentation(const string_t& expr_str,
+std::string expression_formatter_t::add_indentation(const std::string& expr_str,
                                                  std::size_t     indent)
 {
     // goes looking for the string "\n    " and replaces it with "\n        "
@@ -459,12 +459,12 @@ string_t expression_formatter_t::add_indentation(const string_t& expr_str,
 
 /******************************************************************************/
 
-string_t format_expression(const array_t& expression,
+std::string format_expression(const array_t& expression,
                            std::size_t    indent,
                            bool           tight)
 {
     return expression.empty() ?
-           string_t() :
+           std::string() :
            implementation::expression_formatter_t().format(expression,
                                                            indent,
                                                            tight);
