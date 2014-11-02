@@ -332,20 +332,8 @@ void theme_to_rec(const theme_t& style, ControlFontStyleRec& style_rec)
     }
     else if (masked)
     {
-        ThemeFontID font_id(theme_to_ThemeFontID(style));
-        Str255      font_name;
-        SInt16      font_size;
-        Style       font_style;
-
-        ::GetThemeFont(font_id, smSystemScript, font_name, &font_size, &font_style);
-
-        result.flags |= static_cast<int>(kControlUseFontMask) |
-                        static_cast<int>(kControlUseSizeMask) |
-                        static_cast<int>(kControlUseFaceMask) |
-                        static_cast<int>(kControlUseThemeFontIDMask);
-        result.font = font_id;
-        result.size = font_size;
-        result.style = font_style;
+        result.flags = static_cast<int>(kControlUseThemeFontIDMask);
+        result.font = theme_to_ThemeFontID(style);
     }
 
     style_rec = result;
