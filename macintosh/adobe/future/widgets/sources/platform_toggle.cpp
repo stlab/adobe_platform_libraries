@@ -210,7 +210,7 @@ platform_display_type insert<toggle_t>(display_t&             display,
 {
     static const ::Rect bounds_s = { 0, 0, 1024, 1024 };
 
-    assert(element.control_m == false);
+    assert(!element.control_m);
 
     ::ADOBE_REQUIRE_STATUS(::CreateUserPaneControl(0, &bounds_s, 0, &element.control_m));
 

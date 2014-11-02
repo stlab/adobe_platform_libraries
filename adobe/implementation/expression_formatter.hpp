@@ -30,7 +30,7 @@ namespace adobe {
 
 class spaces : public basic_omanipulator<std::size_t, char, std::char_traits<char> >
 {
-    typedef basic_omanipulator<std::size_t, char, std::char_traits<char> >      inherited_t;
+    typedef basic_omanipulator<std::size_t, char, std::char_traits<char> > inherited_t;
 
 public:
     typedef inherited_t::stream_type    stream_type;
@@ -63,9 +63,9 @@ struct expression_formatter_t
 {
     expression_formatter_t();
 
-    string_t format(const array_t& expression,
-                    std::size_t    indent,
-                    bool           tight);
+    std::string format(const array_t& expression,
+                       std::size_t    indent,
+                       bool           tight);
 
 private:
     typedef boost::function<void ()>             operator_t;
@@ -81,15 +81,15 @@ private:
     void op_dictionary();
     void op_variable();
 
-    string_t strip_expression(const string_t& expr_str);
-    string_t add_indentation(const string_t& expr_str, std::size_t indent = 4);
+    std::string strip_expression(const std::string& expr_str);
+    std::string add_indentation(const std::string& expr_str, std::size_t indent = 4);
 
     void assert_stack_ok() const;
 
-    vector<string_t> stack_m;
-    operator_table_t operator_table_m;
-    std::size_t      indent_m;
-    bool             tight_m;
+    std::vector<std::string> stack_m;
+    operator_table_t         operator_table_m;
+    std::size_t              indent_m;
+    bool                     tight_m;
 };
 
 /******************************************************************************/
@@ -102,13 +102,15 @@ private:
 
     @param expression The parsed expression as a token vector
     @param indent The number of spaces to indent the output by
-    @param tight When true does not add a newline after opening or before closing an array or dictionary expression
+    @param tight When true does not add a newline after opening or before
+           closing an array or dictionary expression
 
-    @return A CEL-syntax formatted expression representing the original parsed string
+    @return A CEL-syntax formatted expression representing the original parsed
+            string
 */
-string_t format_expression(const array_t& expression,
-                           std::size_t    indent = 0,
-                           bool           tight = false);
+std::string format_expression(const array_t& expression,
+                              std::size_t    indent = 0,
+                              bool           tight = false);
 
 /******************************************************************************/
 

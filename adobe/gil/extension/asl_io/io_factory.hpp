@@ -20,6 +20,7 @@
 #include <adobe/dictionary.hpp>
 #include <adobe/functional.hpp>
 
+#include <functional>
 #include <vector>
 #include <iostream>
 #include <cassert>
@@ -244,10 +245,10 @@ private:
     inline iterator find(adobe::name_t format_tag)
     {
         iterator result(adobe::find_if(format_set_m,
-                                       boost::bind(adobe::compare_members(&value_type::tag_m,
+                                       std::bind(adobe::compare_members(&value_type::tag_m,
                                                                           std::equal_to<adobe::name_t>()),
                                                    format_tag,
-                                                   _1)));
+                                                   std::placeholders::_1)));
 
         if (result == format_set_m.end())
             throw std::runtime_error("gil: image_io: format not found");
@@ -258,9 +259,9 @@ private:
     value_type& detect_first_for(std::streambuf& stream_buffer)
     {
         iterator result(adobe::find_if(format_set_m,
-                                       boost::bind(&value_type::detect,
-                                                   _1,
-                                                   boost::ref(stream_buffer))));
+                                       std::bind(&value_type::detect,
+                                                   std::placeholders::_1,
+                                                   std::ref(stream_buffer))));
 
         if (result == format_set_m.end())
             throw std::runtime_error("gil: image_io: format not detected");

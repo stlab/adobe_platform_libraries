@@ -28,7 +28,7 @@ if [ "$BUILDTOOL" == "xcode" ] ; then
 
     cd xcode_ide
 
-    echo_run xcodebuild -project begin.xcodeproj -configuration $CURMODE
+    echo_run xcodebuild -project begin.xcodeproj -configuration $CURMODE -arch i386
 
 elif [ "$BUILDTOOL" == "bjam" ] ; then
 

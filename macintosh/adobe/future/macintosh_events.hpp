@@ -27,6 +27,7 @@
 #include <boost/static_assert.hpp>
 #include <boost/type_traits.hpp>
 
+#include <functional>
 #include <iterator>
 #include <vector>
 
@@ -217,7 +218,7 @@ void event_handler_t::insert(const ForwardIterator first,
 
     proc_type proc(&event_handler_t::insert);
 
-    std::for_each(first, last, boost::bind(proc, boost::ref(*this), _1));
+    std::for_each(first, last, std::bind(proc, std::ref(*this), std::placeholders::_1));
 }
 
 /**************************************************************************************************/
@@ -253,7 +254,7 @@ void event_handler_t::erase(const ForwardIterator first,
 
     proc_type proc(&event_handler_t::erase);
 
-    std::for_each(first, last, boost::bind(proc, boost::ref(*this), _1));
+    std::for_each(first, last, std::bind(proc, std::ref(*this), std::placeholders::_1));
 }
 
 /**************************************************************************************************/

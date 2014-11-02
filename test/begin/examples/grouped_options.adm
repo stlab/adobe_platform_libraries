@@ -9,25 +9,19 @@ sheet grouped_options
 	a : true;
 	b : true;
 	c : true;
-	/* group g = [@a, @b, @c ] */
-	g : { a: a, b: b, c: c };
-	all : true;
+	all;
 	
   constant:
-  	g_true : { a: true, b: true, c: true };
-  	g_false : { a: false, b: false, c: false };
+  	true_ : [true, true, true];
+  	false_ : [false, false, false];
 
   logic:
-  	/* relate clauses that simulate a group */
-	relate { a <== g.a; g <== { a: a, b: g.b, c: g.c }; }
-	relate { b <== g.b; g <== { a: g.a, b: b, c: g.c }; }
-	relate { c <== g.c; g <== { a: g.a, b: g.b, c: c }; }
 
 	relate {
-		all <== g == g_true ? true : g == g_false ? false : empty;
-		g <== { a: all, b: all, c: all };
+		all <== [a, b, c] == true_ ? true : [a, b, c] == false_ ? false : empty;
+		a, b, c <== [all, all, all];
 	}
 
  output:
-    result <== { all: all, a: a, b: b, c: c };
+    result <== { a: a, b: b, c: c };
 }
