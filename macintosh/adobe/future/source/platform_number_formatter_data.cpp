@@ -29,12 +29,14 @@ typedef adobe::auto_resource< ::CFNumberFormatterRef > auto_formatter_t;
 /**************************************************************************************************/
 
 template <typename Numeric> struct type_to_cfnumbertype;
+#if 0
 template <> struct type_to_cfnumbertype<char>       { static const ::CFNumberType value = kCFNumberCharType; };
 template <> struct type_to_cfnumbertype<short>      { static const ::CFNumberType value = kCFNumberShortType; };
 template <> struct type_to_cfnumbertype<int>        { static const ::CFNumberType value = kCFNumberIntType; };
 template <> struct type_to_cfnumbertype<long>       { static const ::CFNumberType value = kCFNumberLongType; };
 //template <> struct type_to_cfnumbertype<long long>  { static const ::CFNumberType value = kCFNumberLongLongType; };
 template <> struct type_to_cfnumbertype<float>      { static const ::CFNumberType value = kCFNumberFloatType; };
+#endif
 template <> struct type_to_cfnumbertype<double>     { static const ::CFNumberType value = kCFNumberDoubleType; };
 
 //template <> struct type_to_cfnumbertype<unsigned long long> { static const ::CFNumberType value = kCFNumberLongLongType; };
