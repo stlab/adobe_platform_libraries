@@ -13,6 +13,7 @@
 #include <adobe/string.hpp>
 
 #include <sstream>
+#include <typeinfo>
 
 /****************************************************************************************************/
 
@@ -154,7 +155,7 @@ std::string number_formatter_platform_data_t::format(const any_regular_t& x)
     else if (x.type() == typeid(long long)) return number_format<long long>(format_m, x.cast<long long>());
     else if (x.type() == typeid(float))     return number_format<float>(format_m, x.cast<float>());
 #endif
-    else if (x.type_info() == type_info<double>())    return number_format<double>(format_m, x.cast<double>());
+    else if (x.type_info() == typeid(double))    return number_format<double>(format_m, x.cast<double>());
     else return std::string("formatter_format_number error");
 
     return std::string();
@@ -174,7 +175,7 @@ any_regular_t number_formatter_platform_data_t::parse(const std::string& str, an
     else if (the_type.type() == typeid(long long)) return any_regular_t(number_parse<long long>(format_m, str));
     else if (the_type.type() == typeid(float))     return any_regular_t(number_parse<float>(format_m, str));
 #endif
-    else if (the_type.type_info() == type_info<double>())    return any_regular_t(number_parse<double>(format_m, str));
+    else if (the_type.type_info() == typeid(double))    return any_regular_t(number_parse<double>(format_m, str));
     else return any_regular_t(std::string("formatter_format_number error"));
 
     return any_regular_t();

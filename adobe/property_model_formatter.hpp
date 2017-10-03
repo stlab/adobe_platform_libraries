@@ -18,7 +18,11 @@
 #include <adobe/istream.hpp>
 #include <adobe/string.hpp>
 #include <adobe/utility/pair.hpp>
-#include <adobe/vector.hpp>
+
+// Latest adobe_source_libraries has no string_t and no adobe::vector.
+//
+#include <string>
+#include <vector>
 
 /******************************************************************************/
 /*!
@@ -263,7 +267,9 @@ namespace adobe {
     The result type of adobe::disassemble_sheet. It is a vector of dictionaries,
     each representing a property model cell parsed in the sheet.
 */
-typedef vector<dictionary_t> sheet_assembly_t;
+// Latest adobe_source_libraries has no adobe::vector
+//
+typedef std::vector<dictionary_t> sheet_assembly_t;
 
 /******************************************************************************/
 /*!
@@ -291,7 +297,9 @@ sheet_assembly_t disassemble_sheet(std::istream&          stream,
                       the property model creation
     @param out        the stream to which the final result is to be output
 */
-void assemble_sheet(const string_t&         sheet_name,
+// Latest adobe_source_libraries has no string_t
+//
+void assemble_sheet(const std::string&      sheet_name,
                     const sheet_assembly_t& assembly,
                     std::ostream&           out);
 

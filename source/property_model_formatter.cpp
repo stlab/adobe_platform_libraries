@@ -16,6 +16,8 @@
 #include <adobe/implementation/expression_formatter.hpp>
 #include <adobe/property_model_formatter.hpp>
 
+#include <boost/bind.hpp>
+
 /******************************************************************************/
 
 namespace {
@@ -266,7 +268,9 @@ void adam_node_formatter_t::format_cell_node(const dictionary_t& node,
 
     out << ";";
 
-    const string_t& comment_brief(get_value(node, key_comment_brief).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string& comment_brief(get_value(node, key_comment_brief).cast<std::string>());
 
     if (!comment_brief.empty())
         out << " //" << comment_brief;
@@ -279,10 +283,14 @@ void adam_node_formatter_t::format_cell_node(const dictionary_t& node,
 void adam_node_formatter_t::format_relation(const any_regular_t& any_relation,
                                             std::ostream&        out)
 {
-    typedef vector<name_t> name_set_t;
+	// Latest adobe_source_libraries has no adobe::vector.
+	//
+    typedef std::vector<name_t> name_set_t;
 
     const dictionary_t& relation(any_relation.cast<dictionary_t>());
-    const string_t&     comment_detailed(get_value(relation, key_comment_detailed).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string&     comment_detailed(get_value(relation, key_comment_detailed).cast<std::string>());
 
     if (!comment_detailed.empty())
         out << adobe::spaces(8) << "/*" << comment_detailed << "*/" << std::endl;
@@ -313,7 +321,9 @@ void adam_node_formatter_t::format_relation(const any_regular_t& any_relation,
         << format_expression(get_value(relation, key_expression).cast<array_t>(), 8)
         << ";";
 
-    const string_t& comment_brief(get_value(relation, key_comment_brief).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string& comment_brief(get_value(relation, key_comment_brief).cast<std::string>());
 
     if (!comment_brief.empty())
         out << " //" << comment_brief;
@@ -335,7 +345,9 @@ void adam_node_formatter_t::format_relation_node(const dictionary_t& node,
         out << "\n  logic:";
     }
 
-    const string_t& comment_detailed(get_value(node, key_comment_detailed).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string& comment_detailed(get_value(node, key_comment_detailed).cast<std::string>());
 
     if (!comment_detailed.empty())
         out << "\n" << adobe::spaces(4) << "/*" << comment_detailed << "*/";
@@ -353,7 +365,9 @@ void adam_node_formatter_t::format_relation_node(const dictionary_t& node,
 
     out << adobe::spaces(4) << "}";
 
-    const string_t& comment_brief(get_value(node, key_comment_brief).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string& comment_brief(get_value(node, key_comment_brief).cast<std::string>());
 
     if (!comment_brief.empty())
         out << " //" << comment_brief;
@@ -373,7 +387,9 @@ void adam_node_formatter_t::format_interface_node(const dictionary_t& node,
         out << "\n  interface:" << std::endl;
     }
 
-    const string_t& comment_detailed(get_value(node, key_comment_detailed).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string& comment_detailed(get_value(node, key_comment_detailed).cast<std::string>());
 
     if (!comment_detailed.empty())
         out << "    /*" << comment_detailed << "*/" << std::endl;
@@ -397,7 +413,9 @@ void adam_node_formatter_t::format_interface_node(const dictionary_t& node,
 
     out << ";";
 
-    const string_t& comment_brief(get_value(node, key_comment_brief).cast<string_t>());
+	// Latest adobe_source_libraries has no string_t
+	//
+    const std::string& comment_brief(get_value(node, key_comment_brief).cast<std::string>());
 
     if (!comment_brief.empty())
         out << " //" << comment_brief;
@@ -423,14 +441,20 @@ sheet_assembly_t disassemble_sheet(std::istream&          stream,
 
 /******************************************************************************/
 
-void assemble_sheet(const string_t&         sheet_name,
+// Latest adobe_source_libraries has no string_t
+//
+void assemble_sheet(const std::string&      sheet_name,
                     const sheet_assembly_t& assembly,
                     std::ostream&           out)
 {
-    string_t              washed_sheet_name;
+	// Latest adobe_source_libraries has no string_t
+	//
+    std::string           washed_sheet_name;
     adam_node_formatter_t formatter;
 
-    for (string_t::const_iterator first(sheet_name.begin()), last(sheet_name.end()); first != last; ++first)
+	// Latest adobe_source_libraries has no string_t
+	//
+    for (std::string::const_iterator first(sheet_name.begin()), last(sheet_name.end()); first != last; ++first)
         washed_sheet_name.push_back(std::isalpha(*first) ? *first : '_');
 
     out << "sheet " << washed_sheet_name.c_str() << "\n{";

@@ -15,7 +15,11 @@ namespace adobe {
 
 /******************************************************************************/
 
-#define ADOBE_TOKEN_DEF(x) extern const static_name_t key_##x = { #x };
+// With new adobe_source_libraries, must quiet Xcode:
+// No matching constructor for initialization of const adobe::static_name_t
+//
+#define ADOBE_TOKEN_DEF2(X,Y) X ## Y
+#define ADOBE_TOKEN_DEF(x) extern const static_name_t key_##x = ADOBE_TOKEN_DEF2(#x, _name);
 
 ADOBE_TOKEN_DEF(cell_type)
 ADOBE_TOKEN_DEF(comment_brief)

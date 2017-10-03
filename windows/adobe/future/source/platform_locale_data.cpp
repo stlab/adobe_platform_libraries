@@ -45,7 +45,9 @@ std::string current_locale_iso_tag()
     else if (language_name.empty())
         return country_name;
 
-    return language_name << "_" << country_name;
+	// Changed '<<' to '+' to quiet Visual Studio 2017:
+	// error C2784: 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const char *)': could not deduce template argument for 'std::basic_ostream<_Elem,_Traits> &' from 'std::string'
+    return language_name + "_" + country_name;
 }
 #endif
 /****************************************************************************************************/
@@ -69,7 +71,9 @@ void do_locale_check()
 
     static std::string old_locale_ident;
 
-    std::string new_locale_ident(get_locale_tidbit(LOCALE_SENGLANGUAGE) << "_" << get_locale_tidbit(LOCALE_SENGCOUNTRY));
+	// Changed '<<' to '+' to silence Visual Studio 2017:
+	// error C2678: binary '<<': no operator found which takes a left-hand operand of type 'std::string' (or there is no acceptable conversion)
+    std::string new_locale_ident(get_locale_tidbit(LOCALE_SENGLANGUAGE) + "_" + get_locale_tidbit(LOCALE_SENGCOUNTRY));
 
     if (old_locale_ident == new_locale_ident)
         return;

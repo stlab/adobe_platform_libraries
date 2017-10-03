@@ -181,7 +181,12 @@ void attach_controller_functions_direct(const FactoryToken&	token,
 										const MonitorFunction& monitor_function,
 										const EnableFunction&  enable_function)
 {
-	basic_sheet_t& layout_sheet(*token.mEveViewHolder.mLayoutSheet);
+	// To silence Xcode:
+	// Unknown type name basic_sheet_t
+	// mimic similar usage in attach_view_function_direct.
+	//
+	sheet_t& layout_sheet(*token.mEveViewHolder.mLayoutSheet);
+
 	// is the cell in the layout sheet or the Adam sheet?
 	if (layout_sheet.count_interface(cell) != 0)
 	{
@@ -212,8 +217,10 @@ void attach_controller_functions(const adobe::dictionary_t&	parameters,
 								 const MonitorFunction& monitor_function,
 								 const EnableFunction&  enable_function)
 {
+	// New adobe_source_libraries does not have adobe::type_info<T>
+	//
 	if (parameters.count(key_name) 
-		&& get_value(parameters, key_name).type_info() == adobe::type_info<name_t>())
+		&& get_value(parameters, key_name).type_info() == typeid(name_t))
 	{
 		name_t         cell(get_value(parameters,key_name).cast<name_t>());		
 		
@@ -258,8 +265,10 @@ void attach_view_function(const adobe::dictionary_t&	parameters,
 						  const adobe::name_t			key_name,
 						  const Function&				function )
 {
+	// New adobe_source_libraries does not have adobe::type_info<T>
+	//
 	if (parameters.count(key_name) 
-		&& get_value(parameters, key_name).type_info() == adobe::type_info<name_t>())
+		&& get_value(parameters, key_name).type_info() == typeid(name_t))
 	{
 		name_t         cell(get_value(parameters,key_name).cast<name_t>());		
 		

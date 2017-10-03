@@ -58,7 +58,9 @@ public:
     }
 
     forest<dictionary_t> node_forest_m;
-    vector<dictionary_t> cell_set_m;
+	// Latest adobe_source_libraries has no adobe::vector
+	//
+    std::vector<dictionary_t> cell_set_m;
 
 private:
     position_t add_view(const position_t&      parent,
@@ -136,7 +138,9 @@ void eve_node_forest_t::add_cell(cell_type_t            type,
 struct layout_formatter_t
 {
     typedef forest<dictionary_t> view_node_forest_t;
-    typedef vector<dictionary_t> cell_node_set_t;
+	// Latest adobe_source_libraries has no adobe::vector
+	//
+    typedef std::vector<dictionary_t> cell_node_set_t;
 
     explicit layout_formatter_t(std::ostream& out) :
         out_m(out),
@@ -148,7 +152,9 @@ struct layout_formatter_t
         out_m.flush();
     }
 
-    void stream_out(const string_t&           layout_name,
+	// Latest adobe_source_libraries has no string_t
+	//
+    void stream_out(const std::string&        layout_name,
                     const view_node_forest_t& view_node_forest,
                     const cell_node_set_t&    cell_node_set);
 
@@ -204,8 +210,10 @@ void layout_formatter_t::stream_out_cell_set(const cell_node_set_t& cell_node_se
     {
         name_t          type(get_value(*iter, key_cell_type).cast<name_t>());
         name_t          name(get_value(*iter, key_name).cast<name_t>());
-        const string_t& brief(get_value(*iter, key_comment_brief).cast<string_t>());
-        const string_t& detailed(get_value(*iter, key_comment_detailed).cast<string_t>());
+		// Latest adobe_source_libraries has no string_t
+		//
+        const std::string& brief(get_value(*iter, key_comment_brief).cast<std::string>());
+        const std::string& detailed(get_value(*iter, key_comment_detailed).cast<std::string>());
         const array_t&  initializer(get_value(*iter, key_initializer).cast<array_t>());
 
         if (type != last_type)
@@ -245,13 +253,17 @@ void layout_formatter_t::stream_out_cell_set(const cell_node_set_t& cell_node_se
 
 /******************************************************************************/
 
-void layout_formatter_t::stream_out(const string_t&           layout_name,
+void layout_formatter_t::stream_out(const std::string&        layout_name,
                                     const view_node_forest_t& view_node_forest,
                                     const cell_node_set_t&    cell_node_set)
 {
-    string_t washed_layout_name;
+	// Latest adobe_source_libraries has no string_t
+	//
+    std::string washed_layout_name;
 
-    for (string_t::const_iterator first(layout_name.begin()), last(layout_name.end()); first != last; ++first)
+	// Latest adobe_source_libraries has no string_t
+	//
+    for (std::string::const_iterator first(layout_name.begin()), last(layout_name.end()); first != last; ++first)
         washed_layout_name.push_back(std::isalpha(*first) ? *first : '_');
 
     out_m << "layout " << washed_layout_name.c_str();
@@ -268,15 +280,20 @@ void layout_formatter_t::stream_out(const string_t&           layout_name,
 
     typedef depth_fullorder_iterator<boost::range_const_iterator<forest<dictionary_t> >::type> iterator;
 
-    std::pair<iterator, iterator> range(depth_range(view_node_forest));
+	// With latest adobe_source_libraries, must quiet Xcode:
+	// error: no matching constructor for initialization of 'std::pair<iterator, iterator>' (aka 'pair<depth_fullorder_iterator<forest_const_iterator<adobe::version_1::closed_hash_map<adobe::name_t, adobe::version_1::any_regular_t, std::__1::hash<adobe::name_t>, std::__1::equal_to<adobe::name_t>, adobe::version_1::capture_allocator<std::__1::pair<adobe::name_t, adobe::version_1::any_regular_t> > > > >, depth_fullorder_iterator<forest_const_iterator<adobe::version_1::closed_hash_map<adobe::name_t, adobe::version_1::any_regular_t, std::__1::hash<adobe::name_t>, std::__1::equal_to<adobe::name_t>, adobe::version_1::capture_allocator<std::__1::pair<adobe::name_t, adobe::version_1::any_regular_t> > > > > >')
+	auto depth_range_iterator = depth_range(view_node_forest);
+    std::pair<iterator, iterator> range(depth_range_iterator.begin(), depth_range_iterator.end());
 
     for (iterator first(boost::begin(range)), last(boost::end(range)); first != last; ++first)
     {
         bool            is_leading(first.edge() == adobe::forest_leading_edge);
         name_t          name(get_value(*first, key_name).cast<name_t>());
         const array_t&  parameters(get_value(*first, key_parameters).cast<array_t>());
-        const string_t& brief(get_value(*first, key_comment_brief).cast<string_t>());
-        const string_t& detailed(get_value(*first, key_comment_detailed).cast<string_t>());
+		// Latest adobe_source_libraries has no string_t
+		//
+        const std::string& brief(get_value(*first, key_comment_brief).cast<std::string>());
+        const std::string& detailed(get_value(*first, key_comment_detailed).cast<std::string>());
         std::size_t     indent((first.depth() + 1) * 4);
 
         if (is_leading)
@@ -353,12 +370,16 @@ layout_assembly_t disassemble_layout(std::istream&          stream,
 {
     eve_node_forest_t parser(stream, position);
 
-    return adobe::make_pair(parser.node_forest_m, parser.cell_set_m);
+	// Latest adobe_source_libraries does not have adobe::make_pair.
+	//
+    return layout_assembly_t(parser.node_forest_m, parser.cell_set_m);
 }
 
 /******************************************************************************/
 
-void assemble_layout(const string_t&          layout_name,
+// Latest adobe_source_libraries has no string_t
+//
+void assemble_layout(const std::string&       layout_name,
                      const layout_assembly_t& assembly,
                      std::ostream&            out)
 {
