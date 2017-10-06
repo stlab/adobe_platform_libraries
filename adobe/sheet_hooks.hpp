@@ -217,8 +217,6 @@ void attach_controller_functions(const adobe::dictionary_t&	parameters,
 								 const MonitorFunction& monitor_function,
 								 const EnableFunction&  enable_function)
 {
-	// New adobe_source_libraries does not have adobe::type_info<T>
-	//
 	if (parameters.count(key_name) 
 		&& get_value(parameters, key_name).type_info() == typeid(name_t))
 	{
@@ -265,8 +263,6 @@ void attach_view_function(const adobe::dictionary_t&	parameters,
 						  const adobe::name_t			key_name,
 						  const Function&				function )
 {
-	// New adobe_source_libraries does not have adobe::type_info<T>
-	//
 	if (parameters.count(key_name) 
 		&& get_value(parameters, key_name).type_info() == typeid(name_t))
 	{

@@ -17,6 +17,8 @@
 #include <adobe/implementation/expression_formatter.hpp>
 #include <adobe/layout_formatter.hpp>
 
+using namespace std;
+
 /******************************************************************************/
 
 namespace {
@@ -58,9 +60,7 @@ public:
     }
 
     forest<dictionary_t> node_forest_m;
-	// Latest adobe_source_libraries has no adobe::vector
-	//
-    std::vector<dictionary_t> cell_set_m;
+    vector<dictionary_t> cell_set_m;
 
 private:
     position_t add_view(const position_t&      parent,
@@ -138,9 +138,7 @@ void eve_node_forest_t::add_cell(cell_type_t            type,
 struct layout_formatter_t
 {
     typedef forest<dictionary_t> view_node_forest_t;
-	// Latest adobe_source_libraries has no adobe::vector
-	//
-    typedef std::vector<dictionary_t> cell_node_set_t;
+    typedef vector<dictionary_t> cell_node_set_t;
 
     explicit layout_formatter_t(std::ostream& out) :
         out_m(out),
@@ -152,9 +150,7 @@ struct layout_formatter_t
         out_m.flush();
     }
 
-	// Latest adobe_source_libraries has no string_t
-	//
-    void stream_out(const std::string&        layout_name,
+    void stream_out(const string&             layout_name,
                     const view_node_forest_t& view_node_forest,
                     const cell_node_set_t&    cell_node_set);
 
@@ -210,10 +206,8 @@ void layout_formatter_t::stream_out_cell_set(const cell_node_set_t& cell_node_se
     {
         name_t          type(get_value(*iter, key_cell_type).cast<name_t>());
         name_t          name(get_value(*iter, key_name).cast<name_t>());
-		// Latest adobe_source_libraries has no string_t
-		//
-        const std::string& brief(get_value(*iter, key_comment_brief).cast<std::string>());
-        const std::string& detailed(get_value(*iter, key_comment_detailed).cast<std::string>());
+        const string& brief(get_value(*iter, key_comment_brief).cast<string>());
+        const string& detailed(get_value(*iter, key_comment_detailed).cast<string>());
         const array_t&  initializer(get_value(*iter, key_initializer).cast<array_t>());
 
         if (type != last_type)
@@ -253,17 +247,13 @@ void layout_formatter_t::stream_out_cell_set(const cell_node_set_t& cell_node_se
 
 /******************************************************************************/
 
-void layout_formatter_t::stream_out(const std::string&        layout_name,
+void layout_formatter_t::stream_out(const string&             layout_name,
                                     const view_node_forest_t& view_node_forest,
                                     const cell_node_set_t&    cell_node_set)
 {
-	// Latest adobe_source_libraries has no string_t
-	//
-    std::string washed_layout_name;
+    string washed_layout_name;
 
-	// Latest adobe_source_libraries has no string_t
-	//
-    for (std::string::const_iterator first(layout_name.begin()), last(layout_name.end()); first != last; ++first)
+    for (string::const_iterator first(layout_name.begin()), last(layout_name.end()); first != last; ++first)
         washed_layout_name.push_back(std::isalpha(*first) ? *first : '_');
 
     out_m << "layout " << washed_layout_name.c_str();
@@ -290,10 +280,8 @@ void layout_formatter_t::stream_out(const std::string&        layout_name,
         bool            is_leading(first.edge() == adobe::forest_leading_edge);
         name_t          name(get_value(*first, key_name).cast<name_t>());
         const array_t&  parameters(get_value(*first, key_parameters).cast<array_t>());
-		// Latest adobe_source_libraries has no string_t
-		//
-        const std::string& brief(get_value(*first, key_comment_brief).cast<std::string>());
-        const std::string& detailed(get_value(*first, key_comment_detailed).cast<std::string>());
+        const string& brief(get_value(*first, key_comment_brief).cast<string>());
+        const string& detailed(get_value(*first, key_comment_detailed).cast<string>());
         std::size_t     indent((first.depth() + 1) * 4);
 
         if (is_leading)
@@ -370,16 +358,12 @@ layout_assembly_t disassemble_layout(std::istream&          stream,
 {
     eve_node_forest_t parser(stream, position);
 
-	// Latest adobe_source_libraries does not have adobe::make_pair.
-	//
     return layout_assembly_t(parser.node_forest_m, parser.cell_set_m);
 }
 
 /******************************************************************************/
 
-// Latest adobe_source_libraries has no string_t
-//
-void assemble_layout(const std::string&       layout_name,
+void assemble_layout(const string&            layout_name,
                      const layout_assembly_t& assembly,
                      std::ostream&            out)
 {

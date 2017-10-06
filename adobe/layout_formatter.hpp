@@ -18,8 +18,6 @@
 #include <adobe/istream.hpp>
 #include <adobe/utility/pair.hpp>
 
-// Latest adobe_source_libraries has no string_t and no adobe::vector
-//
 #include <string>
 #include <vector>
 
@@ -183,8 +181,6 @@ namespace adobe {
     <code>second</code> is a vector of dictionaries, each representing a layout
     cell parsed in the layout.
 */
-// Latest adobe_source_libraries has no adobe::vector
-//
 typedef std::pair<forest<dictionary_t>, std::vector<dictionary_t> > layout_assembly_t;
 
 /******************************************************************************/
@@ -212,8 +208,6 @@ layout_assembly_t disassemble_layout(std::istream&          stream,
                        layout creation
     @param out         the stream to which the final result is to be output
 */
-// Latest adobe_source_libraries has no string_t
-//
 void assemble_layout(const std::string&       layout_name,
                      const layout_assembly_t& assembly,
                      std::ostream&            out);
