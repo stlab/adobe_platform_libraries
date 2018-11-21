@@ -12,10 +12,10 @@
 #include <boost/bind.hpp>
 #include <boost/next_prior.hpp>
 
-#include <adobe/algorithm.hpp>
+#include <adobe/algorithm/reverse.hpp>
 #include <adobe/implementation/expression_formatter.hpp>
 
-#define ADOBE_EXPRESSION_FILTER_DEBUG !defined(NDEBUG) && 0
+#define ADOBE_EXPRESSION_FILTER_DEBUG 0
 
 #if ADOBE_EXPRESSION_FILTER_DEBUG
     #include <adobe/iomanip_asl_cel.hpp>
