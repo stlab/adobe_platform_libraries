@@ -28,9 +28,12 @@ namespace implementation {
 
 /**************************************************************************************************/
 
-aggregate_name_t key_drag_ref  = { "drag_ref" };
-aggregate_name_t key_drag_item = { "drag_item" };
-aggregate_name_t key_flavor    = { "flavor" };
+// The type aggregate_name_t is missing in the latest adobe_source_libraries.
+// Switch to static_name_t.
+//
+static_name_t key_drag_ref  = "drag_ref"_name;
+static_name_t key_drag_item = "drag_item"_name;
+static_name_t key_flavor    = "flavor"_name;
 
 /**************************************************************************************************/
 

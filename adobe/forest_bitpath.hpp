@@ -16,7 +16,6 @@
 #include <boost/operators.hpp>
 
 #include <adobe/forest.hpp>
-#include <adobe/vector.hpp>
 
 /**************************************************************************************************/
 
