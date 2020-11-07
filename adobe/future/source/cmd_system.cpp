@@ -40,6 +40,7 @@ struct command_system_t::implementation_t
         }
 
         command_proc_t          proc_m;
+        std::string             prompt_m;
         bool                    enabled_m;
         enable_callback_list_t  enabled_callback_m;
     };
