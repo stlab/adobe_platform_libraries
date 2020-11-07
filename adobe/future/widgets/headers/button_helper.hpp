@@ -17,9 +17,15 @@
 #include <adobe/widget_attributes.hpp>
 
 #include <boost/function.hpp>
-#include <boost/gil/gil_all.hpp>
 #include <boost/range/begin.hpp>
 #include <boost/range/end.hpp>
+#include <boost/version.hpp>
+
+#if (BOOST_VERSION < 106800)
+    #include <boost/gil/gil_all.hpp>
+#else
+    #include <boost/gil.hpp>
+#endif
 
 #include <vector>
 #include <string>
